@@ -1,0 +1,395 @@
+"""
+gui/app.py
+Professional Tkinter GUI for the driver safety system: live webcam feed
+with bounding box / landmark / eye / mouth overlays, plus panels for
+status, confidence, FPS, active cue set, frame quality, and alert state.
+"""
+
+from __future__ import annotations
+
+import json
+import sys
+import time
+import tkinter as tk
+from pathlib import Path
+from tkinter import messagebox, ttk
+from typing import Optional, Tuple
+
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
+import cv2
+from PIL import Image, ImageTk
+
+import config
+from camera import WebcamStream
+from utils.alert import AlarmManager
+from utils.exceptions import CameraError, DriverSafetyError
+from utils.image_utils import draw_eye_and_mouth_regions, draw_face_box, draw_landmarks
+from utils.logger import PredictionCSVLogger, get_logger
+from utils.pipeline import DetectionResult, DriverSafetyPipeline
+
+logger = get_logger(__name__)
+
+_STATUS_COLORS = {
+    "Drowsy": "#e53935",
+    "Not Drowsy": "#2e7d32",
+    "Insufficient Data": "#f9a825",
+    "Driver Not Visible": "#e53935",
+}
+
+
+class DriverSafetyGUI:
+    def __init__(self, root: tk.Tk) -> None:
+        self.root = root
+        self.root.title("Smart Vision-Based Driver Safety Monitoring System")
+        self.root.geometry("1040x680")
+        self.root.minsize(900, 600)
+        self.root.configure(bg="#111318")
+
+        self.pipeline: Optional[DriverSafetyPipeline] = None
+        self.stream: Optional[WebcamStream] = None
+        self.alarm = AlarmManager()
+        self.csv_logger = PredictionCSVLogger()
+
+        self.running = False
+        self._last_alert_screenshot_ts = 0.0
+
+        self._build_layout()
+        self._try_init_pipeline()
+
+    # ------------------------------------------------------------------ #
+    # Layout
+    # ------------------------------------------------------------------ #
+    def _build_layout(self) -> None:
+        style = ttk.Style()
+        try:
+            style.theme_use("clam")
+        except tk.TclError:
+            pass
+        style.configure("TLabel", background="#111318", foreground="#e8e8e8", font=("Segoe UI", 11))
+        style.configure("Header.TLabel", background="#111318", foreground="#ffffff", font=("Segoe UI", 16, "bold"))
+        style.configure("Value.TLabel", background="#1b1e26", foreground="#ffffff", font=("Segoe UI", 13, "bold"))
+        style.configure("TButton", font=("Segoe UI", 11))
+
+        header = ttk.Label(self.root, text="Driver Safety Monitor", style="Header.TLabel")
+        header.pack(side=tk.TOP, anchor="w", padx=16, pady=(12, 4))
+
+        body = tk.Frame(self.root, bg="#111318")
+        body.pack(fill=tk.BOTH, expand=True, padx=16, pady=8)
+
+        # Video panel
+        video_frame = tk.Frame(body, bg="#000000", bd=2, relief=tk.RIDGE)
+        video_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        self.video_label = tk.Label(video_frame, bg="#000000")
+        self.video_label.pack(fill=tk.BOTH, expand=True)
+
+        # Track the CONTAINER's size (not the label's own requested size,
+        # which is driven by the image it displays). Deriving the resize
+        # target from the label itself creates a feedback loop: each
+        # frame's image grows the label slightly, which grows the next
+        # frame's target size, and so on, until the video panel overruns
+        # the sidebar. The container frame's size is controlled purely by
+        # the pack layout and the window's actual size, so it's stable.
+        self._video_panel_size: Tuple[int, int] = (760, 570)
+        video_frame.bind("<Configure>", self._on_video_frame_resize)
+
+        # Info panel
+        info_frame = tk.Frame(body, bg="#111318", width=300)
+        info_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=(16, 0))
+        info_frame.pack_propagate(False)
+
+        self.status_value = self._add_info_row(info_frame, "Status")
+        self.confidence_value = self._add_info_row(info_frame, "Confidence")
+        self.probability_value = self._add_info_row(info_frame, "Probability (Drowsy)")
+        self.fps_value = self._add_info_row(info_frame, "FPS")
+        self.cue_value = self._add_info_row(info_frame, "Active Cue(s)")
+        self.quality_value = self._add_info_row(info_frame, "Frame Quality")
+        self.alert_value = self._add_info_row(info_frame, "Alert Status")
+
+        controls = tk.Frame(info_frame, bg="#111318")
+        controls.pack(fill=tk.X, pady=(24, 0))
+
+        self.start_btn = ttk.Button(controls, text="Start Monitoring", command=self.start)
+        self.start_btn.pack(fill=tk.X, pady=4)
+        self.stop_btn = ttk.Button(controls, text="Stop", command=self.stop, state=tk.DISABLED)
+        self.stop_btn.pack(fill=tk.X, pady=4)
+
+        # --- Model performance summary (loaded from logs/test_metrics.json,
+        # produced by train.py / testing/run_tests.py) -------------------- #
+        metrics_frame = tk.Frame(info_frame, bg="#111318")
+        metrics_frame.pack(fill=tk.X, pady=(24, 0))
+        ttk.Label(metrics_frame, text="Model Performance", style="Header.TLabel").pack(
+            anchor="w", pady=(0, 6)
+        )
+        self.test_accuracy_value = self._add_info_row(metrics_frame, "Test Accuracy")
+        self.roc_auc_value = self._add_info_row(metrics_frame, "ROC AUC")
+        self.view_report_btn = ttk.Button(
+            metrics_frame, text="View Full Report", command=self._open_metrics_report
+        )
+        self.view_report_btn.pack(fill=tk.X, pady=(8, 0))
+        self._load_model_metrics()
+
+        self.footer_label = ttk.Label(
+            self.root, text="Model not loaded.", foreground="#f9a825", background="#111318"
+        )
+        self.footer_label.pack(side=tk.BOTTOM, anchor="w", padx=16, pady=8)
+
+        self.root.protocol("WM_DELETE_WINDOW", self._on_close)
+
+    def _on_video_frame_resize(self, event: tk.Event) -> None:
+        if event.width > 10 and event.height > 10:
+            self._video_panel_size = (event.width, event.height)
+
+    def _add_info_row(self, parent: tk.Frame, label: str) -> tk.Label:
+        row = tk.Frame(parent, bg="#111318")
+        row.pack(fill=tk.X, pady=6)
+        ttk.Label(row, text=label).pack(anchor="w")
+        value = tk.Label(
+            row, text="--", bg="#1b1e26", fg="#ffffff", font=("Segoe UI", 13, "bold"),
+            anchor="w", padx=8, pady=6,
+        )
+        value.pack(fill=tk.X)
+        return value
+
+    # ------------------------------------------------------------------ #
+    # Model performance metrics (from training/evaluation output)
+    # ------------------------------------------------------------------ #
+    def _load_model_metrics(self) -> None:
+        metrics_path = config.LOGS_DIR / "test_metrics.json"
+        if not metrics_path.exists():
+            self.test_accuracy_value.configure(text="No report yet")
+            self.roc_auc_value.configure(text="No report yet")
+            self.view_report_btn.configure(state=tk.DISABLED)
+            return
+        try:
+            metrics = json.loads(metrics_path.read_text(encoding="utf-8"))
+            acc = metrics.get("test_accuracy")
+            roc_auc = metrics.get("roc_auc")
+            self.test_accuracy_value.configure(text=f"{acc * 100:.2f}%" if acc is not None else "--")
+            self.roc_auc_value.configure(text=f"{roc_auc:.3f}" if roc_auc is not None else "--")
+            self.view_report_btn.configure(state=tk.NORMAL)
+        except (json.JSONDecodeError, OSError) as exc:
+            logger.warning("Could not read test_metrics.json: %s", exc)
+            self.test_accuracy_value.configure(text="Error")
+            self.roc_auc_value.configure(text="Error")
+            self.view_report_btn.configure(state=tk.DISABLED)
+
+    def _open_metrics_report(self) -> None:
+        """Opens a separate window showing the full classification report
+        plus the confusion matrix / ROC curve / training curve images
+        produced by train.py and testing/run_tests.py."""
+        window = tk.Toplevel(self.root)
+        window.title("Model Performance Report")
+        window.geometry("900x700")
+        window.configure(bg="#111318")
+
+        canvas = tk.Canvas(window, bg="#111318", highlightthickness=0)
+        scrollbar = ttk.Scrollbar(window, orient="vertical", command=canvas.yview)
+        scroll_frame = tk.Frame(canvas, bg="#111318")
+
+        scroll_frame.bind(
+            "<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
+        )
+        canvas.create_window((0, 0), window=scroll_frame, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+        canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+        report_path = config.LOGS_DIR / "classification_report.txt"
+        if report_path.exists():
+            ttk.Label(scroll_frame, text="Classification Report", style="Header.TLabel").pack(
+                anchor="w", padx=12, pady=(12, 4)
+            )
+            report_text = tk.Text(
+                scroll_frame, height=10, bg="#1b1e26", fg="#ffffff", font=("Consolas", 10),
+                relief=tk.FLAT, wrap=tk.NONE,
+            )
+            report_text.insert("1.0", report_path.read_text(encoding="utf-8"))
+            report_text.configure(state=tk.DISABLED)
+            report_text.pack(fill=tk.X, padx=12, pady=(0, 12))
+
+        self._embedded_images = []  # keep references so Tk doesn't garbage-collect them
+        for label, filename in (
+            ("Confusion Matrix", "confusion_matrix.png"),
+            ("ROC Curve", "roc_curve.png"),
+            ("Training Accuracy", "accuracy_graph.png"),
+            ("Training Loss", "loss_graph.png"),
+        ):
+            image_path = config.LOGS_DIR / filename
+            if not image_path.exists():
+                continue
+            ttk.Label(scroll_frame, text=label, style="Header.TLabel").pack(
+                anchor="w", padx=12, pady=(12, 4)
+            )
+            img = Image.open(image_path)
+            img.thumbnail((820, 500))
+            photo = ImageTk.PhotoImage(img)
+            self._embedded_images.append(photo)
+            tk.Label(scroll_frame, image=photo, bg="#111318").pack(padx=12, pady=(0, 8))
+
+        if not report_path.exists() and not any(
+            (config.LOGS_DIR / f).exists()
+            for f in ("confusion_matrix.png", "roc_curve.png", "accuracy_graph.png", "loss_graph.png")
+        ):
+            ttk.Label(
+                scroll_frame,
+                text="No report artefacts found in logs/. Run 'python train.py' "
+                "or 'python -m testing.run_tests' first.",
+            ).pack(padx=12, pady=12)
+
+    # ------------------------------------------------------------------ #
+    # Pipeline lifecycle
+    # ------------------------------------------------------------------ #
+    def _try_init_pipeline(self) -> None:
+        try:
+            self.pipeline = DriverSafetyPipeline()
+            self.footer_label.configure(
+                text="Model loaded. Click 'Start Monitoring' to begin.", foreground="#66bb6a"
+            )
+        except DriverSafetyError as exc:
+            logger.error("Pipeline initialisation failed: %s", exc)
+            self.footer_label.configure(text=str(exc), foreground="#e53935")
+            messagebox.showerror("Initialisation Error", str(exc))
+
+    def start(self) -> None:
+        if self.pipeline is None:
+            self._try_init_pipeline()
+            if self.pipeline is None:
+                return
+
+        try:
+            self.stream = WebcamStream().start()
+        except CameraError as exc:
+            logger.error("Camera error: %s", exc)
+            messagebox.showerror("Camera Error", str(exc))
+            return
+
+        self.pipeline.reset()
+        self.running = True
+        self.start_btn.configure(state=tk.DISABLED)
+        self.stop_btn.configure(state=tk.NORMAL)
+        self.footer_label.configure(text="Monitoring active.", foreground="#66bb6a")
+        self._load_model_metrics()
+        self._update_frame()
+
+    def stop(self) -> None:
+        self.running = False
+        if self.stream is not None:
+            self.stream.stop()
+            self.stream = None
+        self.alarm.stop()
+        self.start_btn.configure(state=tk.NORMAL)
+        self.stop_btn.configure(state=tk.DISABLED)
+        self.footer_label.configure(text="Monitoring stopped.", foreground="#f9a825")
+
+    def _on_close(self) -> None:
+        self.stop()
+        if self.pipeline is not None:
+            self.pipeline.shutdown()
+        self.alarm.shutdown()
+        self.root.destroy()
+
+    # ------------------------------------------------------------------ #
+    # Frame loop
+    # ------------------------------------------------------------------ #
+    def _update_frame(self) -> None:
+        if not self.running or self.stream is None or self.pipeline is None:
+            return
+
+        frame = self.stream.read()
+        if frame is None:
+            if self.stream.last_error:
+                messagebox.showerror("Camera Error", self.stream.last_error)
+                self.stop()
+                return
+            self.root.after(15, self._update_frame)
+            return
+
+        try:
+            result = self._process(frame)
+        except Exception as exc:  # noqa: BLE001 -- never let the GUI crash
+            logger.exception("Unexpected error while processing frame: %s", exc)
+            self.root.after(15, self._update_frame)
+            return
+
+        self._render(frame, result)
+        self.root.after(15, self._update_frame)
+
+    def _process(self, frame) -> DetectionResult:
+        result = self.pipeline.process_frame(frame)
+
+        if result.status in ("Drowsy", "Driver Not Visible"):
+            self.alarm.start()
+        else:
+            self.alarm.stop()
+
+        if result.alert_triggered:
+            self._save_alert_screenshot(frame)
+
+        self.csv_logger.log_row(
+            {
+                "status": result.status,
+                "probability": f"{result.cnn_probability_drowsy:.3f}",
+                "confidence": f"{result.confidence:.3f}",
+                "active_cues": result.active_cues_label,
+                "frame_quality": result.quality_label,
+                "alert_triggered": result.alert_triggered,
+            }
+        )
+        return result
+
+    def _render(self, frame, result: DetectionResult) -> None:
+        display = frame.copy()
+        if result.face_box is not None:
+            draw_face_box(display, result.face_box)
+        if result.landmarks is not None:
+            draw_landmarks(display, result.landmarks)
+            draw_eye_and_mouth_regions(display, result.landmarks)
+
+        rgb = cv2.cvtColor(display, cv2.COLOR_BGR2RGB)
+        image = Image.fromarray(rgb)
+
+        panel_w, panel_h = self._video_panel_size
+        if panel_w > 10 and panel_h > 10:
+            image = image.resize((panel_w, panel_h))
+
+        photo = ImageTk.PhotoImage(image=image)
+        self.video_label.configure(image=photo)
+        self.video_label.image = photo  # keep a reference, avoid GC
+
+        self.status_value.configure(
+            text=result.status, fg=_STATUS_COLORS.get(result.status, "#ffffff")
+        )
+        self.confidence_value.configure(text=f"{result.confidence:.2f}")
+        self.probability_value.configure(text=f"{result.cnn_probability_drowsy:.2f}")
+        self.fps_value.configure(text=f"{result.fps:.1f}")
+        self.cue_value.configure(text=result.active_cues_label)
+        self.quality_value.configure(text=result.quality_label)
+        is_alert_state = result.alert_triggered or result.status in ("Drowsy", "Driver Not Visible")
+        self.alert_value.configure(
+            text="ALERT" if is_alert_state else "Normal",
+            fg="#e53935" if is_alert_state else "#66bb6a",
+        )
+
+    def _save_alert_screenshot(self, frame) -> None:
+        now = time.time()
+        if now - self._last_alert_screenshot_ts < 2.0:
+            return
+        self._last_alert_screenshot_ts = now
+        config.SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
+        filename = config.SCREENSHOTS_DIR / f"alert_{int(now * 1000)}.png"
+        try:
+            cv2.imwrite(str(filename), frame)
+            logger.info("Saved alert screenshot: %s", filename)
+        except Exception as exc:  # noqa: BLE001
+            logger.warning("Could not save alert screenshot: %s", exc)
+
+
+def launch() -> None:
+    root = tk.Tk()
+    DriverSafetyGUI(root)
+    root.mainloop()
+
+
+if __name__ == "__main__":
+    launch()

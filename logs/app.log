@@ -1,0 +1,118 @@
+2026-07-23 09:29:14,542 | INFO     | driver_safety.__main__ | Loading dataset from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\dataset ...
+2026-07-23 09:29:15,323 | INFO     | driver_safety.training.data_loader | Dataset discovered: 22348 Drowsy, 1893 Not Drowsy (total 24241)
+2026-07-23 09:29:15,383 | INFO     | driver_safety.training.data_loader | Split sizes -> train: 19392, val: 2423, test: 2426
+2026-07-23 09:30:40,042 | WARNING  | driver_safety.training.data_loader | Could not decode image: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\dataset\not_drowsy\c0276.png
+2026-07-23 09:30:53,182 | WARNING  | driver_safety.training.data_loader | Skipped 1 corrupted/unreadable images.
+2026-07-23 09:31:18,197 | INFO     | driver_safety.__main__ | Loaded dataset -> train: 19391, val: 2423, test: 2426 images
+2026-07-23 09:31:21,447 | INFO     | driver_safety.__main__ | Model: "DrowsinessCNN_CBAM"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ face_input (InputLayer)              │ (None, 64, 64, 1)           │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_conv1 (Conv2D)                │ (None, 64, 64, 32)          │             320 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_bn1 (BatchNormalization)      │ (None, 64, 64, 32)          │             128 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_relu1 (ReLU)                  │ (None, 64, 64, 32)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_conv2 (Conv2D)                │ (None, 64, 64, 32)          │           9,248 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_bn2 (BatchNormalization)      │ (None, 64, 64, 32)          │             128 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_relu2 (ReLU)                  │ (None, 64, 64, 32)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_cbam (CBAM)                   │ (None, 64, 64, 32)          │             390 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_pool (MaxPooling2D)           │ (None, 32, 32, 32)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_dropout (Dropout)             │ (None, 32, 32, 32)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_conv1 (Conv2D)                │ (None, 32, 32, 64)          │          18,496 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_bn1 (BatchNormalization)      │ (None, 32, 32, 64)          │             256 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_relu1 (ReLU)                  │ (None, 32, 32, 64)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_conv2 (Conv2D)                │ (None, 32, 32, 64)          │          36,928 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_bn2 (BatchNormalization)      │ (None, 32, 32, 64)          │             256 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_relu2 (ReLU)                  │ (None, 32, 32, 64)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_cbam (CBAM)                   │ (None, 32, 32, 64)          │           1,194 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_pool (MaxPooling2D)           │ (None, 16, 16, 64)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_dropout (Dropout)             │ (None, 16, 16, 64)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_conv1 (Conv2D)                │ (None, 16, 16, 128)         │          73,856 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_bn1 (BatchNormalization)      │ (None, 16, 16, 128)         │             512 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_relu1 (ReLU)                  │ (None, 16, 16, 128)         │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_conv2 (Conv2D)                │ (None, 16, 16, 128)         │         147,584 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_bn2 (BatchNormalization)      │ (None, 16, 16, 128)         │             512 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_relu2 (ReLU)                  │ (None, 16, 16, 128)         │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_cbam (CBAM)                   │ (None, 16, 16, 128)         │           4,338 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_pool (MaxPooling2D)           │ (None, 8, 8, 128)           │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_dropout (Dropout)             │ (None, 8, 8, 128)           │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ global_avg_pool                      │ (None, 128)                 │               0 │
+│ (GlobalAveragePooling2D)             │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense1 (Dense)                       │ (None, 128)                 │          16,512 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense1_bn (BatchNormalization)       │ (None, 128)                 │             512 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense1_relu (ReLU)                   │ (None, 128)                 │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense1_dropout (Dropout)             │ (None, 128)                 │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense2 (Dense)                       │ (None, 64)                  │           8,256 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense2_dropout (Dropout)             │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ predictions (Dense)                  │ (None, 2)                   │             130 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 319,556 (1.22 MB)
+ Trainable params: 318,404 (1.21 MB)
+ Non-trainable params: 1,152 (4.50 KB)
+
+2026-07-23 10:29:12,201 | INFO     | driver_safety.__main__ | Training finished in 3470.4 seconds.
+2026-07-23 10:29:12,495 | INFO     | driver_safety.__main__ | Saved final model to C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
+2026-07-23 10:29:13,841 | INFO     | driver_safety.testing.evaluate | Saved training history plots to C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\logs
+2026-07-23 10:29:13,842 | INFO     | driver_safety.__main__ | Evaluating on held-out test split (2426 images)...
+2026-07-23 10:29:28,649 | INFO     | driver_safety.testing.evaluate | Classification report:
+              precision    recall  f1-score   support
+
+  Not Drowsy       0.00      0.00      0.00       190
+      Drowsy       0.92      1.00      0.96      2236
+
+    accuracy                           0.92      2426
+   macro avg       0.46      0.50      0.48      2426
+weighted avg       0.85      0.92      0.88      2426
+
+2026-07-23 10:29:29,296 | INFO     | driver_safety.testing.evaluate | Saved evaluation artefacts to C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\logs
+2026-07-23 10:29:29,296 | INFO     | driver_safety.__main__ | Final test accuracy: 0.9209 | ROC AUC: 0.6335
+2026-07-23 10:29:29,299 | INFO     | driver_safety.__main__ | Done. You can now run: python main.py
+2026-07-23 10:32:23,484 | INFO     | driver_safety.utils.landmarks | LandmarkDetector initialised with MediaPipe Face Mesh (468 points).
+2026-07-23 10:32:26,789 | INFO     | driver_safety.utils.pipeline | Loaded trained model from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
+2026-07-23 10:43:59,497 | INFO     | driver_safety.camera | Webcam opened at index 0
+2026-07-23 10:45:08,077 | INFO     | driver_safety.camera | Webcam released.
+2026-07-23 10:47:04,140 | INFO     | driver_safety.camera | Webcam opened at index 0
+2026-07-23 10:47:47,386 | INFO     | driver_safety.camera | Webcam released.
+2026-07-23 11:04:39,182 | INFO     | driver_safety.utils.landmarks | LandmarkDetector initialised with MediaPipe Face Mesh (468 points).
+2026-07-23 11:04:41,500 | INFO     | driver_safety.utils.pipeline | Loaded trained model from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
+2026-07-23 11:04:56,547 | INFO     | driver_safety.camera | Webcam opened at index 0
+2026-07-23 11:05:16,773 | INFO     | driver_safety.camera | Webcam released.
+2026-07-23 11:06:41,316 | INFO     | driver_safety.utils.landmarks | LandmarkDetector initialised with MediaPipe Face Mesh (468 points).
+2026-07-23 11:06:43,655 | INFO     | driver_safety.utils.pipeline | Loaded trained model from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
+2026-07-23 11:06:53,622 | INFO     | driver_safety.camera | Webcam opened at index 0
+2026-07-23 11:07:07,748 | INFO     | driver_safety.camera | Webcam released.
