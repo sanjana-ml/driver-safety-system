@@ -407,3 +407,155 @@ weighted avg       0.85      0.92      0.88      2426
 2026-07-23 19:42:16,742 | INFO     | driver_safety.utils.alert | Alarm stopped.
 2026-07-23 19:42:18,543 | INFO     | driver_safety.utils.alert | Warning chime played.
 2026-07-23 19:42:30,895 | INFO     | driver_safety.camera | Webcam released.
+2026-07-23 21:27:43,295 | INFO     | driver_safety.__main__ | Loading dataset from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\dataset ...
+2026-07-23 21:27:46,527 | INFO     | driver_safety.training.data_loader | Dataset discovered: 58378 Drowsy, 32384 Not Drowsy (total 90762)
+2026-07-23 21:27:46,647 | INFO     | driver_safety.training.data_loader | Split sizes -> train: 72609, val: 9075, test: 9078
+2026-07-23 21:28:10,671 | WARNING  | driver_safety.training.data_loader | Could not decode image: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\dataset\not_drowsy\c0276.png
+2026-07-23 21:32:14,104 | WARNING  | driver_safety.training.data_loader | Skipped 1 corrupted/unreadable images.
+2026-07-23 21:33:21,064 | INFO     | driver_safety.__main__ | Loaded dataset -> train: 72608, val: 9075, test: 9078 images
+2026-07-23 21:33:23,600 | INFO     | driver_safety.__main__ | Model: "DrowsinessCNN_CBAM"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ face_input (InputLayer)              │ (None, 64, 64, 1)           │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_conv1 (Conv2D)                │ (None, 64, 64, 32)          │             320 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_bn1 (BatchNormalization)      │ (None, 64, 64, 32)          │             128 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_relu1 (ReLU)                  │ (None, 64, 64, 32)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_conv2 (Conv2D)                │ (None, 64, 64, 32)          │           9,248 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_bn2 (BatchNormalization)      │ (None, 64, 64, 32)          │             128 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_relu2 (ReLU)                  │ (None, 64, 64, 32)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_cbam (CBAM)                   │ (None, 64, 64, 32)          │             390 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_pool (MaxPooling2D)           │ (None, 32, 32, 32)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block1_dropout (Dropout)             │ (None, 32, 32, 32)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_conv1 (Conv2D)                │ (None, 32, 32, 64)          │          18,496 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_bn1 (BatchNormalization)      │ (None, 32, 32, 64)          │             256 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_relu1 (ReLU)                  │ (None, 32, 32, 64)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_conv2 (Conv2D)                │ (None, 32, 32, 64)          │          36,928 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_bn2 (BatchNormalization)      │ (None, 32, 32, 64)          │             256 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_relu2 (ReLU)                  │ (None, 32, 32, 64)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_cbam (CBAM)                   │ (None, 32, 32, 64)          │           1,194 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_pool (MaxPooling2D)           │ (None, 16, 16, 64)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block2_dropout (Dropout)             │ (None, 16, 16, 64)          │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_conv1 (Conv2D)                │ (None, 16, 16, 128)         │          73,856 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_bn1 (BatchNormalization)      │ (None, 16, 16, 128)         │             512 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_relu1 (ReLU)                  │ (None, 16, 16, 128)         │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_conv2 (Conv2D)                │ (None, 16, 16, 128)         │         147,584 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_bn2 (BatchNormalization)      │ (None, 16, 16, 128)         │             512 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_relu2 (ReLU)                  │ (None, 16, 16, 128)         │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_cbam (CBAM)                   │ (None, 16, 16, 128)         │           4,338 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_pool (MaxPooling2D)           │ (None, 8, 8, 128)           │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ block3_dropout (Dropout)             │ (None, 8, 8, 128)           │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ global_avg_pool                      │ (None, 128)                 │               0 │
+│ (GlobalAveragePooling2D)             │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense1 (Dense)                       │ (None, 128)                 │          16,512 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense1_bn (BatchNormalization)       │ (None, 128)                 │             512 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense1_relu (ReLU)                   │ (None, 128)                 │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense1_dropout (Dropout)             │ (None, 128)                 │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense2 (Dense)                       │ (None, 64)                  │           8,256 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense2_dropout (Dropout)             │ (None, 64)                  │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ predictions (Dense)                  │ (None, 2)                   │             130 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 319,556 (1.22 MB)
+ Trainable params: 318,404 (1.21 MB)
+ Non-trainable params: 1,152 (4.50 KB)
+
+2026-07-23 23:38:52,821 | INFO     | driver_safety.__main__ | Training finished in 7528.0 seconds.
+2026-07-23 23:38:52,951 | INFO     | driver_safety.__main__ | Saved final model to C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
+2026-07-23 23:38:53,580 | INFO     | driver_safety.testing.evaluate | Saved training history plots to C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\logs
+2026-07-23 23:38:53,580 | INFO     | driver_safety.__main__ | Evaluating on held-out test split (9078 images)...
+2026-07-23 23:39:12,166 | INFO     | driver_safety.testing.evaluate | Classification report:
+              precision    recall  f1-score   support
+
+  Not Drowsy       0.00      0.00      0.00      3239
+      Drowsy       0.64      1.00      0.78      5839
+
+    accuracy                           0.64      9078
+   macro avg       0.32      0.50      0.39      9078
+weighted avg       0.41      0.64      0.50      9078
+
+2026-07-23 23:39:12,574 | INFO     | driver_safety.testing.evaluate | Saved evaluation artefacts to C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\logs
+2026-07-23 23:39:12,574 | INFO     | driver_safety.__main__ | Final test accuracy: 0.6432 | ROC AUC: 0.5983
+2026-07-23 23:39:12,574 | INFO     | driver_safety.__main__ | Done. You can now run: python main.py
+2026-07-24 00:40:44,319 | INFO     | driver_safety.utils.alert | Audio mixer ready (C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\alarm\alarm.wav).
+2026-07-24 00:40:44,391 | INFO     | driver_safety.utils.landmarks | LandmarkDetector initialised with MediaPipe Face Mesh (468 points).
+2026-07-24 00:40:46,863 | INFO     | driver_safety.utils.pipeline | Loaded trained model from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
+2026-07-24 00:40:59,977 | INFO     | driver_safety.camera | Webcam opened at index 0
+2026-07-24 00:41:18,628 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-24 00:41:27,588 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:41:27,617 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-24_00-40-59\alert_1784833887589.png
+2026-07-24 00:41:27,827 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:41:29,381 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:41:29,598 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:41:30,882 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:41:30,901 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-24_00-40-59\alert_1784833890883.png
+2026-07-24 00:41:31,772 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:41:34,471 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:41:34,493 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-24_00-40-59\alert_1784833894472.png
+2026-07-24 00:41:34,919 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:41:35,191 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-24 00:41:39,794 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:41:39,813 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-24_00-40-59\alert_1784833899794.png
+2026-07-24 00:41:40,027 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:41:41,291 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:41:41,505 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:41:42,170 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:41:42,595 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:41:47,758 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:41:47,777 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-24_00-40-59\alert_1784833907759.png
+2026-07-24 00:41:48,847 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:41:49,488 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:41:49,706 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:41:50,777 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:41:50,798 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-24_00-40-59\alert_1784833910778.png
+2026-07-24 00:41:51,220 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:41:51,429 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:41:51,646 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:41:53,153 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:41:53,368 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:42:07,938 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:42:07,958 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-24_00-40-59\alert_1784833927938.png
+2026-07-24 00:42:08,804 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:42:12,405 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:42:12,424 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-24_00-40-59\alert_1784833932406.png
+2026-07-24 00:42:12,946 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:42:13,154 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:42:13,367 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:42:15,486 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-24 00:42:15,506 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-24_00-40-59\alert_1784833935487.png
+2026-07-24 00:42:15,717 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-24 00:42:19,466 | INFO     | driver_safety.camera | Webcam released.
