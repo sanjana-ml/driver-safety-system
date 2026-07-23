@@ -13,7 +13,7 @@ import time
 import tkinter as tk
 from pathlib import Path
 from tkinter import messagebox, ttk
-from typing import Optional, Tuple
+from typing import Optional
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
@@ -34,7 +34,6 @@ _STATUS_COLORS = {
     "Drowsy": "#e53935",
     "Not Drowsy": "#2e7d32",
     "Insufficient Data": "#f9a825",
-    "Driver Not Visible": "#e53935",
 }
 
 
@@ -53,7 +52,6 @@ class DriverSafetyGUI:
 
         self.running = False
         self._last_alert_screenshot_ts = 0.0
-        self._last_quality_alert_time = 0.0
 
         self._build_layout()
         self._try_init_pipeline()
@@ -81,19 +79,8 @@ class DriverSafetyGUI:
         # Video panel
         video_frame = tk.Frame(body, bg="#000000", bd=2, relief=tk.RIDGE)
         video_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
-        # CRITICAL: without this, the frame auto-resizes to fit whatever
-        # image the label inside it is showing, which then grows the next
-        # image, which grows the frame again, and so on -- eventually
-        # overrunning the sidebar. With propagation off, video_frame's
-        # size is dictated purely by the pack layout (i.e. "however much
-        # space is left after the fixed-width sidebar"), never by its
-        # child's content.
-        video_frame.pack_propagate(False)
         self.video_label = tk.Label(video_frame, bg="#000000")
         self.video_label.pack(fill=tk.BOTH, expand=True)
-
-        self._video_panel_size: Tuple[int, int] = (760, 570)
-        video_frame.bind("<Configure>", self._on_video_frame_resize)
 
         # Info panel
         info_frame = tk.Frame(body, bg="#111318", width=300)
@@ -110,20 +97,6 @@ class DriverSafetyGUI:
 
         controls = tk.Frame(info_frame, bg="#111318")
         controls.pack(fill=tk.X, pady=(24, 0))
-
-        self.show_landmarks_var = tk.BooleanVar(value=True)
-        landmarks_check = tk.Checkbutton(
-            controls,
-            text="Show Landmarks & Overlays",
-            variable=self.show_landmarks_var,
-            bg="#111318",
-            fg="#e8e8e8",
-            selectcolor="#1b1e26",
-            activebackground="#111318",
-            activeforeground="#ffffff",
-            font=("Segoe UI", 10),
-        )
-        landmarks_check.pack(fill=tk.X, pady=(0, 8), anchor="w")
 
         self.start_btn = ttk.Button(controls, text="Start Monitoring", command=self.start)
         self.start_btn.pack(fill=tk.X, pady=4)
@@ -151,10 +124,6 @@ class DriverSafetyGUI:
         self.footer_label.pack(side=tk.BOTTOM, anchor="w", padx=16, pady=8)
 
         self.root.protocol("WM_DELETE_WINDOW", self._on_close)
-
-    def _on_video_frame_resize(self, event: tk.Event) -> None:
-        if event.width > 10 and event.height > 10:
-            self._video_panel_size = (event.width, event.height)
 
     def _add_info_row(self, parent: tk.Frame, label: str) -> tk.Label:
         row = tk.Frame(parent, bg="#111318")
@@ -334,23 +303,10 @@ class DriverSafetyGUI:
     def _process(self, frame) -> DetectionResult:
         result = self.pipeline.process_frame(frame)
 
-        if result.status in ("Drowsy", "Driver Not Visible"):
+        if result.status == "Drowsy":
             self.alarm.start()
         else:
             self.alarm.stop()
-
-            # Frame-quality issues (poor lighting, head not frontal, too
-            # few landmarks, etc.) get their own lighter-weight alert: a
-            # single chime plus a pop-up, rate-limited so it doesn't spam
-            # while the condition persists across many frames.
-            if not result.frame_quality_ok and result.status == "Insufficient Data":
-                now = time.time()
-                if now - self._last_quality_alert_time >= config.FRAME_QUALITY_ALERT_COOLDOWN_SEC:
-                    self._last_quality_alert_time = now
-                    self.alarm.play_warning_once()
-                    self.root.after(
-                        0, lambda label=result.quality_label: self._show_quality_popup(label)
-                    )
 
         if result.alert_triggered:
             self._save_alert_screenshot(frame)
@@ -367,26 +323,19 @@ class DriverSafetyGUI:
         )
         return result
 
-    def _show_quality_popup(self, quality_label: str) -> None:
-        messagebox.showwarning(
-            "Frame Quality Warning",
-            f"Monitoring paused for this frame: {quality_label}.\n\n"
-            "Please face the camera directly with good lighting so "
-            "drowsiness detection can resume.",
-        )
-
     def _render(self, frame, result: DetectionResult) -> None:
         display = frame.copy()
         if result.face_box is not None:
             draw_face_box(display, result.face_box)
-        if result.landmarks is not None and self.show_landmarks_var.get():
+        if result.landmarks is not None:
             draw_landmarks(display, result.landmarks)
             draw_eye_and_mouth_regions(display, result.landmarks)
 
         rgb = cv2.cvtColor(display, cv2.COLOR_BGR2RGB)
         image = Image.fromarray(rgb)
 
-        panel_w, panel_h = self._video_panel_size
+        panel_w = max(1, self.video_label.winfo_width())
+        panel_h = max(1, self.video_label.winfo_height())
         if panel_w > 10 and panel_h > 10:
             image = image.resize((panel_w, panel_h))
 
@@ -402,10 +351,9 @@ class DriverSafetyGUI:
         self.fps_value.configure(text=f"{result.fps:.1f}")
         self.cue_value.configure(text=result.active_cues_label)
         self.quality_value.configure(text=result.quality_label)
-        is_alert_state = result.alert_triggered or result.status in ("Drowsy", "Driver Not Visible")
         self.alert_value.configure(
-            text="ALERT" if is_alert_state else "Normal",
-            fg="#e53935" if is_alert_state else "#66bb6a",
+            text="ALERT" if result.alert_triggered or result.status == "Drowsy" else "Normal",
+            fg="#e53935" if (result.alert_triggered or result.status == "Drowsy") else "#66bb6a",
         )
 
     def _save_alert_screenshot(self, frame) -> None:

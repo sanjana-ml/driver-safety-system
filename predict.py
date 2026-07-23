@@ -59,6 +59,7 @@ def main() -> int:
 
     alarm = None if args.no_alarm else AlarmManager()
     csv_logger = PredictionCSVLogger()
+    session_dir = config.SCREENSHOTS_DIR / time.strftime("%Y-%m-%d_%H-%M-%S")
 
     try:
         stream = WebcamStream(camera_index=args.camera_index).start()
@@ -104,7 +105,7 @@ def main() -> int:
             )
 
             if result.alert_triggered:
-                _save_alert_screenshot(frame)
+                _save_alert_screenshot(frame, session_dir)
                 logger.warning("DROWSINESS ALERT triggered.")
 
             if not args.headless:
@@ -139,9 +140,9 @@ def main() -> int:
     return 0
 
 
-def _save_alert_screenshot(frame) -> None:
-    config.SCREENSHOTS_DIR.mkdir(parents=True, exist_ok=True)
-    filename = config.SCREENSHOTS_DIR / f"alert_{int(time.time() * 1000)}.png"
+def _save_alert_screenshot(frame, session_dir: Path) -> None:
+    session_dir.mkdir(parents=True, exist_ok=True)
+    filename = session_dir / f"alert_{int(time.time() * 1000)}.png"
     try:
         cv2.imwrite(str(filename), frame)
     except Exception as exc:  # noqa: BLE001

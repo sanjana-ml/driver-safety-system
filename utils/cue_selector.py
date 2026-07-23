@@ -23,6 +23,7 @@ from utils.landmarks import (
     eye_aspect_ratio,
     get_points,
     mouth_aspect_ratio,
+    pose_compensated_ear,
 )
 from utils.quality import QualityReport, eye_region_occluded
 
@@ -100,7 +101,8 @@ def cue_based_drowsiness_score(reading: CueReadings) -> float:
     votes: List[float] = []
 
     if reading.eyes_available:
-        eye_score = 1.0 if reading.avg_ear < config.EAR_THRESHOLD else 0.0
+        corrected_ear = pose_compensated_ear(reading.avg_ear, reading.pitch, reading.yaw)
+        eye_score = 1.0 if corrected_ear < config.EAR_THRESHOLD else 0.0
         votes.append(eye_score)
 
     if reading.mouth_available:

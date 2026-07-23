@@ -181,6 +181,25 @@ def eye_aspect_ratio(eye_points: np.ndarray) -> float:
     return (vertical_1 + vertical_2) / (2.0 * horizontal)
 
 
+def pose_compensated_ear(avg_ear: float, pitch_deg: float, yaw_deg: float) -> float:
+    """
+    Corrects EAR for head yaw/pitch before comparing to config.EAR_THRESHOLD.
+
+    A fixed EAR threshold is calibrated for a frontal face. As the head
+    yaws, the eye-corner-to-corner width (EAR's denominator) shrinks under
+    perspective foreshortening -- independent of whether the eye is open
+    or closed -- which raises the measured EAR and makes a genuinely
+    closed eye look "open" at an angle. Pitch does the same thing to the
+    lid-gap numerator. Re-projecting by the matching cosine factors
+    restores an EAR close to what a frontal view would have measured.
+    """
+    yaw_rad = np.radians(np.clip(yaw_deg, -config.MAX_YAW_DEG, config.MAX_YAW_DEG))
+    pitch_rad = np.radians(np.clip(pitch_deg, -config.MAX_PITCH_DEG, config.MAX_PITCH_DEG))
+    cos_yaw = max(np.cos(yaw_rad), 0.5)
+    cos_pitch = max(np.cos(pitch_rad), 0.5)
+    return avg_ear * cos_yaw / cos_pitch
+
+
 def mouth_aspect_ratio(mouth_points: np.ndarray) -> float:
     """MAR from 4 points ordered [left_corner, upper_lip, right_corner, lower_lip]."""
     if mouth_points.shape[0] != 4:

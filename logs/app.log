@@ -161,3 +161,177 @@ weighted avg       0.85      0.92      0.88      2426
 2026-07-23 17:49:26,423 | INFO     | driver_safety.utils.alert | Alarm stopped.
 2026-07-23 17:49:26,426 | INFO     | driver_safety.utils.alert | Warning chime played.
 2026-07-23 17:49:59,465 | INFO     | driver_safety.camera | Webcam released.
+2026-07-23 17:57:11,414 | INFO     | driver_safety.utils.alert | Audio mixer ready (C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\alarm\alarm.wav).
+2026-07-23 17:57:11,500 | INFO     | driver_safety.utils.landmarks | LandmarkDetector initialised with MediaPipe Face Mesh (468 points).
+2026-07-23 17:57:14,395 | INFO     | driver_safety.utils.pipeline | Loaded trained model from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
+2026-07-23 18:02:07,112 | INFO     | driver_safety.utils.alert | Audio mixer ready (C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\alarm\alarm.wav).
+2026-07-23 18:02:07,194 | INFO     | driver_safety.utils.landmarks | LandmarkDetector initialised with MediaPipe Face Mesh (468 points).
+2026-07-23 18:02:10,229 | INFO     | driver_safety.utils.pipeline | Loaded trained model from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
+2026-07-23 18:02:18,802 | INFO     | driver_safety.camera | Webcam opened at index 0
+2026-07-23 18:02:25,988 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:02:41,970 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:03:00,222 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:03:00,261 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\alert_1784809980222.png
+2026-07-23 18:03:00,515 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:03:00,794 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:03:01,089 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:03:02,216 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:03:02,517 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:03:04,078 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:03:04,110 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\alert_1784809984079.png
+2026-07-23 18:03:04,387 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:03:04,748 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:03:16,262 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:03:16,291 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\alert_1784809996264.png
+2026-07-23 18:03:17,606 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:03:18,864 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:03:19,347 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:03:19,602 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:03:19,634 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\alert_1784809999604.png
+2026-07-23 18:03:19,896 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:03:21,922 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:03:22,427 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:03:32,007 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:03:32,035 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\alert_1784810012008.png
+2026-07-23 18:03:33,009 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:03:33,263 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:03:33,774 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:03:36,150 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:03:41,296 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:03:47,372 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:03:47,396 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\alert_1784810027372.png
+2026-07-23 18:03:48,888 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:03:49,933 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:03:50,002 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:03:50,002 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:03:59,597 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:03:59,626 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\alert_1784810039599.png
+2026-07-23 18:04:01,155 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:04:07,474 | INFO     | driver_safety.camera | Webcam released.
+2026-07-23 18:35:48,264 | INFO     | driver_safety.utils.alert | Audio mixer ready (C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\alarm\alarm.wav).
+2026-07-23 18:35:48,316 | INFO     | driver_safety.utils.landmarks | LandmarkDetector initialised with MediaPipe Face Mesh (468 points).
+2026-07-23 18:35:50,816 | INFO     | driver_safety.utils.pipeline | Loaded trained model from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
+2026-07-23 18:36:01,321 | INFO     | driver_safety.camera | Webcam opened at index 0
+2026-07-23 18:36:04,663 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:36:12,048 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:36:12,075 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784811972049.png
+2026-07-23 18:36:12,306 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:36:14,062 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:36:14,277 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:36:16,196 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:36:16,215 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784811976197.png
+2026-07-23 18:36:17,272 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:36:19,786 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:36:19,804 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784811979787.png
+2026-07-23 18:36:19,867 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:36:19,868 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:36:26,373 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:36:30,644 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:36:30,662 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784811990645.png
+2026-07-23 18:36:30,873 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:36:31,083 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:36:31,719 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:36:32,152 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:36:32,363 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:36:34,304 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:36:34,733 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:36:34,752 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784811994734.png
+2026-07-23 18:36:35,850 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:36:40,361 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:36:41,674 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:36:41,693 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812001675.png
+2026-07-23 18:36:41,908 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:36:45,574 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:36:45,597 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812005575.png
+2026-07-23 18:36:45,828 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:36:45,897 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:36:47,121 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:36:47,361 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:36:48,715 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:36:48,733 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812008716.png
+2026-07-23 18:36:48,803 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:36:49,484 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:36:49,915 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:37:02,028 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:37:07,088 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:37:13,882 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:37:18,889 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:37:23,945 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:37:28,954 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:37:30,081 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:37:30,101 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812050082.png
+2026-07-23 18:37:30,314 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:37:40,323 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:37:40,342 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812060324.png
+2026-07-23 18:37:40,403 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:37:40,404 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:37:40,632 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:37:40,857 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:37:47,820 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:37:47,838 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812067821.png
+2026-07-23 18:37:48,047 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:37:48,258 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:37:48,676 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:37:48,887 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:37:49,094 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:37:50,402 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:37:50,852 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:37:50,870 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812070852.png
+2026-07-23 18:37:51,305 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:37:54,581 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:37:54,600 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812074582.png
+2026-07-23 18:37:55,269 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:37:56,126 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:37:57,175 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:37:59,075 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:37:59,094 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812079076.png
+2026-07-23 18:37:59,341 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:37:59,855 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:38:05,222 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:38:10,274 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:38:15,315 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:38:20,335 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:38:25,380 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:38:30,408 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:38:35,459 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:38:40,527 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:38:45,542 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:38:50,602 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:38:53,349 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:38:53,378 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812133350.png
+2026-07-23 18:38:54,302 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:38:54,526 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:38:54,992 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:38:55,678 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:38:56,476 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:38:56,495 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812136477.png
+2026-07-23 18:38:56,745 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:39:00,731 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:39:05,791 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:39:10,819 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:39:16,172 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:39:21,203 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:39:28,253 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:39:31,810 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:39:31,838 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812171811.png
+2026-07-23 18:39:32,066 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:39:34,726 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:39:34,970 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812174952.png
+2026-07-23 18:39:35,181 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:39:36,120 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:39:36,608 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:39:36,827 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:39:37,263 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:39:37,481 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:39:44,313 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:39:44,332 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812184313.png
+2026-07-23 18:39:44,557 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:39:49,308 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:39:53,883 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:39:53,903 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812193884.png
+2026-07-23 18:39:54,117 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:40:14,880 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:40:14,903 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-23_18-36-01\alert_1784812214881.png
+2026-07-23 18:40:16,197 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:40:18,737 | INFO     | driver_safety.utils.alert | Warning chime played.
+2026-07-23 18:40:23,365 | INFO     | driver_safety.camera | Webcam released.
