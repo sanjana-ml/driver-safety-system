@@ -150,6 +150,7 @@ DROWSY_VOTE_RATIO_THRESHOLD: float = 0.6   # fraction of window that must vote d
 PROBABILITY_THRESHOLD: float = 0.65
 CONFIDENCE_THRESHOLD: float = 0.60
 ALERT_COOLDOWN_SEC: float = 3.0
+FRAME_QUALITY_ALERT_COOLDOWN_SEC: float = 5.0  # min seconds between "insufficient data" sound+popup alerts
 
 
 # --------------------------------------------------------------------------- #

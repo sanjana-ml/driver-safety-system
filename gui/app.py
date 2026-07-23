@@ -53,6 +53,7 @@ class DriverSafetyGUI:
 
         self.running = False
         self._last_alert_screenshot_ts = 0.0
+        self._last_quality_alert_time = 0.0
 
         self._build_layout()
         self._try_init_pipeline()
@@ -80,16 +81,17 @@ class DriverSafetyGUI:
         # Video panel
         video_frame = tk.Frame(body, bg="#000000", bd=2, relief=tk.RIDGE)
         video_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        # CRITICAL: without this, the frame auto-resizes to fit whatever
+        # image the label inside it is showing, which then grows the next
+        # image, which grows the frame again, and so on -- eventually
+        # overrunning the sidebar. With propagation off, video_frame's
+        # size is dictated purely by the pack layout (i.e. "however much
+        # space is left after the fixed-width sidebar"), never by its
+        # child's content.
+        video_frame.pack_propagate(False)
         self.video_label = tk.Label(video_frame, bg="#000000")
         self.video_label.pack(fill=tk.BOTH, expand=True)
 
-        # Track the CONTAINER's size (not the label's own requested size,
-        # which is driven by the image it displays). Deriving the resize
-        # target from the label itself creates a feedback loop: each
-        # frame's image grows the label slightly, which grows the next
-        # frame's target size, and so on, until the video panel overruns
-        # the sidebar. The container frame's size is controlled purely by
-        # the pack layout and the window's actual size, so it's stable.
         self._video_panel_size: Tuple[int, int] = (760, 570)
         video_frame.bind("<Configure>", self._on_video_frame_resize)
 
@@ -108,6 +110,20 @@ class DriverSafetyGUI:
 
         controls = tk.Frame(info_frame, bg="#111318")
         controls.pack(fill=tk.X, pady=(24, 0))
+
+        self.show_landmarks_var = tk.BooleanVar(value=True)
+        landmarks_check = tk.Checkbutton(
+            controls,
+            text="Show Landmarks & Overlays",
+            variable=self.show_landmarks_var,
+            bg="#111318",
+            fg="#e8e8e8",
+            selectcolor="#1b1e26",
+            activebackground="#111318",
+            activeforeground="#ffffff",
+            font=("Segoe UI", 10),
+        )
+        landmarks_check.pack(fill=tk.X, pady=(0, 8), anchor="w")
 
         self.start_btn = ttk.Button(controls, text="Start Monitoring", command=self.start)
         self.start_btn.pack(fill=tk.X, pady=4)
@@ -323,6 +339,19 @@ class DriverSafetyGUI:
         else:
             self.alarm.stop()
 
+            # Frame-quality issues (poor lighting, head not frontal, too
+            # few landmarks, etc.) get their own lighter-weight alert: a
+            # single chime plus a pop-up, rate-limited so it doesn't spam
+            # while the condition persists across many frames.
+            if not result.frame_quality_ok and result.status == "Insufficient Data":
+                now = time.time()
+                if now - self._last_quality_alert_time >= config.FRAME_QUALITY_ALERT_COOLDOWN_SEC:
+                    self._last_quality_alert_time = now
+                    self.alarm.play_warning_once()
+                    self.root.after(
+                        0, lambda label=result.quality_label: self._show_quality_popup(label)
+                    )
+
         if result.alert_triggered:
             self._save_alert_screenshot(frame)
 
@@ -338,11 +367,19 @@ class DriverSafetyGUI:
         )
         return result
 
+    def _show_quality_popup(self, quality_label: str) -> None:
+        messagebox.showwarning(
+            "Frame Quality Warning",
+            f"Monitoring paused for this frame: {quality_label}.\n\n"
+            "Please face the camera directly with good lighting so "
+            "drowsiness detection can resume.",
+        )
+
     def _render(self, frame, result: DetectionResult) -> None:
         display = frame.copy()
         if result.face_box is not None:
             draw_face_box(display, result.face_box)
-        if result.landmarks is not None:
+        if result.landmarks is not None and self.show_landmarks_var.get():
             draw_landmarks(display, result.landmarks)
             draw_eye_and_mouth_regions(display, result.landmarks)
 
