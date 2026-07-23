@@ -25,11 +25,12 @@ import config
 from cbam.cbam import CUSTOM_OBJECTS
 from utils.cue_selector import CueReadings, compute_cue_readings, cue_based_drowsiness_score
 from utils.exceptions import ModelNotFoundError
-from utils.image_utils import preprocess_face
+from utils.image_utils import preprocess_face, enhance_low_light
 from utils.landmarks import FaceBox, LandmarkDetector
 from utils.logger import get_logger
 from utils.quality import QualityReport, assess_frame_quality
 from utils.sliding_window import SlidingWindow
+
 
 logger = get_logger(__name__)
 
@@ -93,8 +94,11 @@ class DriverSafetyPipeline:
             return 0.0
         return 1.0 / dt
 
+
     def process_frame(self, frame_bgr: np.ndarray) -> DetectionResult:
         fps = self._update_fps()
+
+        frame_bgr = enhance_low_light(frame_bgr)
 
         # MediaPipe Face Mesh needs the color (RGB-convertible) frame; the
         # grayscale copy is still used for brightness/quality checks and

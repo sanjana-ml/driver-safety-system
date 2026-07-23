@@ -14,7 +14,7 @@ from typing import Optional, Tuple
 import numpy as np
 
 import config
-from utils.landmarks import FaceBox, head_pose_angles
+from utils.landmarks import FaceBox, POSE_LANDMARK_IDX, head_pose_angles
 
 
 @dataclass
@@ -60,8 +60,6 @@ def assess_frame_quality(
     if not report.landmarks_sufficient:
         report.reason = "too few landmarks visible"
 
-    # Brightness computed over the face ROI only, so background lighting
-    # does not mask a poorly lit face (or vice versa).
     x1, y1, x2, y2 = face_box.as_tuple()
     x1, y1 = max(0, x1), max(0, y1)
     x2 = min(gray_frame.shape[1], x2)
@@ -71,7 +69,20 @@ def assess_frame_quality(
         report.reason = "invalid face region"
         return report
 
-    report.brightness_value = float(np.mean(face_roi))
+    # Sunglasses/cooling glasses put two large dark lenses over the eyes,
+    # which can drag the *whole-face* average brightness below
+    # MIN_BRIGHTNESS even though the room/scene is perfectly well lit --
+    # producing a false "poor lighting" -> Insufficient Data result that
+    # has nothing to do with actual lighting. To avoid that, brightness
+    # is instead sampled from the lower half of the face (nose tip down
+    # to the chin), which stays visible regardless of eyewear.
+    nose_tip_idx, chin_idx = POSE_LANDMARK_IDX[0], POSE_LANDMARK_IDX[1]
+    lower_y1 = int(landmarks[nose_tip_idx][1])
+    lower_y1 = max(y1, min(lower_y1, y2 - 1))
+    lower_face_roi = gray_frame[lower_y1:y2, x1:x2]
+
+    brightness_roi = lower_face_roi if lower_face_roi.size > 0 else face_roi
+    report.brightness_value = float(np.mean(brightness_roi))
     report.brightness_ok = config.MIN_BRIGHTNESS <= report.brightness_value <= config.MAX_BRIGHTNESS
     if not report.brightness_ok and not report.reason:
         report.reason = "poor lighting"

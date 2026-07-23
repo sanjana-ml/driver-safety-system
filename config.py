@@ -77,12 +77,14 @@ FACE_BOX_PADDING_PX: int = 10        # padding around the min/max landmark bound
 # --------------------------------------------------------------------------- #
 # Frame quality gate
 # --------------------------------------------------------------------------- #
-MIN_BRIGHTNESS: float = 40.0         # mean grayscale intensity, 0-255
+MIN_BRIGHTNESS: float = 25.0         # mean grayscale intensity, 0-255
 MAX_BRIGHTNESS: float = 230.0
 MAX_YAW_DEG: float = 45.0            # head must be roughly frontal
 MAX_PITCH_DEG: float = 40.0
 MAX_ROLL_DEG: float = 40.0
 EYE_OCCLUSION_VARIANCE_THRESHOLD: float = 15.0  # low variance -> sunglasses/occlusion
+CLAHE_CLIP_LIMIT: float = 3.0
+CLAHE_TILE_GRID_SIZE: Tuple[int, int] = (8, 8)
 
 # How long the driver's face must be completely absent from the frame
 # before it's treated as its own alert condition (distinct from "poor

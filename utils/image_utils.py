@@ -36,7 +36,30 @@ def preprocess_face(
     resized = cv2.resize(face_roi, (target_size, target_size), interpolation=cv2.INTER_AREA)
     normalized = resized.astype(np.float32) / 255.0
     return np.expand_dims(normalized, axis=-1)
+def enhance_low_light(frame_bgr: np.ndarray) -> np.ndarray:
+    """Boosts local contrast/brightness in dim frames using CLAHE (Contrast
+    Limited Adaptive Histogram Equalization) applied to the L (lightness)
+    channel in LAB colour space, then converts back to BGR.
 
+    This runs on every frame before face/landmark detection and before the
+    quality-gate brightness check, so a driver in a dim cabin or wearing
+    dark sunglasses is far less likely to trip a false "poor lighting" /
+    "Insufficient Data" result, and MediaPipe has a much better-contrast
+    image to find landmarks in. CLAHE is local (tile-based), so it lifts
+    shadowed regions without blowing out already-bright ones -- unlike a
+    flat brightness/gamma boost, which either leaves dark areas too dark or
+    over-brightens well-lit areas.
+    """
+    lab = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2LAB)
+    l_channel, a_channel, b_channel = cv2.split(lab)
+
+    clahe = cv2.createCLAHE(
+        clipLimit=config.CLAHE_CLIP_LIMIT, tileGridSize=config.CLAHE_TILE_GRID_SIZE
+    )
+    l_enhanced = clahe.apply(l_channel)
+
+    enhanced_lab = cv2.merge((l_enhanced, a_channel, b_channel))
+    return cv2.cvtColor(enhanced_lab, cv2.COLOR_LAB2BGR)
 
 def draw_face_box(frame_bgr: np.ndarray, face_box: FaceBox, color=(0, 255, 0)) -> None:
     cv2.rectangle(
