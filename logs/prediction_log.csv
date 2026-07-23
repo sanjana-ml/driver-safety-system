@@ -5143,3 +5143,151 @@ timestamp,status,probability,confidence,active_cues,frame_quality,alert_triggere
 2026-07-23T18:40:22,Not Drowsy,0.718,0.242,eye_closure+blink_duration+yawning+head_pose,Good,False
 2026-07-23T18:40:22,Not Drowsy,0.716,0.244,eye_closure+blink_duration+yawning+head_pose,Good,False
 2026-07-23T18:40:22,Not Drowsy,0.712,0.246,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:04,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:04,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:04,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:04,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:04,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:05,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:06,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:07,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:08,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:09,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:10,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:11,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:12,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:12,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:12,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:42:13,Not Drowsy,0.828,0.462,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:13,Not Drowsy,0.616,0.310,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:13,Not Drowsy,0.728,0.235,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:13,Not Drowsy,0.771,0.202,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:13,Not Drowsy,0.797,0.182,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:14,Not Drowsy,0.741,0.225,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:14,Not Drowsy,0.738,0.517,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:14,Not Drowsy,0.666,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:14,Not Drowsy,0.707,0.250,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:15,Not Drowsy,0.688,0.263,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:15,Not Drowsy,0.705,0.252,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:15,Not Drowsy,0.731,0.233,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:15,Not Drowsy,0.710,0.248,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:15,Not Drowsy,0.703,0.253,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:16,Not Drowsy,0.653,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:16,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:16,Not Drowsy,0.691,0.261,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:16,Not Drowsy,0.713,0.246,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:17,Not Drowsy,0.722,0.240,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:17,Not Drowsy,0.710,0.248,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:17,Not Drowsy,0.747,0.221,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:42:17,Drowsy,0.702,0.821,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-23T18:45:38,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:39,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:40,Insufficient Data,0.000,0.000,none,Insufficient Data (poor lighting),False
+2026-07-23T18:45:40,Not Drowsy,0.864,0.438,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:45:41,Not Drowsy,0.829,0.156,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-23T18:45:41,Not Drowsy,0.942,0.380,eye_closure+blink_duration+yawning+head_pose,Good,False

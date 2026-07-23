@@ -335,3 +335,22 @@ weighted avg       0.85      0.92      0.88      2426
 2026-07-23 18:40:16,197 | INFO     | driver_safety.utils.alert | Alarm stopped.
 2026-07-23 18:40:18,737 | INFO     | driver_safety.utils.alert | Warning chime played.
 2026-07-23 18:40:23,365 | INFO     | driver_safety.camera | Webcam released.
+2026-07-23 18:41:50,654 | INFO     | driver_safety.utils.alert | Audio mixer ready (C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\alarm\alarm.wav).
+2026-07-23 18:41:50,700 | INFO     | driver_safety.utils.landmarks | LandmarkDetector initialised with MediaPipe Face Mesh (468 points).
+2026-07-23 18:41:53,048 | INFO     | driver_safety.utils.pipeline | Loaded trained model from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
+2026-07-23 18:42:04,106 | INFO     | driver_safety.camera | Webcam opened at index 0
+2026-07-23 18:42:17,860 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-23 18:42:17,879 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\alert_1784812337861.png
+2026-07-23 18:42:18,230 | INFO     | driver_safety.camera | Webcam released.
+2026-07-23 18:42:18,231 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-23 18:45:28,051 | INFO     | driver_safety.utils.alert | Audio mixer ready (C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\alarm\alarm.wav).
+2026-07-23 18:45:28,099 | INFO     | driver_safety.utils.landmarks | LandmarkDetector initialised with MediaPipe Face Mesh (468 points).
+2026-07-23 18:45:30,327 | INFO     | driver_safety.utils.pipeline | Loaded trained model from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
+2026-07-23 18:45:38,415 | INFO     | driver_safety.camera | Webcam opened at index 0
+2026-07-23 18:45:41,703 | INFO     | driver_safety.camera | Webcam released.
+2026-07-23 18:48:32,599 | INFO     | driver_safety.utils.alert | Audio mixer ready (C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\alarm\alarm.wav).
+2026-07-23 18:48:32,657 | INFO     | driver_safety.utils.landmarks | LandmarkDetector initialised with MediaPipe Face Mesh (468 points).
+2026-07-23 18:48:34,925 | INFO     | driver_safety.utils.pipeline | Loaded trained model from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
+2026-07-23 18:50:20,348 | INFO     | driver_safety.utils.alert | Audio mixer ready (C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\alarm\alarm.wav).
+2026-07-23 18:50:20,399 | INFO     | driver_safety.utils.landmarks | LandmarkDetector initialised with MediaPipe Face Mesh (468 points).
+2026-07-23 18:50:22,596 | INFO     | driver_safety.utils.pipeline | Loaded trained model from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
