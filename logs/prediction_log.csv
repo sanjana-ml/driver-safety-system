@@ -6729,3 +6729,1609 @@ timestamp,status,probability,confidence,active_cues,frame_quality,alert_triggere
 2026-07-24T00:42:18,Not Drowsy,0.678,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
 2026-07-24T00:42:18,Not Drowsy,0.677,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
 2026-07-24T00:42:18,Not Drowsy,0.682,0.267,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:43,Not Drowsy,0.676,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:43,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:43,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:44,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:44,Not Drowsy,0.685,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:44,Not Drowsy,0.664,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:44,Not Drowsy,0.658,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:44,Not Drowsy,0.656,0.285,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:44,Not Drowsy,0.660,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:45,Not Drowsy,0.653,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:45,Not Drowsy,0.661,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:45,Not Drowsy,0.643,0.567,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:45,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:40:45,Not Drowsy,0.640,0.569,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:45,Not Drowsy,0.618,0.309,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:45,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:40:45,Not Drowsy,0.626,0.575,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:45,Not Drowsy,0.659,0.559,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:46,Not Drowsy,0.648,0.565,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:46,Not Drowsy,0.649,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:46,Not Drowsy,0.654,0.286,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:46,Not Drowsy,0.681,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:46,Not Drowsy,0.681,0.549,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:46,Drowsy,0.689,0.826,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T11:40:46,Drowsy,0.682,0.828,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:47,Not Drowsy,0.666,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:47,Not Drowsy,0.658,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:47,Not Drowsy,0.652,0.288,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:47,Not Drowsy,0.650,0.289,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:47,Not Drowsy,0.649,0.289,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:47,Not Drowsy,0.625,0.305,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:47,Drowsy,0.629,0.802,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:48,Not Drowsy,0.629,0.302,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:48,Not Drowsy,0.626,0.575,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:48,Not Drowsy,0.652,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:48,Not Drowsy,0.646,0.566,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:48,Not Drowsy,0.655,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:48,Not Drowsy,0.656,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:49,Not Drowsy,0.706,0.535,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:49,Not Drowsy,0.678,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:49,Not Drowsy,0.717,0.529,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:49,Not Drowsy,0.713,0.532,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:49,Not Drowsy,0.717,0.529,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:49,Not Drowsy,0.708,0.534,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:49,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:50,Not Drowsy,0.647,0.565,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:50,Not Drowsy,0.663,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:50,Not Drowsy,0.657,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:50,Not Drowsy,0.651,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:50,Not Drowsy,0.662,0.558,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:51,Not Drowsy,0.681,0.548,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:51,Not Drowsy,0.679,0.549,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:51,Not Drowsy,0.675,0.551,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:51,Not Drowsy,0.683,0.547,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:51,Not Drowsy,0.684,0.547,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:51,Not Drowsy,0.683,0.547,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:51,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:52,Not Drowsy,0.687,0.264,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:52,Not Drowsy,0.685,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:52,Not Drowsy,0.683,0.267,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:52,Not Drowsy,0.681,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:52,Not Drowsy,0.660,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:53,Not Drowsy,0.662,0.281,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:53,Not Drowsy,0.655,0.285,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:53,Not Drowsy,0.656,0.285,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:53,Not Drowsy,0.659,0.559,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:53,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:53,Not Drowsy,0.680,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:53,Not Drowsy,0.676,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:53,Not Drowsy,0.695,0.258,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:54,Not Drowsy,0.709,0.248,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:54,Not Drowsy,0.694,0.541,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:54,Drowsy,0.680,0.829,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T11:40:55,Not Drowsy,0.681,0.549,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:55,Not Drowsy,0.678,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:55,Drowsy,0.664,0.831,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:56,Not Drowsy,0.678,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:56,Not Drowsy,0.686,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:56,Not Drowsy,0.684,0.266,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:56,Not Drowsy,0.688,0.263,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:57,Not Drowsy,0.688,0.263,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:57,Not Drowsy,0.688,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:57,Not Drowsy,0.687,0.264,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:57,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:58,Not Drowsy,0.685,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:58,Not Drowsy,0.674,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:58,Not Drowsy,0.679,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:58,Not Drowsy,0.683,0.266,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:59,Not Drowsy,0.686,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:59,Not Drowsy,0.687,0.264,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:59,Not Drowsy,0.688,0.263,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:40:59,Not Drowsy,0.687,0.264,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:00,Not Drowsy,0.638,0.296,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:00,Not Drowsy,0.660,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:00,Not Drowsy,0.659,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:00,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:00,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:01,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:01,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:01,Not Drowsy,0.673,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:02,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:02,Not Drowsy,0.653,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:02,Not Drowsy,0.649,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:02,Not Drowsy,0.640,0.568,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:03,Not Drowsy,0.648,0.565,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:03,Not Drowsy,0.652,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:03,Not Drowsy,0.646,0.565,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:04,Not Drowsy,0.640,0.569,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:04,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:04,Not Drowsy,0.658,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:04,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:05,Not Drowsy,0.655,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:05,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:05,Not Drowsy,0.679,0.549,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:06,Not Drowsy,0.679,0.549,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:06,Not Drowsy,0.652,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:06,Drowsy,0.660,0.828,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T11:41:07,Not Drowsy,0.656,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:07,Not Drowsy,0.663,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:07,Drowsy,0.660,0.828,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:07,Drowsy,0.646,0.816,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:08,Not Drowsy,0.643,0.293,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:08,Not Drowsy,0.625,0.576,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:08,Drowsy,0.649,0.819,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:09,Drowsy,0.648,0.818,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:09,Not Drowsy,0.668,0.555,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:09,Not Drowsy,0.634,0.571,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:09,Not Drowsy,0.659,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:10,Not Drowsy,0.646,0.291,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:10,Not Drowsy,0.622,0.306,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:10,Not Drowsy,0.680,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:10,Not Drowsy,0.690,0.262,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:11,Not Drowsy,0.697,0.540,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:11,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:41:11,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:11,Not Drowsy,0.688,0.263,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:12,Not Drowsy,0.665,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:12,Not Drowsy,0.678,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:12,Not Drowsy,0.679,0.549,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:12,Not Drowsy,0.661,0.281,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:13,Not Drowsy,0.656,0.285,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:13,Not Drowsy,0.661,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:13,Not Drowsy,0.667,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:13,Not Drowsy,0.667,0.555,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:14,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:14,Not Drowsy,0.688,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:14,Not Drowsy,0.669,0.555,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:15,Not Drowsy,0.688,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:15,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:15,Not Drowsy,0.688,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:15,Not Drowsy,0.670,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:16,Not Drowsy,0.685,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:16,Not Drowsy,0.645,0.292,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:16,Not Drowsy,0.641,0.295,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:17,Not Drowsy,0.651,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:17,Not Drowsy,0.655,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:17,Not Drowsy,0.655,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:17,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:41:17,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:41:18,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:18,Not Drowsy,0.679,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:18,Drowsy,0.700,0.822,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T11:41:19,Not Drowsy,0.696,0.540,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:19,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:41:19,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:41:19,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:41:19,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:41:19,Not Drowsy,0.705,0.535,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:19,Not Drowsy,0.653,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:20,Drowsy,0.647,0.817,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:20,Not Drowsy,0.657,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:20,Not Drowsy,0.659,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:21,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:21,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:21,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:21,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:22,Not Drowsy,0.659,0.559,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:22,Not Drowsy,0.660,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:41:22,Not Drowsy,0.662,0.558,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:05,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:44:05,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:44:05,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:44:05,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:44:06,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:44:06,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:44:06,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:44:06,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:44:06,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:44:06,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:44:07,Drowsy,0.650,0.820,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T11:44:07,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:44:08,Not Drowsy,0.692,0.543,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:08,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:44:08,Not Drowsy,0.682,0.548,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:08,Not Drowsy,0.684,0.266,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:09,Not Drowsy,0.647,0.290,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:09,Not Drowsy,0.689,0.263,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:09,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:10,Not Drowsy,0.689,0.544,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:10,Not Drowsy,0.684,0.547,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:10,Not Drowsy,0.642,0.568,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:10,Not Drowsy,0.645,0.566,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:11,Not Drowsy,0.648,0.290,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:11,Not Drowsy,0.651,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:11,Not Drowsy,0.647,0.565,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:12,Not Drowsy,0.679,0.549,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:12,Not Drowsy,0.648,0.565,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:12,Not Drowsy,0.649,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:12,Not Drowsy,0.650,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:13,Not Drowsy,0.652,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:13,Not Drowsy,0.648,0.565,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:13,Not Drowsy,0.647,0.565,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:14,Not Drowsy,0.679,0.549,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:14,Not Drowsy,0.678,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:14,Not Drowsy,0.684,0.266,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:15,Not Drowsy,0.650,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:15,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:44:15,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:44:15,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:44:15,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:44:15,Not Drowsy,0.643,0.293,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:16,Not Drowsy,0.649,0.289,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:16,Drowsy,0.648,0.818,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T11:44:16,Not Drowsy,0.651,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:17,Not Drowsy,0.656,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:17,Not Drowsy,0.684,0.547,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:17,Not Drowsy,0.653,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:18,Not Drowsy,0.662,0.558,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:18,Not Drowsy,0.677,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:18,Not Drowsy,0.652,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:18,Not Drowsy,0.684,0.547,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:19,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:19,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:19,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:20,Not Drowsy,0.690,0.543,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:20,Not Drowsy,0.672,0.553,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:20,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:21,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:21,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:21,Not Drowsy,0.688,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:21,Not Drowsy,0.688,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:22,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:22,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:22,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:23,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:23,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:23,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:23,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:24,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:24,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:24,Not Drowsy,0.687,0.264,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:25,Not Drowsy,0.686,0.264,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:25,Not Drowsy,0.686,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:25,Not Drowsy,0.686,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:26,Not Drowsy,0.686,0.264,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:26,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:26,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:26,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:27,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:27,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:27,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:27,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:28,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:28,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:28,Not Drowsy,0.667,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:29,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:29,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:30,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:30,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:30,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:30,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:31,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:31,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:31,Not Drowsy,0.656,0.285,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:31,Not Drowsy,0.663,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:32,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:32,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:32,Not Drowsy,0.655,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:33,Not Drowsy,0.655,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:33,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:33,Not Drowsy,0.655,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:33,Not Drowsy,0.651,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:34,Not Drowsy,0.653,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:34,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:34,Not Drowsy,0.651,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:35,Not Drowsy,0.652,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:35,Not Drowsy,0.653,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:35,Not Drowsy,0.644,0.567,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:35,Not Drowsy,0.663,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:36,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:36,Not Drowsy,0.655,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:36,Not Drowsy,0.655,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:37,Not Drowsy,0.655,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:37,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:37,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:37,Not Drowsy,0.673,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:38,Not Drowsy,0.656,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:38,Not Drowsy,0.669,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:38,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:39,Not Drowsy,0.691,0.543,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:39,Not Drowsy,0.656,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:39,Not Drowsy,0.651,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:39,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:44:39,Not Drowsy,0.663,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:40,Not Drowsy,0.647,0.290,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:40,Not Drowsy,0.671,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:40,Not Drowsy,0.670,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:41,Not Drowsy,0.670,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:41,Not Drowsy,0.691,0.543,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:41,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:42,Not Drowsy,0.650,0.289,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:42,Not Drowsy,0.640,0.295,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:42,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:43,Not Drowsy,0.689,0.544,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:43,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:43,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:43,Not Drowsy,0.677,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:44,Not Drowsy,0.673,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:44,Not Drowsy,0.661,0.558,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:44,Not Drowsy,0.669,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:45,Not Drowsy,0.677,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:45,Not Drowsy,0.668,0.555,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:45,Not Drowsy,0.692,0.543,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:46,Not Drowsy,0.681,0.548,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:46,Not Drowsy,0.651,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:46,Not Drowsy,0.651,0.288,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:46,Not Drowsy,0.627,0.303,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:47,Not Drowsy,0.634,0.571,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:47,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:44:47,Not Drowsy,0.658,0.284,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:47,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:48,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:48,Not Drowsy,0.690,0.544,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:48,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:49,Not Drowsy,0.692,0.543,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:49,Not Drowsy,0.688,0.263,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:49,Not Drowsy,0.690,0.262,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:50,Not Drowsy,0.690,0.262,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:50,Not Drowsy,0.691,0.261,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:50,Not Drowsy,0.690,0.544,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:50,Not Drowsy,0.691,0.543,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:51,Not Drowsy,0.691,0.543,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:51,Not Drowsy,0.691,0.543,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:51,Not Drowsy,0.691,0.261,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:52,Not Drowsy,0.692,0.260,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:52,Not Drowsy,0.691,0.261,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:52,Not Drowsy,0.691,0.261,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:53,Not Drowsy,0.691,0.261,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:53,Not Drowsy,0.692,0.261,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:53,Not Drowsy,0.693,0.542,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:54,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:54,Not Drowsy,0.688,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:54,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:54,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:55,Not Drowsy,0.688,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:55,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:55,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:55,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:56,Not Drowsy,0.657,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:56,Not Drowsy,0.660,0.559,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:56,Not Drowsy,0.649,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:56,Not Drowsy,0.652,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:57,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:57,Not Drowsy,0.673,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:57,Not Drowsy,0.650,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:58,Not Drowsy,0.653,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:58,Not Drowsy,0.664,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:58,Not Drowsy,0.672,0.553,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:58,Not Drowsy,0.657,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:59,Not Drowsy,0.652,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:59,Not Drowsy,0.670,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:59,Not Drowsy,0.676,0.551,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:44:59,Not Drowsy,0.652,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:00,Not Drowsy,0.653,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:00,Not Drowsy,0.652,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:00,Not Drowsy,0.655,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:00,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:01,Not Drowsy,0.653,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:01,Not Drowsy,0.653,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:01,Not Drowsy,0.662,0.558,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:02,Not Drowsy,0.654,0.286,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:02,Not Drowsy,0.660,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:02,Not Drowsy,0.649,0.289,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:02,Not Drowsy,0.669,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:03,Not Drowsy,0.675,0.551,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:03,Not Drowsy,0.655,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:03,Not Drowsy,0.655,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:03,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:04,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:45:04,Not Drowsy,0.669,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:04,Not Drowsy,0.653,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:04,Drowsy,0.661,0.829,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T11:45:05,Not Drowsy,0.673,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:05,Drowsy,0.677,0.830,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:05,Not Drowsy,0.669,0.555,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:05,Not Drowsy,0.656,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:06,Drowsy,0.659,0.827,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:06,Not Drowsy,0.659,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:06,Not Drowsy,0.662,0.558,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:06,Not Drowsy,0.659,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:07,Not Drowsy,0.660,0.559,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:07,Not Drowsy,0.657,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:07,Not Drowsy,0.656,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:08,Not Drowsy,0.659,0.559,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:08,Not Drowsy,0.657,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:08,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:08,Not Drowsy,0.658,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:09,Drowsy,0.672,0.832,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T11:45:09,Not Drowsy,0.673,0.553,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:09,Not Drowsy,0.671,0.553,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:10,Not Drowsy,0.655,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:10,Drowsy,0.655,0.824,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:10,Not Drowsy,0.689,0.544,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:10,Not Drowsy,0.655,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:11,Drowsy,0.660,0.828,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:11,Drowsy,0.660,0.828,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:11,Drowsy,0.659,0.827,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:12,Drowsy,0.669,0.833,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:12,Not Drowsy,0.664,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:12,Not Drowsy,0.664,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:12,Not Drowsy,0.667,0.555,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:13,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:13,Not Drowsy,0.665,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:13,Not Drowsy,0.665,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:13,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:14,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:45:14,Not Drowsy,0.663,0.558,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:57:55,Not Drowsy,0.654,0.286,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:57:55,Not Drowsy,0.647,0.291,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:57:55,Not Drowsy,0.646,0.292,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:57:56,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:57:56,Drowsy,0.697,0.823,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T11:57:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:57:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:57:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:57:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:57:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:57:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:57:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:57:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:57:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:57:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:57:57,Not Drowsy,0.654,0.286,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:57:57,Not Drowsy,0.677,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:57:58,Not Drowsy,0.658,0.284,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:57:58,Not Drowsy,0.650,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:57:58,Not Drowsy,0.694,0.542,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:57:59,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:57:59,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:57:59,Not Drowsy,0.635,0.571,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:57:59,Not Drowsy,0.690,0.543,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:00,Not Drowsy,0.658,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:00,Not Drowsy,0.667,0.555,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:00,Not Drowsy,0.652,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:00,Not Drowsy,0.648,0.290,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:01,Not Drowsy,0.646,0.566,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:01,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:01,Not Drowsy,0.636,0.570,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:01,Not Drowsy,0.630,0.573,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:02,Not Drowsy,0.679,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:02,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:02,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:02,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:02,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:02,Not Drowsy,0.664,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:03,Not Drowsy,0.648,0.290,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:03,Not Drowsy,0.654,0.286,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:03,Not Drowsy,0.654,0.286,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:03,Not Drowsy,0.654,0.286,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:04,Not Drowsy,0.678,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:04,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:04,Not Drowsy,0.673,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:05,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:05,Not Drowsy,0.664,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:05,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:05,Not Drowsy,0.667,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:06,Not Drowsy,0.666,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:06,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:06,Not Drowsy,0.664,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:06,Not Drowsy,0.670,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:07,Not Drowsy,0.670,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:07,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:07,Not Drowsy,0.669,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:08,Not Drowsy,0.664,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:08,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:08,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:08,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:09,Not Drowsy,0.666,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:09,Not Drowsy,0.670,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:09,Not Drowsy,0.668,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:09,Not Drowsy,0.686,0.264,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:10,Not Drowsy,0.659,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:10,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:10,Not Drowsy,0.666,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:11,Not Drowsy,0.658,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:11,Not Drowsy,0.654,0.286,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:11,Not Drowsy,0.704,0.252,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:11,Not Drowsy,0.687,0.264,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:12,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:12,Not Drowsy,0.694,0.542,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:12,Not Drowsy,0.707,0.535,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:13,Not Drowsy,0.702,0.254,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:13,Not Drowsy,0.660,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:13,Not Drowsy,0.658,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:13,Not Drowsy,0.644,0.567,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:14,Not Drowsy,0.646,0.291,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:14,Not Drowsy,0.660,0.559,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:14,Not Drowsy,0.704,0.536,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:14,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:14,Not Drowsy,0.667,0.555,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:15,Not Drowsy,0.645,0.292,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:15,Not Drowsy,0.657,0.284,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:15,Not Drowsy,0.650,0.289,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:16,Not Drowsy,0.646,0.292,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:16,Not Drowsy,0.635,0.298,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:16,Not Drowsy,0.653,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:16,Not Drowsy,0.669,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:17,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:17,Not Drowsy,0.668,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:17,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:18,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:18,Not Drowsy,0.660,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:18,Not Drowsy,0.658,0.284,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:18,Not Drowsy,0.660,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:19,Not Drowsy,0.663,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:19,Not Drowsy,0.663,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:19,Not Drowsy,0.660,0.559,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:19,Not Drowsy,0.660,0.559,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:20,Not Drowsy,0.679,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:20,Not Drowsy,0.693,0.542,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:20,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:21,Not Drowsy,0.698,0.539,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:21,Drowsy,0.703,0.821,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T11:58:21,Drowsy,0.707,0.819,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:21,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:22,Not Drowsy,0.670,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:22,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:22,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:22,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:22,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:22,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:22,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:22,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:22,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:22,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:23,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:23,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:23,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:23,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:23,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:23,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:23,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:23,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:23,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:23,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:23,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:24,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:24,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:24,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:24,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:24,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:24,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:24,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:24,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:24,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:24,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:24,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:25,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:25,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:25,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:25,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:25,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),True
+2026-07-24T11:58:25,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:25,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:25,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:25,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:25,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:25,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:25,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:26,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:26,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:26,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:26,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:26,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:26,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:26,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:26,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:26,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:26,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:26,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:26,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:27,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:27,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:27,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:27,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:27,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:27,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:27,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:27,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:27,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:27,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:27,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:28,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:28,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:28,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:28,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:28,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),True
+2026-07-24T11:58:28,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:28,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:28,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:28,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:28,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:28,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:29,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:29,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:29,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:29,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:29,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:29,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:29,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:29,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:29,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:29,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:29,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:29,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:29,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:30,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:30,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:30,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:30,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:30,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:30,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:30,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:30,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:30,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:30,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:31,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:31,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:31,Not Drowsy,0.701,0.254,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:31,Not Drowsy,0.692,0.261,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:31,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:31,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:32,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:32,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:32,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:32,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:32,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:32,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:32,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:32,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:32,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:32,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:32,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:32,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:33,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:33,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:33,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:33,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:33,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:33,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:33,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:33,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:33,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:33,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:33,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:33,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:34,Not Drowsy,0.655,0.285,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:34,Not Drowsy,0.650,0.289,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:34,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:34,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:34,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:34,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:35,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:35,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:35,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:35,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:35,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:35,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:35,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:35,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:35,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:35,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:36,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:36,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:36,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:36,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:36,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:36,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:36,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:36,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:36,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:36,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:36,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:37,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:37,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:37,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:37,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:37,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:37,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:37,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:37,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:37,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:37,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:37,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:38,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:38,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:38,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:38,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:38,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:38,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:38,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:38,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:38,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),True
+2026-07-24T11:58:38,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:38,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:39,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:39,Not Drowsy,0.659,0.559,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:39,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:39,Not Drowsy,0.674,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:40,Not Drowsy,0.670,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:40,Not Drowsy,0.641,0.294,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:40,Not Drowsy,0.680,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:41,Not Drowsy,0.654,0.286,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:41,Not Drowsy,0.653,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:41,Not Drowsy,0.659,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:41,Drowsy,0.653,0.822,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T11:58:42,Not Drowsy,0.650,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:42,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:42,Not Drowsy,0.653,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:42,Not Drowsy,0.648,0.565,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:43,Not Drowsy,0.698,0.539,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:43,Not Drowsy,0.708,0.534,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:43,Not Drowsy,0.656,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:44,Not Drowsy,0.682,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:44,Not Drowsy,0.675,0.551,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:44,Not Drowsy,0.704,0.536,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:44,Not Drowsy,0.657,0.284,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:45,Not Drowsy,0.637,0.297,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:45,Not Drowsy,0.649,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:45,Not Drowsy,0.647,0.290,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:46,Not Drowsy,0.645,0.566,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:46,Not Drowsy,0.650,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:46,Not Drowsy,0.649,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:46,Not Drowsy,0.649,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:47,Not Drowsy,0.626,0.304,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:47,Not Drowsy,0.647,0.291,yawning+head_pose,Good,False
+2026-07-24T11:58:47,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:47,Not Drowsy,0.668,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:48,Not Drowsy,0.673,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:48,Not Drowsy,0.673,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:48,Not Drowsy,0.669,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:49,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:49,Not Drowsy,0.664,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:49,Not Drowsy,0.670,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:50,Not Drowsy,0.671,0.553,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:50,Not Drowsy,0.674,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:50,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:50,Not Drowsy,0.673,0.553,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:51,Not Drowsy,0.706,0.250,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:51,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:51,Not Drowsy,0.670,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:52,Not Drowsy,0.666,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:52,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:52,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:52,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:52,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:52,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:52,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:52,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:52,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:52,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:53,Not Drowsy,0.682,0.548,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:53,Not Drowsy,0.656,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:53,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:53,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:58:53,Not Drowsy,0.648,0.565,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:53,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:54,Not Drowsy,0.651,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:54,Not Drowsy,0.692,0.260,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:58:54,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:54,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:54,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:54,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:54,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:55,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:55,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:55,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:55,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:55,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:55,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:55,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:55,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:55,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:55,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:55,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:55,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:57,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),True
+2026-07-24T11:58:57,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:57,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:57,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:58,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:58,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:58,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:58,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:58,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:58,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:58,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:58,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:58,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:58,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:58,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:58,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:59,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:59,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:59,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:59,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:59,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:59,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:59,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:59,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:59,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:59,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:59,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:58:59,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:00,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:00,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:00,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:00,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:00,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:00,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:00,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:00,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:00,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:00,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),True
+2026-07-24T11:59:00,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:00,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:01,Driver Not Visible,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:01,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:01,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:01,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:01,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:01,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:01,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:01,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:01,Not Drowsy,0.704,0.536,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:02,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:02,Not Drowsy,0.658,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:02,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:02,Not Drowsy,0.657,0.284,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:03,Not Drowsy,0.682,0.548,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:03,Not Drowsy,0.674,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:03,Drowsy,0.654,0.823,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T11:59:03,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:04,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:04,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:04,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:04,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:04,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:04,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:04,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:04,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:04,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:04,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:04,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:05,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:05,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:05,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:05,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:05,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:05,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:05,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:05,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:05,Not Drowsy,0.674,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:06,Not Drowsy,0.684,0.266,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:06,Not Drowsy,0.701,0.255,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:06,Not Drowsy,0.696,0.540,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:07,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:07,Not Drowsy,0.650,0.289,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:07,Not Drowsy,0.640,0.569,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:07,Not Drowsy,0.642,0.568,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:08,Not Drowsy,0.639,0.569,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:08,Not Drowsy,0.640,0.569,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:08,Not Drowsy,0.640,0.295,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:09,Not Drowsy,0.657,0.284,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:09,Not Drowsy,0.656,0.285,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:09,Not Drowsy,0.657,0.284,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:09,Not Drowsy,0.655,0.285,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:10,Not Drowsy,0.705,0.536,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:10,Not Drowsy,0.715,0.530,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:10,Not Drowsy,0.711,0.532,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:11,Not Drowsy,0.702,0.537,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:11,Not Drowsy,0.663,0.558,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:11,Not Drowsy,0.690,0.544,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:12,Not Drowsy,0.698,0.539,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:12,Drowsy,0.680,0.829,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T11:59:12,Drowsy,0.678,0.829,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:12,Drowsy,0.683,0.828,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:13,Drowsy,0.673,0.831,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:13,Drowsy,0.671,0.832,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:13,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:14,Not Drowsy,0.700,0.255,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:14,Not Drowsy,0.697,0.257,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:14,Not Drowsy,0.664,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:15,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:15,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:15,Not Drowsy,0.645,0.566,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:15,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:15,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:15,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:15,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:15,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:16,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:16,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:16,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:16,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:16,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:16,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:16,Not Drowsy,0.698,0.256,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:17,Not Drowsy,0.703,0.253,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:17,Not Drowsy,0.704,0.252,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:17,Not Drowsy,0.679,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:17,Not Drowsy,0.697,0.257,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:17,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:18,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:18,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:18,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:18,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:18,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:18,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:18,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:18,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:18,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:18,Not Drowsy,0.696,0.540,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:19,Not Drowsy,0.647,0.290,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:19,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:19,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:19,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:19,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:19,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:19,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:19,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:20,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:20,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:20,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:20,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:20,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:20,Not Drowsy,0.705,0.536,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:20,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:20,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:20,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:21,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:21,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:21,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T11:59:21,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:21,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:21,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:21,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:21,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:21,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:22,Not Drowsy,0.698,0.540,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:22,Not Drowsy,0.686,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:22,Not Drowsy,0.688,0.263,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:22,Not Drowsy,0.683,0.267,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:23,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:23,Not Drowsy,0.679,0.549,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:23,Not Drowsy,0.648,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:23,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:24,Not Drowsy,0.674,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:24,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:24,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:24,Not Drowsy,0.668,0.555,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:25,Not Drowsy,0.669,0.555,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:25,Not Drowsy,0.670,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:25,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:26,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:26,Not Drowsy,0.696,0.541,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:26,Not Drowsy,0.681,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:26,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T11:59:27,Not Drowsy,0.668,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:27,Not Drowsy,0.686,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:27,Not Drowsy,0.666,0.556,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:27,Not Drowsy,0.684,0.547,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:28,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:28,Not Drowsy,0.700,0.538,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:28,Not Drowsy,0.661,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:28,Not Drowsy,0.664,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:29,Not Drowsy,0.668,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:29,Not Drowsy,0.696,0.258,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:29,Not Drowsy,0.668,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:30,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:30,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:30,Not Drowsy,0.673,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:31,Not Drowsy,0.676,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:31,Not Drowsy,0.678,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:31,Not Drowsy,0.679,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:31,Not Drowsy,0.681,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:32,Not Drowsy,0.679,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:32,Not Drowsy,0.681,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:32,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:33,Not Drowsy,0.693,0.260,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:33,Not Drowsy,0.678,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:33,Not Drowsy,0.679,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:33,Not Drowsy,0.679,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:34,Not Drowsy,0.681,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:34,Not Drowsy,0.677,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:34,Not Drowsy,0.707,0.250,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:34,Not Drowsy,0.699,0.256,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:35,Not Drowsy,0.691,0.261,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:35,Not Drowsy,0.688,0.263,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:35,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:36,Not Drowsy,0.700,0.255,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:36,Not Drowsy,0.704,0.252,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:36,Not Drowsy,0.705,0.251,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:37,Not Drowsy,0.653,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:37,Not Drowsy,0.681,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:37,Not Drowsy,0.677,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:37,Not Drowsy,0.645,0.292,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:38,Not Drowsy,0.677,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:38,Not Drowsy,0.697,0.257,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:38,Not Drowsy,0.698,0.256,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:38,Not Drowsy,0.670,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:39,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:39,Not Drowsy,0.706,0.251,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:39,Not Drowsy,0.701,0.254,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:39,Not Drowsy,0.702,0.253,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:40,Not Drowsy,0.681,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:40,Not Drowsy,0.684,0.266,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:40,Not Drowsy,0.683,0.267,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:41,Not Drowsy,0.683,0.267,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:41,Not Drowsy,0.682,0.267,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:41,Not Drowsy,0.682,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:41,Not Drowsy,0.678,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:42,Not Drowsy,0.679,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:42,Not Drowsy,0.680,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:42,Not Drowsy,0.681,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:42,Not Drowsy,0.679,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:43,Not Drowsy,0.680,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:43,Not Drowsy,0.680,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:43,Not Drowsy,0.679,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:43,Not Drowsy,0.679,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:44,Not Drowsy,0.681,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:44,Not Drowsy,0.683,0.266,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:44,Not Drowsy,0.684,0.266,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:45,Not Drowsy,0.685,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:45,Not Drowsy,0.685,0.266,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:45,Not Drowsy,0.687,0.264,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:45,Not Drowsy,0.694,0.259,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:46,Not Drowsy,0.686,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:46,Not Drowsy,0.655,0.285,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:46,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:46,Not Drowsy,0.686,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:47,Not Drowsy,0.648,0.290,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:47,Not Drowsy,0.668,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:47,Not Drowsy,0.662,0.281,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:47,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:48,Not Drowsy,0.704,0.252,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:48,Not Drowsy,0.708,0.250,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:48,Not Drowsy,0.697,0.257,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:49,Not Drowsy,0.702,0.254,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:49,Not Drowsy,0.706,0.251,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:49,Not Drowsy,0.706,0.251,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:49,Not Drowsy,0.705,0.251,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:50,Not Drowsy,0.673,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:50,Not Drowsy,0.709,0.249,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:50,Not Drowsy,0.708,0.250,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:51,Not Drowsy,0.676,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:51,Not Drowsy,0.673,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:51,Not Drowsy,0.667,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:51,Not Drowsy,0.699,0.539,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:52,Not Drowsy,0.682,0.548,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:52,Not Drowsy,0.675,0.551,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:52,Not Drowsy,0.680,0.549,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:52,Not Drowsy,0.670,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:53,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:53,Not Drowsy,0.711,0.247,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:53,Not Drowsy,0.707,0.250,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:54,Not Drowsy,0.681,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:54,Not Drowsy,0.688,0.263,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:54,Not Drowsy,0.712,0.246,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:54,Not Drowsy,0.713,0.246,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:55,Not Drowsy,0.713,0.246,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:55,Not Drowsy,0.711,0.248,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:55,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:55,Not Drowsy,0.684,0.266,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:56,Not Drowsy,0.696,0.258,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:56,Not Drowsy,0.686,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:56,Not Drowsy,0.679,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:56,Not Drowsy,0.668,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:57,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:57,Not Drowsy,0.677,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:57,Not Drowsy,0.677,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:58,Not Drowsy,0.670,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T11:59:58,Not Drowsy,0.678,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:05:55,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:05:55,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:56,Not Drowsy,0.687,0.545,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:05:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:56,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:57,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:57,Not Drowsy,0.655,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:05:57,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T12:05:58,Not Drowsy,0.678,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:05:58,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:58,Not Drowsy,0.685,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:05:58,Not Drowsy,0.645,0.566,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:05:58,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:05:59,Not Drowsy,0.701,0.254,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:05:59,Not Drowsy,0.696,0.540,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:00,Not Drowsy,0.663,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:00,Not Drowsy,0.668,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:00,Not Drowsy,0.670,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:00,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:01,Not Drowsy,0.670,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:01,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:01,Not Drowsy,0.670,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:02,Not Drowsy,0.673,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:02,Not Drowsy,0.669,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:02,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:02,Not Drowsy,0.664,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:03,Not Drowsy,0.696,0.541,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:03,Not Drowsy,0.689,0.544,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:03,Not Drowsy,0.694,0.542,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:03,Not Drowsy,0.697,0.257,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:04,Not Drowsy,0.685,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:04,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:04,Not Drowsy,0.704,0.536,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:05,Not Drowsy,0.702,0.537,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:05,Not Drowsy,0.704,0.536,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:05,Not Drowsy,0.686,0.546,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:05,Not Drowsy,0.694,0.542,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:06,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:06,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:06,Not Drowsy,0.669,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:07,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:07,Not Drowsy,0.669,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:07,Not Drowsy,0.670,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:08,Not Drowsy,0.669,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:08,Not Drowsy,0.672,0.553,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:08,Not Drowsy,0.703,0.537,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:08,Drowsy,0.701,0.821,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T12:06:09,Not Drowsy,0.689,0.544,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:09,Drowsy,0.701,0.821,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:09,Drowsy,0.674,0.831,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:10,Not Drowsy,0.672,0.553,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:10,Not Drowsy,0.681,0.548,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:10,Not Drowsy,0.669,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:10,Not Drowsy,0.666,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:11,Not Drowsy,0.667,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:11,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:11,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:11,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:12,Not Drowsy,0.661,0.281,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:12,Not Drowsy,0.652,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:12,Not Drowsy,0.644,0.567,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:13,Not Drowsy,0.694,0.260,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:13,Not Drowsy,0.707,0.250,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:13,Not Drowsy,0.693,0.260,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:13,Not Drowsy,0.647,0.291,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:14,Not Drowsy,0.673,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:14,Not Drowsy,0.654,0.286,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:14,Not Drowsy,0.680,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:15,Not Drowsy,0.678,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:15,Not Drowsy,0.679,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:15,Not Drowsy,0.678,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:15,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:16,Not Drowsy,0.673,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:16,Not Drowsy,0.675,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:16,Not Drowsy,0.676,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:16,Not Drowsy,0.676,0.551,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:17,Not Drowsy,0.673,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:17,Not Drowsy,0.670,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:17,Not Drowsy,0.677,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:17,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:18,Not Drowsy,0.676,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:18,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:18,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:18,Not Drowsy,0.673,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:19,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:19,Not Drowsy,0.676,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:19,Not Drowsy,0.676,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:20,Not Drowsy,0.676,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:20,Not Drowsy,0.677,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:20,Not Drowsy,0.677,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:20,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:21,Not Drowsy,0.676,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:21,Not Drowsy,0.677,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:21,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:22,Not Drowsy,0.676,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:22,Not Drowsy,0.677,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:22,Not Drowsy,0.675,0.551,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:22,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:23,Not Drowsy,0.673,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:23,Not Drowsy,0.669,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:23,Not Drowsy,0.670,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:23,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:24,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:24,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:24,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:25,Not Drowsy,0.676,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:25,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:25,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:25,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:26,Not Drowsy,0.676,0.551,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:26,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:26,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:26,Not Drowsy,0.673,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:27,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:27,Not Drowsy,0.676,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:27,Not Drowsy,0.676,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:28,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:28,Not Drowsy,0.673,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:28,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:29,Not Drowsy,0.660,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:29,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:29,Not Drowsy,0.657,0.284,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:29,Not Drowsy,0.682,0.548,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:30,Not Drowsy,0.674,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:30,Not Drowsy,0.678,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:30,Not Drowsy,0.703,0.537,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:31,Not Drowsy,0.681,0.548,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:31,Not Drowsy,0.707,0.535,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:31,Not Drowsy,0.709,0.534,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:31,Drowsy,0.702,0.821,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T12:06:32,Drowsy,0.694,0.824,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:32,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:32,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T12:06:32,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T12:06:32,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T12:06:33,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:33,Drowsy,0.665,0.832,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:33,Not Drowsy,0.681,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:33,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:34,Not Drowsy,0.675,0.551,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:34,Not Drowsy,0.677,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:34,Not Drowsy,0.652,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:35,Drowsy,0.652,0.821,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T12:06:35,Not Drowsy,0.656,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:35,Not Drowsy,0.670,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:36,Not Drowsy,0.658,0.284,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:36,Not Drowsy,0.680,0.549,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:36,Not Drowsy,0.668,0.555,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:37,Not Drowsy,0.712,0.532,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:37,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:37,Not Drowsy,0.659,0.559,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:37,Not Drowsy,0.684,0.547,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:38,Not Drowsy,0.702,0.537,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:38,Drowsy,0.684,0.827,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T12:06:38,Not Drowsy,0.669,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:38,Not Drowsy,0.631,0.573,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:39,Not Drowsy,0.701,0.538,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:39,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:40,Not Drowsy,0.651,0.288,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:40,Not Drowsy,0.677,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:40,Not Drowsy,0.664,0.557,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:41,Not Drowsy,0.669,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:41,Not Drowsy,0.679,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:41,Not Drowsy,0.693,0.260,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:41,Not Drowsy,0.676,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:42,Not Drowsy,0.659,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:42,Not Drowsy,0.676,0.551,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:42,Not Drowsy,0.667,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:42,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T12:06:43,Not Drowsy,0.658,0.560,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:43,Not Drowsy,0.647,0.565,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:43,Not Drowsy,0.654,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:44,Not Drowsy,0.670,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:44,Not Drowsy,0.676,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:44,Not Drowsy,0.695,0.541,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:45,Not Drowsy,0.682,0.548,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:45,Not Drowsy,0.692,0.543,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:45,Not Drowsy,0.674,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:45,Not Drowsy,0.702,0.537,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:46,Drowsy,0.705,0.820,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T12:06:46,Not Drowsy,0.714,0.531,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:46,Not Drowsy,0.680,0.269,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:47,Not Drowsy,0.694,0.542,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:47,Not Drowsy,0.677,0.550,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:47,Not Drowsy,0.693,0.260,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:47,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:48,Not Drowsy,0.680,0.549,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:48,Not Drowsy,0.670,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:48,Not Drowsy,0.694,0.542,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:49,Not Drowsy,0.682,0.548,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:49,Not Drowsy,0.676,0.551,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:49,Not Drowsy,0.680,0.549,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:50,Not Drowsy,0.705,0.535,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:50,Not Drowsy,0.693,0.260,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:50,Not Drowsy,0.643,0.293,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:50,Not Drowsy,0.673,0.552,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:51,Not Drowsy,0.710,0.248,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:51,Not Drowsy,0.669,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:51,Not Drowsy,0.681,0.268,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:52,Not Drowsy,0.653,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:52,Not Drowsy,0.653,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:52,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:53,Not Drowsy,0.664,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:53,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:53,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:54,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:54,Not Drowsy,0.648,0.290,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:54,Not Drowsy,0.667,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:55,Not Drowsy,0.646,0.291,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:55,Not Drowsy,0.651,0.288,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:55,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:55,Not Drowsy,0.698,0.256,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:56,Not Drowsy,0.672,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:56,Not Drowsy,0.713,0.246,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:56,Not Drowsy,0.712,0.247,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:57,Not Drowsy,0.706,0.251,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:57,Not Drowsy,0.704,0.536,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:57,Drowsy,0.694,0.824,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T12:06:58,Drowsy,0.710,0.818,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:58,Drowsy,0.709,0.818,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:58,Drowsy,0.710,0.818,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:58,Drowsy,0.703,0.821,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:59,Drowsy,0.685,0.827,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:59,Drowsy,0.701,0.821,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:06:59,Not Drowsy,0.708,0.534,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:00,Not Drowsy,0.701,0.254,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:00,Not Drowsy,0.703,0.537,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:00,Not Drowsy,0.701,0.254,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:00,Not Drowsy,0.713,0.246,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:01,Not Drowsy,0.712,0.246,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:01,Not Drowsy,0.714,0.531,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:01,Not Drowsy,0.714,0.531,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:02,Not Drowsy,0.711,0.533,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:02,Not Drowsy,0.710,0.533,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:02,Not Drowsy,0.710,0.533,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:02,Not Drowsy,0.710,0.248,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:03,Not Drowsy,0.709,0.249,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:03,Not Drowsy,0.668,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:03,Not Drowsy,0.668,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:04,Not Drowsy,0.684,0.266,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:04,Not Drowsy,0.708,0.250,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:04,Not Drowsy,0.695,0.259,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:04,Not Drowsy,0.686,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:05,Not Drowsy,0.697,0.540,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:05,Not Drowsy,0.697,0.257,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:07:05,Not Drowsy,0.683,0.267,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:47,Drowsy,0.700,0.680,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T12:39:47,Not Drowsy,0.627,0.439,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:48,Not Drowsy,0.673,0.274,yawning+head_pose,Good,False
+2026-07-24T12:39:48,Drowsy,0.691,0.684,yawning+head_pose,Good,False
+2026-07-24T12:39:48,Not Drowsy,0.662,0.281,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:49,Not Drowsy,0.698,0.256,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:49,Not Drowsy,0.655,0.424,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:49,Drowsy,0.694,0.683,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:49,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:50,Not Drowsy,0.666,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:50,Not Drowsy,0.643,0.293,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:50,Not Drowsy,0.650,0.289,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:50,Not Drowsy,0.648,0.290,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:51,Not Drowsy,0.649,0.289,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:51,Not Drowsy,0.646,0.291,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:51,Not Drowsy,0.647,0.291,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:51,Not Drowsy,0.648,0.290,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:52,Not Drowsy,0.651,0.288,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:52,Not Drowsy,0.651,0.288,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:52,Not Drowsy,0.650,0.426,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:53,Not Drowsy,0.646,0.428,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:53,Not Drowsy,0.653,0.425,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:53,Not Drowsy,0.653,0.424,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:53,Not Drowsy,0.694,0.400,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:54,Drowsy,0.706,0.677,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T12:39:54,Drowsy,0.706,0.678,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:54,Not Drowsy,0.703,0.395,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:54,Not Drowsy,0.669,0.276,yawning+head_pose,Good,False
+2026-07-24T12:39:54,Not Drowsy,0.660,0.282,yawning+head_pose,Good,False
+2026-07-24T12:39:54,Not Drowsy,0.654,0.286,yawning+head_pose,Good,False
+2026-07-24T12:39:55,Not Drowsy,0.653,0.287,yawning+head_pose,Good,False
+2026-07-24T12:39:55,Not Drowsy,0.655,0.286,yawning+head_pose,Good,False
+2026-07-24T12:39:55,Not Drowsy,0.659,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:55,Not Drowsy,0.655,0.285,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:56,Not Drowsy,0.662,0.281,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:56,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:56,Not Drowsy,0.662,0.281,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:56,Not Drowsy,0.661,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:57,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:57,Not Drowsy,0.647,0.291,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:57,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T12:39:57,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T12:39:57,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:58,Not Drowsy,0.689,0.262,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:58,Not Drowsy,0.660,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:58,Not Drowsy,0.639,0.432,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:59,Not Drowsy,0.640,0.295,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:59,Not Drowsy,0.641,0.294,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:59,Not Drowsy,0.660,0.282,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:39:59,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:00,Not Drowsy,0.703,0.253,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:00,Not Drowsy,0.706,0.251,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:00,Not Drowsy,0.701,0.254,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:01,Not Drowsy,0.691,0.261,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:01,Not Drowsy,0.662,0.281,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:01,Not Drowsy,0.644,0.293,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:01,Not Drowsy,0.666,0.417,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:02,Not Drowsy,0.650,0.426,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:02,Not Drowsy,0.659,0.421,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:02,Not Drowsy,0.665,0.417,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:03,Not Drowsy,0.696,0.399,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:03,Not Drowsy,0.652,0.425,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:03,Not Drowsy,0.656,0.423,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:03,Not Drowsy,0.701,0.396,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:04,Drowsy,0.710,0.675,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T12:40:04,Drowsy,0.709,0.676,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:04,Not Drowsy,0.658,0.422,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:05,Not Drowsy,0.658,0.422,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:05,Not Drowsy,0.686,0.265,yawning+head_pose,Good,False
+2026-07-24T12:40:05,Not Drowsy,0.696,0.258,yawning+head_pose,Good,False
+2026-07-24T12:40:05,Not Drowsy,0.648,0.290,yawning+head_pose,Good,False
+2026-07-24T12:40:06,Not Drowsy,0.674,0.273,yawning+head_pose,Good,False
+2026-07-24T12:40:06,Not Drowsy,0.663,0.280,yawning+head_pose,Good,False
+2026-07-24T12:40:06,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:07,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:07,Not Drowsy,0.651,0.288,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:07,Not Drowsy,0.666,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:08,Not Drowsy,0.643,0.293,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:08,Not Drowsy,0.666,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:08,Not Drowsy,0.655,0.286,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:08,Not Drowsy,0.664,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:09,Not Drowsy,0.652,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:09,Not Drowsy,0.654,0.286,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:09,Not Drowsy,0.652,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:09,Not Drowsy,0.653,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:10,Not Drowsy,0.659,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:10,Not Drowsy,0.662,0.281,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:10,Not Drowsy,0.653,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:10,Not Drowsy,0.652,0.425,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:11,Not Drowsy,0.659,0.421,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:11,Not Drowsy,0.667,0.417,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:11,Not Drowsy,0.660,0.420,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:12,Not Drowsy,0.670,0.415,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:12,Not Drowsy,0.676,0.411,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:12,Not Drowsy,0.671,0.414,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:12,Not Drowsy,0.672,0.413,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:13,Not Drowsy,0.670,0.415,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:13,Not Drowsy,0.670,0.415,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:13,Not Drowsy,0.673,0.413,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:14,Not Drowsy,0.671,0.414,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:14,Not Drowsy,0.671,0.414,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:14,Not Drowsy,0.668,0.416,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:14,Not Drowsy,0.675,0.412,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:15,Not Drowsy,0.670,0.415,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:15,Not Drowsy,0.673,0.413,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:15,Not Drowsy,0.673,0.413,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:16,Not Drowsy,0.669,0.415,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:16,Not Drowsy,0.670,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:16,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:16,Not Drowsy,0.690,0.262,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:17,Not Drowsy,0.652,0.425,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:17,Not Drowsy,0.646,0.429,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:17,Not Drowsy,0.646,0.428,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:17,Not Drowsy,0.647,0.428,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:18,Not Drowsy,0.656,0.423,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:18,Not Drowsy,0.660,0.421,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:18,Not Drowsy,0.661,0.420,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:19,Not Drowsy,0.665,0.417,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:19,Not Drowsy,0.665,0.418,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:19,Not Drowsy,0.666,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:19,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:20,Not Drowsy,0.651,0.288,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:20,Not Drowsy,0.662,0.281,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:20,Not Drowsy,0.658,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:20,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:21,Not Drowsy,0.668,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:21,Not Drowsy,0.657,0.284,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:21,Not Drowsy,0.650,0.288,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:21,Not Drowsy,0.631,0.301,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:22,Not Drowsy,0.644,0.293,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:22,Not Drowsy,0.676,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:22,Not Drowsy,0.683,0.407,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:22,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:23,Not Drowsy,0.653,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:23,Not Drowsy,0.651,0.288,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:23,Not Drowsy,0.664,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:24,Not Drowsy,0.659,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:24,Not Drowsy,0.652,0.288,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:24,Not Drowsy,0.649,0.289,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:24,Not Drowsy,0.645,0.292,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:25,Not Drowsy,0.673,0.413,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:25,Not Drowsy,0.676,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:25,Not Drowsy,0.694,0.400,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:25,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T12:40:25,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T12:40:25,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T12:40:26,Drowsy,0.678,0.690,eye_closure+blink_duration+yawning+head_pose,Good,True
+2026-07-24T12:40:26,Not Drowsy,0.689,0.263,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:26,Not Drowsy,0.677,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:27,Not Drowsy,0.673,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:27,Not Drowsy,0.668,0.416,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:27,Not Drowsy,0.673,0.413,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:27,Not Drowsy,0.671,0.275,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:28,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:28,Not Drowsy,0.659,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:28,Not Drowsy,0.648,0.427,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:29,Not Drowsy,0.665,0.279,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:29,Not Drowsy,0.673,0.413,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:29,Not Drowsy,0.675,0.551,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:29,Not Drowsy,0.670,0.554,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:30,Not Drowsy,0.666,0.417,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:30,Not Drowsy,0.648,0.428,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:30,Not Drowsy,0.646,0.428,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:31,Not Drowsy,0.664,0.418,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:31,Not Drowsy,0.670,0.415,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:31,Not Drowsy,0.672,0.414,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:31,Not Drowsy,0.665,0.418,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:32,Not Drowsy,0.663,0.419,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:32,Not Drowsy,0.664,0.418,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:32,Not Drowsy,0.668,0.416,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:33,Not Drowsy,0.663,0.419,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:33,Not Drowsy,0.664,0.418,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:33,Not Drowsy,0.664,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:33,Not Drowsy,0.663,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:34,Not Drowsy,0.661,0.420,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:34,Not Drowsy,0.664,0.418,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:34,Not Drowsy,0.650,0.426,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:34,Not Drowsy,0.662,0.419,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:35,Not Drowsy,0.662,0.419,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:35,Not Drowsy,0.663,0.419,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:35,Not Drowsy,0.659,0.421,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:35,Not Drowsy,0.660,0.421,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:36,Not Drowsy,0.665,0.418,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:36,Not Drowsy,0.662,0.420,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:36,Not Drowsy,0.658,0.422,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:37,Not Drowsy,0.661,0.420,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:37,Not Drowsy,0.661,0.420,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:37,Not Drowsy,0.658,0.422,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:37,Not Drowsy,0.664,0.418,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:38,Not Drowsy,0.661,0.420,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:38,Not Drowsy,0.666,0.417,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:38,Not Drowsy,0.660,0.420,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:38,Not Drowsy,0.662,0.420,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:39,Not Drowsy,0.664,0.280,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:39,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:39,Not Drowsy,0.673,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:40,Not Drowsy,0.677,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:40,Not Drowsy,0.651,0.288,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:40,Not Drowsy,0.677,0.270,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:40,Not Drowsy,0.682,0.267,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:41,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:41,Not Drowsy,0.673,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:41,Not Drowsy,0.677,0.271,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:41,Not Drowsy,0.696,0.258,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:42,Not Drowsy,0.690,0.262,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:42,Not Drowsy,0.686,0.265,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:42,Not Drowsy,0.684,0.266,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:43,Not Drowsy,0.648,0.290,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:43,Not Drowsy,0.675,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:43,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:43,Not Drowsy,0.670,0.276,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:44,Not Drowsy,0.667,0.277,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:44,Not Drowsy,0.672,0.274,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:44,Not Drowsy,0.673,0.273,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:45,Not Drowsy,0.705,0.252,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:45,Not Drowsy,0.676,0.272,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:45,Not Drowsy,0.658,0.284,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:46,Not Drowsy,0.648,0.290,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:46,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:40:46,Insufficient Data,0.000,0.000,none,Insufficient Data (no face detected),False
+2026-07-24T12:40:46,Not Drowsy,0.680,0.409,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:46,Not Drowsy,0.667,0.278,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:47,Not Drowsy,0.655,0.285,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:47,Not Drowsy,0.656,0.561,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:47,Not Drowsy,0.659,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:47,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T12:40:48,Not Drowsy,0.659,0.559,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:48,Insufficient Data,0.000,0.000,none,Insufficient Data (head not sufficiently frontal),False
+2026-07-24T12:40:48,Not Drowsy,0.659,0.283,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:48,Not Drowsy,0.653,0.287,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:48,Not Drowsy,0.652,0.563,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:49,Not Drowsy,0.653,0.562,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:49,Not Drowsy,0.650,0.564,eye_closure+blink_duration+yawning+head_pose,Good,False
+2026-07-24T12:40:49,Not Drowsy,0.658,0.284,eye_closure+blink_duration+yawning+head_pose,Good,False

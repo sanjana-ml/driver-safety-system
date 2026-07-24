@@ -13,9 +13,6 @@ from pathlib import Path
 from typing import Tuple
 
 
-# --------------------------------------------------------------------------- #
-# Base paths
-# --------------------------------------------------------------------------- #
 BASE_DIR: Path = Path(__file__).resolve().parent
 
 DATASET_DIR: Path = BASE_DIR / "dataset"
@@ -28,7 +25,6 @@ TENSORBOARD_DIR: Path = LOGS_DIR / "tensorboard"
 PREDICTION_LOG_CSV: Path = LOGS_DIR / "prediction_log.csv"
 APP_LOG_FILE: Path = LOGS_DIR / "app.log"
 
-# Trained artefacts
 MODEL_PATH: Path = WEIGHTS_DIR / "drowsiness_cnn_cbam.h5"
 BEST_CHECKPOINT_PATH: Path = WEIGHTS_DIR / "best_checkpoint.h5"
 TRAINING_HISTORY_PATH: Path = LOGS_DIR / "training_history.json"
@@ -37,15 +33,9 @@ ALARM_SOUND_PATH: Path = ALARM_DIR / "alarm.wav"
 
 
 def ensure_directories() -> None:
-    """Create every directory this project writes to, if missing."""
     for directory in (
-        DATASET_DIR,
-        MODELS_DIR,
-        WEIGHTS_DIR,
-        LOGS_DIR,
-        SCREENSHOTS_DIR,
-        ALARM_DIR,
-        TENSORBOARD_DIR,
+        DATASET_DIR, MODELS_DIR, WEIGHTS_DIR, LOGS_DIR,
+        SCREENSHOTS_DIR, ALARM_DIR, TENSORBOARD_DIR,
     ):
         directory.mkdir(parents=True, exist_ok=True)
 
@@ -53,7 +43,7 @@ def ensure_directories() -> None:
 # --------------------------------------------------------------------------- #
 # Camera
 # --------------------------------------------------------------------------- #
-CAMERA_INDEX: int = 0                # built-in laptop webcam
+CAMERA_INDEX: int = 0
 CAMERA_FRAME_WIDTH: int = 640
 CAMERA_FRAME_HEIGHT: int = 480
 CAMERA_FPS_TARGET: int = 30
@@ -64,52 +54,58 @@ CAMERA_RETRY_DELAY_SEC: float = 1.0
 # --------------------------------------------------------------------------- #
 # Face / landmark detection (MediaPipe Face Mesh)
 # --------------------------------------------------------------------------- #
-NUM_LANDMARKS: int = 468             # MediaPipe Face Mesh point count
-MIN_LANDMARKS_REQUIRED: int = 468    # MediaPipe returns all-or-nothing per face
+NUM_LANDMARKS: int = 468
+MIN_LANDMARKS_REQUIRED: int = 468
 MEDIAPIPE_MAX_NUM_FACES: int = 1
-MEDIAPIPE_STATIC_IMAGE_MODE: bool = False   # False = video mode, enables tracking between frames
-MEDIAPIPE_REFINE_LANDMARKS: bool = False    # True adds iris landmarks (not needed here)
+MEDIAPIPE_STATIC_IMAGE_MODE: bool = False
+MEDIAPIPE_REFINE_LANDMARKS: bool = False
 MEDIAPIPE_MIN_DETECTION_CONFIDENCE: float = 0.5
 MEDIAPIPE_MIN_TRACKING_CONFIDENCE: float = 0.5
-FACE_BOX_PADDING_PX: int = 10        # padding around the min/max landmark bounding box
+FACE_BOX_PADDING_PX: int = 10
 
 
 # --------------------------------------------------------------------------- #
 # Frame quality gate
 # --------------------------------------------------------------------------- #
-MIN_BRIGHTNESS: float = 25.0         # mean grayscale intensity, 0-255
+MIN_BRIGHTNESS: float = 25.0
 MAX_BRIGHTNESS: float = 230.0
-MAX_YAW_DEG: float = 45.0            # head must be roughly frontal
+MAX_YAW_DEG: float = 45.0
 MAX_PITCH_DEG: float = 40.0
 MAX_ROLL_DEG: float = 40.0
-EYE_OCCLUSION_VARIANCE_THRESHOLD: float = 15.0  # low variance -> sunglasses/occlusion
+EYE_OCCLUSION_VARIANCE_THRESHOLD: float = 15.0  # legacy, kept for reference
+# Sunglasses/occlusion detector: compares each eye patch against a same-frame
+# skin reference (lower face) instead of a fixed brightness/variance constant,
+# since absolute pixel values swing wildly with lighting and lens glare.
+EYE_OCCLUSION_SATURATION_RATIO: float = 0.72
+EYE_OCCLUSION_DARK_RATIO: float = 0.6
+EYE_OCCLUSION_BRIGHT_RATIO: float = 1.5
+EYE_OCCLUSION_VOTE_FRAMES: int = 8
+EYE_OCCLUSION_VOTE_RATIO: float = 0.6
 CLAHE_CLIP_LIMIT: float = 3.0
 CLAHE_TILE_GRID_SIZE: Tuple[int, int] = (8, 8)
 
-# How long the driver's face must be completely absent from the frame
-# before it's treated as its own alert condition (distinct from "poor
-# quality" -- this covers the driver looking far away, slumping out of
-# frame, or the camera being blocked).
 NO_FACE_ALERT_SECONDS: float = 3.0
 
 
 # --------------------------------------------------------------------------- #
 # Facial cue thresholds
 # --------------------------------------------------------------------------- #
-EAR_THRESHOLD: float = 0.21          # below -> eye considered closed
+EAR_THRESHOLD: float = 0.21
 EAR_CONSEC_FRAMES_BLINK: int = 2
-MAR_THRESHOLD: float = 0.6           # above -> mouth considered open (yawn candidate)
+EAR_CONSEC_FRAMES_DROWSY: int = 25   # ~0.8s @30fps of continuous closure
+MAR_THRESHOLD: float = 0.6
 YAWN_CONSEC_FRAMES: int = 15
 HEAD_NOD_PITCH_DELTA_DEG: float = 15.0
+HEAD_TILT_ROLL_DELTA_DEG: float = 20.0
 
 
 # --------------------------------------------------------------------------- #
 # CNN + CBAM model
 # --------------------------------------------------------------------------- #
-IMG_SIZE: int = 64                   # face ROI is resized to IMG_SIZE x IMG_SIZE
-IMG_CHANNELS: int = 1                # grayscale
+IMG_SIZE: int = 64
+IMG_CHANNELS: int = 1
 INPUT_SHAPE: Tuple[int, int, int] = (IMG_SIZE, IMG_SIZE, IMG_CHANNELS)
-NUM_CLASSES: int = 2                 # Drowsy, Not Drowsy
+NUM_CLASSES: int = 2
 CLASS_NAMES: Tuple[str, str] = ("Not Drowsy", "Drowsy")
 CBAM_REDUCTION_RATIO: int = 8
 DROPOUT_RATE: float = 0.4
@@ -143,7 +139,7 @@ AUGMENTATION_HORIZONTAL_FLIP: bool = True
 # Sliding window / temporal smoothing
 # --------------------------------------------------------------------------- #
 SLIDING_WINDOW_SIZE: int = 30
-DROWSY_VOTE_RATIO_THRESHOLD: float = 0.6   # fraction of window that must vote drowsy
+DROWSY_VOTE_RATIO_THRESHOLD: float = 0.6
 
 
 # --------------------------------------------------------------------------- #
@@ -152,7 +148,7 @@ DROWSY_VOTE_RATIO_THRESHOLD: float = 0.6   # fraction of window that must vote d
 PROBABILITY_THRESHOLD: float = 0.65
 CONFIDENCE_THRESHOLD: float = 0.60
 ALERT_COOLDOWN_SEC: float = 3.0
-FRAME_QUALITY_ALERT_COOLDOWN_SEC: float = 5.0  # min seconds between "insufficient data" sound+popup alerts
+FRAME_QUALITY_ALERT_COOLDOWN_SEC: float = 5.0
 
 
 # --------------------------------------------------------------------------- #
@@ -166,9 +162,6 @@ LOG_BACKUP_COUNT: int = 3
 
 @dataclass
 class RuntimeConfig:
-    """Small mutable bundle for values that may be overridden at runtime
-    (e.g. via CLI flags) without touching the module-level constants above."""
-
     camera_index: int = CAMERA_INDEX
     probability_threshold: float = PROBABILITY_THRESHOLD
     confidence_threshold: float = CONFIDENCE_THRESHOLD

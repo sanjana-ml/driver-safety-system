@@ -11,6 +11,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from typing import Optional, Tuple
 
+import cv2
 import numpy as np
 
 import config
@@ -29,6 +30,8 @@ class QualityReport:
     roll: float = 0.0
     num_landmarks: int = 0
     reason: str = ""
+    skin_brightness_ref: float = 0.0
+    skin_saturation_ref: float = 0.0
 
     @property
     def overall_ok(self) -> bool:
@@ -47,6 +50,7 @@ def assess_frame_quality(
     gray_frame: np.ndarray,
     face_box: Optional[FaceBox],
     landmarks: Optional[np.ndarray],
+    frame_bgr: Optional[np.ndarray] = None,
 ) -> QualityReport:
     report = QualityReport()
 
@@ -69,13 +73,10 @@ def assess_frame_quality(
         report.reason = "invalid face region"
         return report
 
-    # Sunglasses/cooling glasses put two large dark lenses over the eyes,
-    # which can drag the *whole-face* average brightness below
-    # MIN_BRIGHTNESS even though the room/scene is perfectly well lit --
-    # producing a false "poor lighting" -> Insufficient Data result that
-    # has nothing to do with actual lighting. To avoid that, brightness
-    # is instead sampled from the lower half of the face (nose tip down
-    # to the chin), which stays visible regardless of eyewear.
+    # Sunglasses drag *whole-face* brightness below MIN_BRIGHTNESS even in a
+    # well-lit room, producing a false "poor lighting" result. Brightness is
+    # instead sampled from the lower face (nose tip down to chin), which
+    # stays visible regardless of eyewear.
     nose_tip_idx, chin_idx = POSE_LANDMARK_IDX[0], POSE_LANDMARK_IDX[1]
     lower_y1 = int(landmarks[nose_tip_idx][1])
     lower_y1 = max(y1, min(lower_y1, y2 - 1))
@@ -86,6 +87,16 @@ def assess_frame_quality(
     report.brightness_ok = config.MIN_BRIGHTNESS <= report.brightness_value <= config.MAX_BRIGHTNESS
     if not report.brightness_ok and not report.reason:
         report.reason = "poor lighting"
+
+    # Same lower-face region doubles as the skin-tone reference for eye
+    # occlusion checks -- the one part of the face guaranteed visible
+    # whether or not the driver is wearing sunglasses.
+    report.skin_brightness_ref = report.brightness_value
+    if frame_bgr is not None:
+        lower_face_roi_bgr = frame_bgr[lower_y1:y2, x1:x2]
+        if lower_face_roi_bgr.size > 0:
+            hsv_roi = cv2.cvtColor(lower_face_roi_bgr, cv2.COLOR_BGR2HSV)
+            report.skin_saturation_ref = float(np.mean(hsv_roi[:, :, 1]))
 
     pitch, yaw, roll = head_pose_angles(landmarks, gray_frame.shape)
     report.pitch, report.yaw, report.roll = pitch, yaw, roll
@@ -104,17 +115,41 @@ def assess_frame_quality(
 
 
 def eye_region_occluded(
-    gray_frame: np.ndarray, eye_points: np.ndarray, frame_shape: Tuple[int, int]
+    frame_bgr: np.ndarray,
+    eye_points: np.ndarray,
+    frame_shape: Tuple[int, int],
+    skin_brightness_ref: float,
+    skin_saturation_ref: float,
 ) -> bool:
-    """Heuristic sunglasses / heavy-occlusion detector: a genuinely visible
-    eye region has meaningful pixel-intensity variance (iris, sclera,
-    eyelid edges). Sunglasses or a hand covering the eyes tend to produce a
-    much flatter, low-variance patch. eye_points can be any Nx2 array of
-    landmark points covering the eye region (e.g. the 6-point EAR set)."""
+    """Sunglasses / heavy-occlusion detector for a single frame. Compares the
+    eye patch's saturation and brightness against the same-frame skin
+    reference rather than a fixed constant, since absolute pixel values swing
+    with lighting and lens glare. Either signal alone can vote "occluded".
+    This is a single-frame vote -- CueSelector applies the temporal
+    smoothing that turns repeated votes into a stable decision."""
     from utils.landmarks import region_bounding_box
 
     x1, y1, x2, y2 = region_bounding_box(eye_points, frame_shape, padding=4)
-    patch = gray_frame[y1:y2, x1:x2]
-    if patch.size == 0:
+    patch_bgr = frame_bgr[y1:y2, x1:x2]
+    if patch_bgr.size == 0:
         return True
-    return float(np.var(patch)) < config.EYE_OCCLUSION_VARIANCE_THRESHOLD
+
+    hsv_patch = cv2.cvtColor(patch_bgr, cv2.COLOR_BGR2HSV)
+    eye_brightness = float(np.mean(hsv_patch[:, :, 2]))
+    eye_saturation = float(np.mean(hsv_patch[:, :, 1]))
+
+    saturation_vote = (
+        skin_saturation_ref > 0
+        and (eye_saturation / skin_saturation_ref) < config.EYE_OCCLUSION_SATURATION_RATIO
+    )
+
+    if skin_brightness_ref <= 0:
+        brightness_vote = False
+    else:
+        brightness_ratio = eye_brightness / skin_brightness_ref
+        brightness_vote = (
+            brightness_ratio < config.EYE_OCCLUSION_DARK_RATIO
+            or brightness_ratio > config.EYE_OCCLUSION_BRIGHT_RATIO
+        )
+
+    return saturation_vote or brightness_vote

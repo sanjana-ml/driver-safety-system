@@ -23,7 +23,7 @@ import numpy as np
 
 import config
 from cbam.cbam import CUSTOM_OBJECTS
-from utils.cue_selector import CueReadings, compute_cue_readings, cue_based_drowsiness_score
+from utils.cue_selector import CueReadings, CueSelector
 from utils.exceptions import ModelNotFoundError
 from utils.image_utils import preprocess_face, enhance_low_light
 from utils.landmarks import FaceBox, LandmarkDetector
@@ -65,13 +65,13 @@ class DriverSafetyPipeline:
 
         self.landmark_detector = LandmarkDetector()
         self.sliding_window = SlidingWindow(window_size=window_size)
+        self.cue_selector = CueSelector()
         self.model = self._load_model(model_path)
 
         self._last_alert_time = 0.0
         self._no_face_since: Optional[float] = None
         self._prev_tick = time.time()
 
-    # ------------------------------------------------------------------ #
     def _load_model(self, model_path: Optional[str]):
         import tensorflow as tf
 
@@ -85,7 +85,6 @@ class DriverSafetyPipeline:
         logger.info("Loaded trained model from %s", path)
         return model
 
-    # ------------------------------------------------------------------ #
     def _update_fps(self) -> float:
         now = time.time()
         dt = now - self._prev_tick
@@ -94,24 +93,15 @@ class DriverSafetyPipeline:
             return 0.0
         return 1.0 / dt
 
-
     def process_frame(self, frame_bgr: np.ndarray) -> DetectionResult:
         fps = self._update_fps()
 
         frame_bgr = enhance_low_light(frame_bgr)
 
-        # MediaPipe Face Mesh needs the color (RGB-convertible) frame; the
-        # grayscale copy is still used for brightness/quality checks and
-        # for the CNN input crop.
         face_box, landmarks = self.landmark_detector.detect(frame_bgr)
         gray = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2GRAY)
 
         if face_box is None:
-            # Track how long the driver has been completely absent from
-            # frame -- distinct from "present but poor quality", which
-            # should never itself trigger an alert. Sustained absence is
-            # treated as its own alert condition (looking away, slumped
-            # out of frame, camera blocked, etc.).
             if self._no_face_since is None:
                 self._no_face_since = time.time()
             absence_duration = time.time() - self._no_face_since
@@ -134,7 +124,7 @@ class DriverSafetyPipeline:
             )
 
         self._no_face_since = None
-        quality = assess_frame_quality(gray, face_box, landmarks)
+        quality = assess_frame_quality(gray, face_box, landmarks, frame_bgr)
 
         if not quality.overall_ok:
             return DetectionResult(
@@ -146,8 +136,8 @@ class DriverSafetyPipeline:
                 fps=fps,
             )
 
-        cue_reading = compute_cue_readings(gray, landmarks, quality)
-        cue_score = cue_based_drowsiness_score(cue_reading)
+        cue_reading = self.cue_selector.compute(frame_bgr, landmarks, quality)
+        cue_score = self.cue_selector.score(cue_reading)
 
         face_input = preprocess_face(gray, face_box)
         batch = np.expand_dims(face_input, axis=0)
@@ -155,11 +145,6 @@ class DriverSafetyPipeline:
         drowsy_index = config.CLASS_NAMES.index("Drowsy")
         prob_drowsy = float(probs[drowsy_index])
 
-        # Blend CNN visual probability with the interpretable rule-based
-        # cue score to form the confidence metric. Confidence is high when
-        # both lines of evidence agree; it drops when they disagree, which
-        # is exactly the "weak/incomplete evidence" case that must not
-        # trigger a false alarm.
         agreement = 1.0 - abs(prob_drowsy - cue_score)
         confidence = float(np.clip(0.5 * agreement + 0.5 * max(prob_drowsy, cue_score) * agreement, 0.0, 1.0))
 
@@ -202,6 +187,7 @@ class DriverSafetyPipeline:
 
     def reset(self) -> None:
         self.sliding_window.reset()
+        self.cue_selector.reset()
         self._last_alert_time = 0.0
         self._no_face_since = None
 
