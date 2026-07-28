@@ -4,6 +4,13 @@ Top-level entry point. Launches the professional GUI (gui/app.py). Run
 'python predict.py' instead if you prefer a lightweight OpenCV-window
 console mode.
 
+Every "Start Monitoring" click in the GUI now begins with a short driver
+calibration phase (config.CALIBRATION_DURATION_SEC, 5-10 seconds by
+default) during which personalized EAR/MAR thresholds are derived from the
+driver's own baseline; this is handled entirely inside
+DriverSafetyPipeline / gui.app.DriverSafetyGUI, so no extra step is needed
+here beyond the existing model-availability check below.
+
 Usage:
     python main.py
 """
