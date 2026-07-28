@@ -16,6 +16,14 @@ Kept as a class because two required behaviours are inherently temporal:
 
 One instance should live for the lifetime of a camera session and be
 reset() alongside the sliding window when that session restarts.
+
+EAR/MAR comparisons use adaptive, personalized thresholds rather than the
+fixed config.EAR_THRESHOLD / config.MAR_THRESHOLD constants directly: the
+constants are still the *default* (used before calibration completes, or
+if it falls back due to insufficient samples), but utils/pipeline.py calls
+set_thresholds() once utils.calibration.CalibrationSession finishes, after
+which every subsequent compute() call in the session uses the driver's own
+baseline-derived thresholds.
 """
 
 from __future__ import annotations
@@ -27,6 +35,7 @@ from typing import Deque, List
 import numpy as np
 
 import config
+from utils.calibration import PersonalizedThresholds
 from utils.landmarks import (
     LEFT_EYE_EAR_IDX,
     MOUTH_MAR_IDX,
@@ -57,6 +66,8 @@ class CueReadings:
     yawning: bool = False
     head_nod: bool = False
     head_tilt: bool = False
+    ear_threshold_used: float = config.EAR_THRESHOLD
+    mar_threshold_used: float = config.MAR_THRESHOLD
     active_cues: List[str] = field(default_factory=list)
 
     def label(self) -> str:
@@ -69,12 +80,46 @@ class CueSelector:
         self._right_votes: Deque[bool] = deque(maxlen=config.EYE_OCCLUSION_VOTE_FRAMES)
         self._eye_closed_streak: int = 0
         self._mouth_open_streak: int = 0
+        # Adaptive EAR/MAR thresholds -- start out at the fixed config
+        # defaults and are replaced once calibration finishes (see
+        # set_thresholds()). Kept as plain floats (not the full
+        # PersonalizedThresholds object) so compute() has a simple, always-
+        # valid pair of numbers to compare against.
+        self._ear_threshold: float = config.EAR_THRESHOLD
+        self._mar_threshold: float = config.MAR_THRESHOLD
+        self._thresholds_personalized: bool = False
 
     def reset(self) -> None:
         self._left_votes.clear()
         self._right_votes.clear()
         self._eye_closed_streak = 0
         self._mouth_open_streak = 0
+        # A new session may have a different driver / lighting, so drop back
+        # to the fixed defaults until the new session's calibration finishes.
+        self._ear_threshold = config.EAR_THRESHOLD
+        self._mar_threshold = config.MAR_THRESHOLD
+        self._thresholds_personalized = False
+
+    def set_thresholds(self, thresholds: PersonalizedThresholds) -> None:
+        """Called by utils.pipeline.DriverSafetyPipeline once the session's
+        CalibrationSession finishes. Every compute() call from this point on
+        uses these (possibly personalized, possibly fallback-default)
+        thresholds instead of the raw config constants."""
+        self._ear_threshold = thresholds.ear_threshold
+        self._mar_threshold = thresholds.mar_threshold
+        self._thresholds_personalized = thresholds.calibrated
+
+    @property
+    def thresholds_personalized(self) -> bool:
+        return self._thresholds_personalized
+
+    @property
+    def ear_threshold(self) -> float:
+        return self._ear_threshold
+
+    @property
+    def mar_threshold(self) -> float:
+        return self._mar_threshold
 
     def _eyes_available(
         self, frame_bgr: np.ndarray, left_eye_points: np.ndarray,
@@ -123,9 +168,12 @@ class CueSelector:
         reading.mouth_available = quality.landmarks_sufficient
         reading.head_pose_available = quality.face_detected
 
+        reading.ear_threshold_used = self._ear_threshold
+        reading.mar_threshold_used = self._mar_threshold
+
         if reading.eyes_available:
             reading.corrected_ear = pose_compensated_ear(reading.avg_ear, reading.pitch, reading.yaw)
-            reading.eye_closed = reading.corrected_ear < config.EAR_THRESHOLD
+            reading.eye_closed = reading.corrected_ear < self._ear_threshold
             if reading.eye_closed:
                 self._eye_closed_streak += 1
             else:
@@ -136,7 +184,7 @@ class CueSelector:
             self._eye_closed_streak = 0
 
         if reading.mouth_available:
-            mouth_open = reading.mar > config.MAR_THRESHOLD
+            mouth_open = reading.mar > self._mar_threshold
             if mouth_open:
                 self._mouth_open_streak += 1
             else:
