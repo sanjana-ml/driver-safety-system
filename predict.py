@@ -1,15 +1,17 @@
 """
 predict.py
-Console-mode real-time drowsiness detection: opens the webcam, runs the
-full pipeline (face/landmark detection -> quality gate -> adaptive cues ->
-CNN+CBAM -> sliding window -> confidence/threshold check -> alert), and
-displays an OpenCV window with overlays. This is a lighter-weight
-alternative to the Tkinter GUI in gui/app.py, and is also useful for
-quickly testing the pipeline after training.
+Console-mode real-time drowsiness detection: opens the webcam, runs a short
+driver calibration phase, then runs the full pipeline (face/landmark
+detection -> quality gate with hysteresis -> calibrated adaptive cues ->
+CNN+CBAM -> PERCLOS -> head-pose monitoring -> sliding window -> multi-
+signal fusion -> alert), and displays an OpenCV window with overlays. This
+is a lighter-weight alternative to the Tkinter GUI in gui/app.py, and is
+also useful for quickly testing the pipeline after training.
 
 Usage:
     python predict.py
-    python predict.py --headless      # no display window, console + CSV log only
+    python predict.py --headless                 # no display window, console + CSV log only
+    python predict.py --calibration-seconds 5     # override the default calibration duration
 Press 'q' to quit.
 """
 
@@ -39,12 +41,33 @@ from utils.pipeline import DriverSafetyPipeline
 
 logger = get_logger(__name__)
 
+_STATUS_COLORS = {
+    "Drowsy": (0, 0, 255),
+    "Not Drowsy": (0, 200, 0),
+    "Insufficient Data": (0, 200, 255),
+    "Face Not Detected": (0, 0, 255),
+    "Calibrating": (255, 200, 0),
+}
+
+# Alarm-worthy statuses: the continuous alarm should be active on these and
+# stopped on everything else.
+_ALARM_STATUSES = ("Drowsy", "Face Not Detected")
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Real-time driver drowsiness detection (console mode).")
     parser.add_argument("--headless", action="store_true", help="Run without an OpenCV display window.")
     parser.add_argument("--camera-index", type=int, default=config.CAMERA_INDEX)
     parser.add_argument("--no-alarm", action="store_true", help="Disable audio alarm playback.")
+    parser.add_argument(
+        "--calibration-seconds",
+        type=float,
+        default=config.CALIBRATION_DURATION_SEC,
+        help=(
+            "How long the initial driver calibration phase lasts "
+            f"(default: {config.CALIBRATION_DURATION_SEC}s)."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -52,7 +75,7 @@ def main() -> int:
     args = parse_args()
 
     try:
-        pipeline = DriverSafetyPipeline()
+        pipeline = DriverSafetyPipeline(calibration_duration_sec=args.calibration_seconds)
     except DriverSafetyError as exc:
         logger.error("Could not start pipeline: %s", exc)
         return 1
@@ -67,7 +90,11 @@ def main() -> int:
         logger.error("Camera error: %s", exc)
         return 1
 
-    logger.info("Starting real-time monitoring. Press 'q' to quit (display mode only).")
+    logger.info(
+        "Starting real-time monitoring. Calibrating for %.1fs -- look naturally at the camera. "
+        "Press 'q' to quit (display mode only).",
+        args.calibration_seconds,
+    )
 
     try:
         # Give the camera thread a moment to deliver the first frame.
@@ -88,7 +115,7 @@ def main() -> int:
             result = pipeline.process_frame(frame)
 
             if alarm is not None:
-                if result.alert_triggered or result.status == "Drowsy":
+                if result.status in _ALARM_STATUSES:
                     alarm.start()
                 else:
                     alarm.stop()
@@ -106,7 +133,7 @@ def main() -> int:
 
             if result.alert_triggered:
                 _save_alert_screenshot(frame, session_dir)
-                logger.warning("DROWSINESS ALERT triggered.")
+                logger.warning("DROWSINESS ALERT triggered (%s).", result.status)
 
             if not args.headless:
                 display = frame.copy()
@@ -116,14 +143,34 @@ def main() -> int:
                     draw_landmarks(display, result.landmarks)
                     draw_eye_and_mouth_regions(display, result.landmarks)
 
-                color = (0, 0, 255) if result.status == "Drowsy" else (0, 200, 0)
-                put_status_text(display, f"Status: {result.status}", (10, 25), color=color)
-                put_status_text(display, f"Confidence: {result.confidence:.2f}", (10, 50))
+                color = _STATUS_COLORS.get(result.status, (255, 255, 255))
+
+                if result.calibration_in_progress:
+                    put_status_text(
+                        display,
+                        f"Calibrating... {result.calibration_remaining:.1f}s remaining",
+                        (10, 25),
+                        color=color,
+                        scale=0.7,
+                    )
+                    put_status_text(
+                        display, "Please look naturally at the camera", (10, 50), color=(255, 255, 255)
+                    )
+                else:
+                    put_status_text(display, f"Status: {result.status}", (10, 25), color=color)
+                    put_status_text(display, f"Confidence: {result.confidence:.2f}", (10, 50))
+
                 put_status_text(display, f"FPS: {result.fps:.1f}", (10, 75))
                 put_status_text(display, f"Cues: {result.active_cues_label}", (10, 100))
                 put_status_text(display, f"Quality: {result.quality_label}", (10, 125))
+                put_status_text(
+                    display,
+                    f"PERCLOS: {result.perclos_value:.2f}"
+                    + (" (drowsy)" if result.perclos_drowsy else ""),
+                    (10, 150),
+                )
                 if result.alert_triggered:
-                    put_status_text(display, "ALERT!", (10, 155), color=(0, 0, 255), scale=1.0)
+                    put_status_text(display, "ALERT!", (10, 180), color=(0, 0, 255), scale=1.0)
 
                 cv2.imshow("Driver Safety Monitor", display)
                 if cv2.waitKey(1) & 0xFF == ord("q"):
