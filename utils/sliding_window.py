@@ -5,6 +5,13 @@ Instead of deciding drowsiness from a single frame, the system evaluates
 the proportion of frames in the window showing fatigue indicators
 (majority voting), which filters out a normal blink or brief yawn from
 triggering a false alarm.
+
+The sliding-window vote is one of several signals fused together in
+utils/pipeline.py, alongside the CNN+CBAM prediction, personalized EAR/MAR
+cue evidence, PERCLOS, and head-pose events. has_enough_data() lets the
+fusion logic hold off on any decision at all until the window has actually
+accumulated a meaningful amount of history, rather than voting off a
+mostly-empty buffer right after a session (re)starts.
 """
 
 from __future__ import annotations
@@ -59,3 +66,13 @@ class SlidingWindow:
         or exceeds the configured ratio threshold. A single blink or short
         yawn (a small minority of frames) will not flip this to True."""
         return self.drowsy_vote_ratio() >= ratio_threshold
+
+    def has_enough_data(
+        self, min_fill_ratio: float = config.MIN_WINDOW_FILL_RATIO_FOR_DECISION
+    ) -> bool:
+        """Returns True once the window holds at least `min_fill_ratio` of
+        its capacity. Used by the pipeline's fusion decision to report
+        "Insufficient Data" instead of trusting a vote from a window that
+        has barely started filling (e.g. right after a session start or a
+        reset())."""
+        return self.fill_ratio >= min_fill_ratio
