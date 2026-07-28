@@ -4,6 +4,16 @@ Frame quality gating: before any drowsiness inference happens, verify that
 the frame is trustworthy (face present, lighting adequate, orientation
 close to frontal, enough landmarks visible). If not, the pipeline must
 never force a prediction -- it reports "Insufficient Data" instead.
+
+assess_frame_quality() evaluates a single frame in isolation and is
+unchanged in behaviour. QualityGate wraps it with temporal hysteresis: a
+single bad-quality frame (a moment of landmark jitter, a brief partial
+out-of-frame movement) is absorbed for up to config.QUALITY_GRACE_FRAMES
+consecutive frames before the gate actually reports "not ok" -- this is
+what stops slight, transient tracking noise from being mistaken for a real
+quality failure (and, under the old per-frame-only gate, potentially for a
+"Drowsy"/alert-worthy signal). Recovery from bad to good quality is always
+immediate; only degradation is debounced.
 """
 
 from __future__ import annotations
@@ -44,6 +54,52 @@ class QualityReport:
 
     def as_label(self) -> str:
         return "Good" if self.overall_ok else f"Insufficient Data ({self.reason})"
+
+
+class QualityGate:
+    """Stateful hysteresis wrapper around a stream of per-frame
+    `QualityReport.overall_ok` values. One instance should live for the
+    lifetime of a monitoring session and be reset() alongside the other
+    per-session state (sliding window, cue selector, etc.).
+
+    Behaviour:
+    - A "good" frame immediately marks the gate stable-ok and clears the
+      bad-frame streak (recovery is instant).
+    - A "bad" frame increments a streak counter. While that streak is at or
+      below config.QUALITY_GRACE_FRAMES, the gate keeps reporting whatever
+      its last stable state was (absorbing the blip). Only once the streak
+      exceeds the grace period does the gate flip to stable-not-ok.
+    """
+
+    def __init__(self, grace_frames: int = config.QUALITY_GRACE_FRAMES) -> None:
+        self.grace_frames = grace_frames
+        self._bad_streak = 0
+        self._stable_ok = False  # no frames observed yet -> not trusted
+
+    def reset(self) -> None:
+        self._bad_streak = 0
+        self._stable_ok = False
+
+    def update(self, raw_ok: bool) -> bool:
+        """Feed in this frame's raw QualityReport.overall_ok. Returns the
+        debounced ("stable") quality decision to actually act on."""
+        if raw_ok:
+            self._bad_streak = 0
+            self._stable_ok = True
+        else:
+            self._bad_streak += 1
+            if self._bad_streak > self.grace_frames:
+                self._stable_ok = False
+            # else: within grace -- keep the previous stable_ok, absorbing
+            # this frame's blip.
+        return self._stable_ok
+
+    @property
+    def is_within_grace(self) -> bool:
+        """True when the gate is currently absorbing a bad-quality streak
+        that hasn't yet exceeded the grace period (i.e. stable_ok is still
+        True despite this frame's raw quality being bad)."""
+        return 0 < self._bad_streak <= self.grace_frames
 
 
 def assess_frame_quality(
