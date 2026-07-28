@@ -84,7 +84,18 @@ EYE_OCCLUSION_VOTE_RATIO: float = 0.6
 CLAHE_CLIP_LIMIT: float = 3.0
 CLAHE_TILE_GRID_SIZE: Tuple[int, int] = (8, 8)
 
-NO_FACE_ALERT_SECONDS: float = 3.0
+# How long the face must be continuously missing before the system escalates
+# from "Insufficient Data" to "Face Not Detected" (and raises an alert).
+# (Previously named NO_FACE_ALERT_SECONDS.)
+FACE_NOT_DETECTED_GRACE_SEC: float = 3.0
+
+# Frame-quality hysteresis: a single bad-quality frame (momentary landmark
+# jitter, a brief partial out-of-frame move) is absorbed for up to this many
+# CONSECUTIVE frames before the system actually reports "Insufficient Data".
+# This is what prevents slight, transient tracking noise from being treated
+# as a real quality failure / false alarm. Quality recovery (bad -> good) is
+# always immediate -- only the bad direction is debounced.
+QUALITY_GRACE_FRAMES: int = 6
 
 
 # --------------------------------------------------------------------------- #
@@ -97,6 +108,51 @@ MAR_THRESHOLD: float = 0.6
 YAWN_CONSEC_FRAMES: int = 15
 HEAD_NOD_PITCH_DELTA_DEG: float = 15.0
 HEAD_TILT_ROLL_DELTA_DEG: float = 20.0
+
+
+# --------------------------------------------------------------------------- #
+# Driver calibration (personalized EAR/MAR thresholds)
+# --------------------------------------------------------------------------- #
+# A short calibration phase runs at the start of every session (see
+# utils/calibration.py): the driver looks naturally at the camera for
+# CALIBRATION_DURATION_SEC seconds while baseline EAR/MAR statistics are
+# collected, then personalized thresholds replace the fixed EAR_THRESHOLD /
+# MAR_THRESHOLD defaults above for the rest of the session. If calibration
+# does not collect enough usable samples (e.g. the driver's face was not
+# reliably tracked for most of the phase), the system safely falls back to
+# the fixed defaults instead of using noisy personalized values.
+CALIBRATION_DURATION_SEC: float = 7.0          # within the required 5-10s window
+CALIBRATION_MIN_SAMPLES: int = 30              # ~1s of good frames at 30fps
+CALIBRATION_EAR_STD_MULTIPLIER: float = 0.8    # personal_ear = mean_ear - k * std_ear
+CALIBRATION_MAR_STD_MULTIPLIER: float = 1.0    # personal_mar = mean_mar + k * std_mar
+# Sane clamps so a short/noisy calibration can never produce a threshold
+# that is unreasonably strict or unreasonably loose.
+CALIBRATION_EAR_MIN: float = 0.12
+CALIBRATION_EAR_MAX: float = 0.30
+CALIBRATION_MAR_MIN: float = 0.35
+CALIBRATION_MAR_MAX: float = 0.85
+
+
+# --------------------------------------------------------------------------- #
+# PERCLOS (percentage of eyelid closure over a rolling time window)
+# --------------------------------------------------------------------------- #
+PERCLOS_WINDOW_SEC: float = 60.0     # rolling time window used to compute PERCLOS
+PERCLOS_MIN_WINDOW_SEC: float = 10.0  # minimum span of data before PERCLOS is trusted
+PERCLOS_DROWSY_THRESHOLD: float = 0.30  # >=30% of the window with eyes closed => drowsy signal
+
+
+# --------------------------------------------------------------------------- #
+# Head-pose temporal monitoring (prolonged tilt / repeated nodding)
+# --------------------------------------------------------------------------- #
+# +1 if pitch increases as the head drops forward/down given this rig's
+# solvePnP convention, -1 otherwise. Flip this if prolonged-tilt / nod
+# detection appears inverted for your camera setup during testing.
+PITCH_DOWN_SIGN: int = 1
+DOWNWARD_TILT_PITCH_DEG: float = 15.0       # degrees of (signed) downward pitch to count as "tilted"
+HEAD_TILT_MIN_DURATION_SEC: float = 1.5     # must be sustained this long to be "prolonged" (not a glance)
+NOD_PITCH_DELTA_DEG: float = 12.0           # degrees of downward pitch that counts as a nod's "down" phase
+NOD_WINDOW_SEC: float = 12.0                # rolling window for counting repeated nods
+NOD_COUNT_THRESHOLD: int = 3                # this many down->up cycles within the window => repeated nodding
 
 
 # --------------------------------------------------------------------------- #
@@ -140,15 +196,25 @@ AUGMENTATION_HORIZONTAL_FLIP: bool = True
 # --------------------------------------------------------------------------- #
 SLIDING_WINDOW_SIZE: int = 30
 DROWSY_VOTE_RATIO_THRESHOLD: float = 0.6
+# The window must hold at least this fraction of SLIDING_WINDOW_SIZE frames
+# before its vote is trusted for a final decision; before that, the system
+# reports "Insufficient Data" rather than guessing off a mostly-empty window.
+MIN_WINDOW_FILL_RATIO_FOR_DECISION: float = 0.5
 
 
 # --------------------------------------------------------------------------- #
-# Confidence / alert decision (two-gate design)
+# Confidence / alert decision (multi-signal fusion)
 # --------------------------------------------------------------------------- #
 PROBABILITY_THRESHOLD: float = 0.65
 CONFIDENCE_THRESHOLD: float = 0.60
 ALERT_COOLDOWN_SEC: float = 3.0
 FRAME_QUALITY_ALERT_COOLDOWN_SEC: float = 5.0
+# Final fusion (utils/pipeline.py) combines the CNN+window+confidence gate
+# with PERCLOS, head-pose events, and personalized EAR/MAR cue evidence.
+# The CNN+window+confidence gate must always agree, AND at least this
+# fraction of the other available secondary signals must agree too, before
+# a "Drowsy" status/alert is raised.
+FUSION_AGREEMENT_RATIO: float = 0.5
 
 
 # --------------------------------------------------------------------------- #
