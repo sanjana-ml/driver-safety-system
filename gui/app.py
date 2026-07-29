@@ -34,7 +34,8 @@ _STATUS_COLORS = {
     "Drowsy": "#e53935",
     "Not Drowsy": "#2e7d32",
     "Insufficient Data": "#f9a825",
-    "Driver Not Visible": "#e53935",
+    "Face Not Detected": "#e53935",
+    "Calibrating": "#42a5f5",
 }
 
 
@@ -96,10 +97,38 @@ class DriverSafetyGUI:
         self._video_panel_size: Tuple[int, int] = (760, 570)
         video_frame.bind("<Configure>", self._on_video_frame_resize)
 
-        # Info panel
-        info_frame = tk.Frame(body, bg="#111318", width=300)
-        info_frame.pack(side=tk.RIGHT, fill=tk.Y, padx=(16, 0))
-        info_frame.pack_propagate(False)
+        # Info panel -- wrapped in a scrollable canvas. Adding the new
+        # Calibration/PERCLOS/Thresholds rows made the sidebar taller than
+        # the window in some sizes; a fixed-height Frame would silently
+        # clip Start/Stop and the metrics section below it. Scrolling keeps
+        # every row reachable regardless of window size, without changing
+        # any of the row widgets, styling, or order below.
+        info_outer = tk.Frame(body, bg="#111318", width=300)
+        info_outer.pack(side=tk.RIGHT, fill=tk.Y, padx=(16, 0))
+        info_outer.pack_propagate(False)
+
+        info_canvas = tk.Canvas(info_outer, bg="#111318", highlightthickness=0, bd=0)
+        info_scrollbar = ttk.Scrollbar(info_outer, orient=tk.VERTICAL, command=info_canvas.yview)
+        info_canvas.configure(yscrollcommand=info_scrollbar.set)
+        info_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        info_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+        info_frame = tk.Frame(info_canvas, bg="#111318")
+        info_canvas_window = info_canvas.create_window((0, 0), window=info_frame, anchor="nw")
+
+        def _on_info_frame_configure(_event: tk.Event) -> None:
+            info_canvas.configure(scrollregion=info_canvas.bbox("all"))
+
+        def _on_info_canvas_configure(event: tk.Event) -> None:
+            info_canvas.itemconfigure(info_canvas_window, width=event.width)
+
+        def _on_info_mousewheel(event: tk.Event) -> None:
+            info_canvas.yview_scroll(int(-1 * (event.delta / 120)), "units")
+
+        info_frame.bind("<Configure>", _on_info_frame_configure)
+        info_canvas.bind("<Configure>", _on_info_canvas_configure)
+        info_canvas.bind("<Enter>", lambda _e: info_canvas.bind_all("<MouseWheel>", _on_info_mousewheel))
+        info_canvas.bind("<Leave>", lambda _e: info_canvas.unbind_all("<MouseWheel>"))
 
         self.status_value = self._add_info_row(info_frame, "Status")
         self.confidence_value = self._add_info_row(info_frame, "Confidence")
@@ -108,6 +137,9 @@ class DriverSafetyGUI:
         self.cue_value = self._add_info_row(info_frame, "Active Cue(s)")
         self.quality_value = self._add_info_row(info_frame, "Frame Quality")
         self.alert_value = self._add_info_row(info_frame, "Alert Status")
+        self.calibration_value = self._add_info_row(info_frame, "Calibration")
+        self.perclos_value = self._add_info_row(info_frame, "PERCLOS")
+        self.thresholds_value = self._add_info_row(info_frame, "Thresholds")
 
         controls = tk.Frame(info_frame, bg="#111318")
         controls.pack(fill=tk.X, pady=(24, 0))
@@ -336,7 +368,10 @@ class DriverSafetyGUI:
     def _process(self, frame) -> DetectionResult:
         result = self.pipeline.process_frame(frame)
 
-        if result.status in ("Drowsy", "Driver Not Visible"):
+        if result.calibration_in_progress:
+            # Never alarm mid-calibration -- no verdict has been formed yet.
+            self.alarm.stop()
+        elif result.status in ("Drowsy", "Face Not Detected"):
             self.alarm.start()
         else:
             self.alarm.stop()
@@ -396,15 +431,41 @@ class DriverSafetyGUI:
         self.video_label.configure(image=photo)
         self.video_label.image = photo  # keep a reference, avoid GC
 
+        if result.calibration_in_progress:
+            status_text = f"Calibrating ({result.calibration_remaining:.1f}s left)"
+        else:
+            status_text = result.status
         self.status_value.configure(
-            text=result.status, fg=_STATUS_COLORS.get(result.status, "#ffffff")
+            text=status_text, fg=_STATUS_COLORS.get(result.status, "#ffffff")
         )
         self.confidence_value.configure(text=f"{result.confidence:.2f}")
         self.probability_value.configure(text=f"{result.cnn_probability_drowsy:.2f}")
         self.fps_value.configure(text=f"{result.fps:.1f}")
         self.cue_value.configure(text=result.active_cues_label)
         self.quality_value.configure(text=result.quality_label)
-        is_alert_state = result.alert_triggered or result.status in ("Drowsy", "Driver Not Visible")
+
+        if result.calibration_in_progress:
+            self.calibration_value.configure(
+                text=f"{result.calibration_progress * 100:.0f}%", fg="#42a5f5"
+            )
+        else:
+            self.calibration_value.configure(text="Complete", fg="#66bb6a")
+
+        if result.perclos_ready:
+            perclos_color = "#e53935" if result.perclos_drowsy else "#66bb6a"
+            self.perclos_value.configure(text=f"{result.perclos_value * 100:.0f}%", fg=perclos_color)
+        else:
+            self.perclos_value.configure(text="Warming up...", fg="#f9a825")
+
+        self.thresholds_value.configure(
+            text="Personalized" if result.personalized_thresholds_active else "Default",
+            fg="#66bb6a" if result.personalized_thresholds_active else "#e8e8e8",
+        )
+
+        is_alert_state = (
+            not result.calibration_in_progress
+            and (result.alert_triggered or result.status in ("Drowsy", "Face Not Detected"))
+        )
         self.alert_value.configure(
             text="ALERT" if is_alert_state else "Normal",
             fg="#e53935" if is_alert_state else "#66bb6a",
