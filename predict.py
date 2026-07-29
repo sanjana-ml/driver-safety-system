@@ -82,7 +82,6 @@ def main() -> int:
 
     alarm = None if args.no_alarm else AlarmManager()
     csv_logger = PredictionCSVLogger()
-    session_dir = config.SCREENSHOTS_DIR / time.strftime("%Y-%m-%d_%H-%M-%S")
 
     try:
         stream = WebcamStream(camera_index=args.camera_index).start()
@@ -131,9 +130,11 @@ def main() -> int:
                 }
             )
 
-            if result.alert_triggered:
-                _save_alert_screenshot(frame, session_dir)
+            if result.alert_triggered and result.status == "Drowsy":
+                _save_alert_screenshot(frame)
                 logger.warning("DROWSINESS ALERT triggered (%s).", result.status)
+            elif result.alert_triggered:
+                logger.warning("Alert triggered (%s) -- no screenshot (not a drowsiness event).", result.status)
 
             if not args.headless:
                 display = frame.copy()
@@ -187,9 +188,9 @@ def main() -> int:
     return 0
 
 
-def _save_alert_screenshot(frame, session_dir: Path) -> None:
-    session_dir.mkdir(parents=True, exist_ok=True)
-    filename = session_dir / f"alert_{int(time.time() * 1000)}.png"
+def _save_alert_screenshot(frame) -> None:
+    session_dir = config.current_screenshot_dir()
+    filename = session_dir / f"drowsy_{int(time.time() * 1000)}.png"
     try:
         cv2.imwrite(str(filename), frame)
     except Exception as exc:  # noqa: BLE001

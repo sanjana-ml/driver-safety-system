@@ -55,7 +55,8 @@ class DriverSafetyGUI:
         self.running = False
         self._last_alert_screenshot_ts = 0.0
         self._last_quality_alert_time = 0.0
-        self._session_screenshot_dir: Optional[Path] = None
+        self._was_calibrating = False
+        self._calibration_popup_shown = False
 
         self._build_layout()
         self._try_init_pipeline()
@@ -140,6 +141,11 @@ class DriverSafetyGUI:
         self.calibration_value = self._add_info_row(info_frame, "Calibration")
         self.perclos_value = self._add_info_row(info_frame, "PERCLOS")
         self.thresholds_value = self._add_info_row(info_frame, "Thresholds")
+        self.ear_value = self._add_info_row(info_frame, "Current EAR")
+        self.mar_value = self._add_info_row(info_frame, "Current MAR")
+        self.head_pose_value = self._add_info_row(info_frame, "Head Pose (P/Y/R)")
+        self.ear_threshold_value = self._add_info_row(info_frame, "EAR Threshold")
+        self.mar_threshold_value = self._add_info_row(info_frame, "MAR Threshold")
 
         controls = tk.Frame(info_frame, bg="#111318")
         controls.pack(fill=tk.X, pady=(24, 0))
@@ -315,11 +321,19 @@ class DriverSafetyGUI:
 
         self.pipeline.reset()
         self.running = True
-        self._session_screenshot_dir = config.SCREENSHOTS_DIR / time.strftime("%Y-%m-%d_%H-%M-%S")
+        self._was_calibrating = True
+        self._calibration_popup_shown = False
         self.start_btn.configure(state=tk.DISABLED)
         self.stop_btn.configure(state=tk.NORMAL)
         self.footer_label.configure(text="Monitoring active.", foreground="#66bb6a")
         self._load_model_metrics()
+        messagebox.showinfo(
+            "Calibration Starting",
+            f"Please stay steady and look naturally at the camera for the next "
+            f"~{config.CALIBRATION_DURATION_SEC:.0f} seconds.\n\n"
+            "This lets the system learn your personal eye/mouth baseline "
+            "instead of using generic fixed thresholds.",
+        )
         self._update_frame()
 
     def stop(self) -> None:
@@ -368,6 +382,11 @@ class DriverSafetyGUI:
     def _process(self, frame) -> DetectionResult:
         result = self.pipeline.process_frame(frame)
 
+        if self._was_calibrating and not result.calibration_in_progress and not self._calibration_popup_shown:
+            self._calibration_popup_shown = True
+            self.root.after(0, lambda r=result: self._show_calibration_done_popup(r))
+        self._was_calibrating = result.calibration_in_progress
+
         if result.calibration_in_progress:
             # Never alarm mid-calibration -- no verdict has been formed yet.
             self.alarm.stop()
@@ -389,7 +408,10 @@ class DriverSafetyGUI:
                         0, lambda label=result.quality_label: self._show_quality_popup(label)
                     )
 
-        if result.alert_triggered:
+        # Only a genuine "Drowsy" verdict counts as a drowsiness event for
+        # screenshot purposes -- "Face Not Detected" also alerts, but it is
+        # not itself evidence of drowsiness.
+        if result.alert_triggered and result.status == "Drowsy":
             self._save_alert_screenshot(frame)
 
         self.csv_logger.log_row(
@@ -403,6 +425,24 @@ class DriverSafetyGUI:
             }
         )
         return result
+
+    def _show_calibration_done_popup(self, result: DetectionResult) -> None:
+        cues = result.cue_readings
+        if cues is None or not result.personalized_thresholds_active:
+            messagebox.showinfo(
+                "Calibration Complete",
+                "Calibration finished, but not enough reliable data was collected "
+                "to personalize your thresholds -- using the default fixed "
+                "thresholds for this session instead.",
+            )
+            return
+        messagebox.showinfo(
+            "Calibration Complete",
+            "Your personalized thresholds for this session:\n\n"
+            f"EAR threshold: {cues.ear_threshold_used:.3f}\n"
+            f"MAR threshold: {cues.mar_threshold_used:.3f}\n\n"
+            "Monitoring will now use these instead of the generic defaults.",
+        )
 
     def _show_quality_popup(self, quality_label: str) -> None:
         messagebox.showwarning(
@@ -462,6 +502,22 @@ class DriverSafetyGUI:
             fg="#66bb6a" if result.personalized_thresholds_active else "#e8e8e8",
         )
 
+        cues = result.cue_readings
+        if cues is not None:
+            self.ear_value.configure(text=f"{cues.corrected_ear:.3f}")
+            self.mar_value.configure(text=f"{cues.mar:.3f}")
+            self.head_pose_value.configure(
+                text=f"{cues.pitch:.0f} / {cues.yaw:.0f} / {cues.roll:.0f}"
+            )
+            self.ear_threshold_value.configure(text=f"{cues.ear_threshold_used:.3f}")
+            self.mar_threshold_value.configure(text=f"{cues.mar_threshold_used:.3f}")
+        else:
+            for value_label in (
+                self.ear_value, self.mar_value, self.head_pose_value,
+                self.ear_threshold_value, self.mar_threshold_value,
+            ):
+                value_label.configure(text="--")
+
         is_alert_state = (
             not result.calibration_in_progress
             and (result.alert_triggered or result.status in ("Drowsy", "Face Not Detected"))
@@ -476,9 +532,8 @@ class DriverSafetyGUI:
         if now - self._last_alert_screenshot_ts < 2.0:
             return
         self._last_alert_screenshot_ts = now
-        session_dir = self._session_screenshot_dir or config.SCREENSHOTS_DIR
-        session_dir.mkdir(parents=True, exist_ok=True)
-        filename = session_dir / f"alert_{int(now * 1000)}.png"
+        session_dir = config.current_screenshot_dir()
+        filename = session_dir / f"drowsy_{int(now * 1000)}.png"
         try:
             cv2.imwrite(str(filename), frame)
             logger.info("Saved alert screenshot: %s", filename)

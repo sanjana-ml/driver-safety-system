@@ -8,6 +8,7 @@ codebase never hard-codes a magic number.
 from __future__ import annotations
 
 import os
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Tuple
@@ -30,6 +31,20 @@ BEST_CHECKPOINT_PATH: Path = WEIGHTS_DIR / "best_checkpoint.h5"
 TRAINING_HISTORY_PATH: Path = LOGS_DIR / "training_history.json"
 
 ALARM_SOUND_PATH: Path = ALARM_DIR / "alarm.wav"
+
+# Screenshots are grouped into one folder per calendar day (rather than one
+# folder per monitoring session) so reviewing "what happened on a given day"
+# is a single folder open, not a hunt across many session-timestamped ones.
+SCREENSHOT_DATE_FORMAT: str = "%Y-%m-%d"
+
+
+def current_screenshot_dir() -> Path:
+    """Today's screenshot folder (SCREENSHOTS_DIR/YYYY-MM-DD), created if it
+    doesn't exist yet. Callers should still give each individual screenshot
+    file a timestamped name for uniqueness within the day."""
+    directory = SCREENSHOTS_DIR / time.strftime(SCREENSHOT_DATE_FORMAT)
+    directory.mkdir(parents=True, exist_ok=True)
+    return directory
 
 
 def ensure_directories() -> None:
