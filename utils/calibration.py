@@ -76,19 +76,29 @@ class CalibrationSession:
     are reset() per session), since lighting and the driver themselves may
     have changed."""
 
-    def __init__(self, duration_sec: float = config.CALIBRATION_DURATION_SEC) -> None:
+    def __init__(
+        self,
+        duration_sec: float = config.CALIBRATION_DURATION_SEC,
+        max_retries: int = config.CALIBRATION_MAX_RETRIES,
+    ) -> None:
         self.duration_sec = duration_sec
+        self.max_retries = max_retries
         self._ear_samples: List[float] = []
         self._mar_samples: List[float] = []
         self._start_time: Optional[float] = None
         self._done = False
         self._result: Optional[PersonalizedThresholds] = None
+        self._retry_count = 0
 
     # ------------------------------------------------------------------ #
     # Lifecycle
     # ------------------------------------------------------------------ #
     def start(self) -> None:
-        """Begins (or restarts) the calibration phase."""
+        """Begins (or restarts) the calibration phase. Used both to begin a
+        brand new session's calibration and internally by finalize() to
+        retry a single session's calibration after an insufficient-sample
+        attempt -- so this deliberately does NOT touch _retry_count; only
+        reset() (a genuinely new session) clears that counter."""
         self._start_time = time.time()
         self._ear_samples = []
         self._mar_samples = []
@@ -103,6 +113,7 @@ class CalibrationSession:
         self._mar_samples = []
         self._done = False
         self._result = None
+        self._retry_count = 0
 
     # ------------------------------------------------------------------ #
     # Progress
@@ -131,6 +142,10 @@ class CalibrationSession:
     def sample_count(self) -> int:
         return min(len(self._ear_samples), len(self._mar_samples))
 
+    @property
+    def retry_count(self) -> int:
+        return self._retry_count
+
     def is_time_elapsed(self) -> bool:
         return self._start_time is not None and self.elapsed >= self.duration_sec
 
@@ -151,16 +166,40 @@ class CalibrationSession:
     # ------------------------------------------------------------------ #
     # Finalization
     # ------------------------------------------------------------------ #
-    def finalize(self) -> PersonalizedThresholds:
-        """Computes personalized thresholds from whatever samples were
-        collected and marks the session done. Safe to call more than once
-        -- subsequent calls just return the cached result."""
+    def finalize(self) -> Optional[PersonalizedThresholds]:
+        """Call once is_time_elapsed() is True.
+
+        If both EAR and MAR collected enough usable samples, computes and
+        returns the personalized thresholds -- done.
+
+        If not, and fewer than max_retries retries have happened yet in
+        this session, restarts the calibration phase from scratch (a fresh
+        duration_sec window, samples cleared) instead of silently falling
+        back to the fixed config defaults, and returns None so the caller
+        keeps reporting status="Calibrating" while the new attempt runs.
+
+        Only once max_retries consecutive insufficient attempts have
+        happened does this finally fall back to the fixed defaults
+        (calibrated=False) and return a result -- this cap exists so a
+        session where the driver's face genuinely can't be tracked well
+        (e.g. a camera fault) doesn't stay in "Calibrating" forever and
+        never actually monitor.
+
+        Safe to call more than once after a real result exists -- subsequent
+        calls just return the cached result.
+        """
         if self._result is not None:
             self._done = True
             return self._result
 
         have_enough_ear = len(self._ear_samples) >= config.CALIBRATION_MIN_SAMPLES
         have_enough_mar = len(self._mar_samples) >= config.CALIBRATION_MIN_SAMPLES
+        have_enough = have_enough_ear and have_enough_mar
+
+        if not have_enough and self._retry_count < self.max_retries:
+            self._retry_count += 1
+            self.start()  # fresh timer + cleared samples; retry_count preserved
+            return None
 
         if have_enough_ear:
             baseline_ear = float(np.mean(self._ear_samples))
@@ -192,7 +231,7 @@ class CalibrationSession:
             ear_std=ear_std,
             mar_std=mar_std,
             sample_count=self.sample_count,
-            calibrated=have_enough_ear and have_enough_mar,
+            calibrated=have_enough,
         )
         self._done = True
         return self._result

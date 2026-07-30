@@ -186,11 +186,20 @@ class DriverSafetyPipeline:
             if not self.calibration.is_time_elapsed():
                 return self._calibration_result(fps, raw_quality, face_box, landmarks, cue_reading)
 
-            # Calibration duration has just elapsed on this frame: finalize
-            # and immediately re-derive the cue reading with the freshly
-            # personalized thresholds so this frame is scored consistently
-            # with every frame that follows it.
+            # Calibration duration has just elapsed on this frame: try to
+            # finalize. If too few usable samples were collected,
+            # CalibrationSession.finalize() restarts a fresh attempt
+            # internally (up to config.CALIBRATION_MAX_RETRIES times) and
+            # returns None -- keep reporting "Calibrating" in that case
+            # rather than treating the session as done.
             thresholds = self.calibration.finalize()
+            if thresholds is None:
+                return self._calibration_result(fps, raw_quality, face_box, landmarks, cue_reading)
+
+            # Personalized thresholds are ready (or retries were exhausted
+            # and we fell back to fixed defaults): re-derive the cue
+            # reading with them so this frame is scored consistently with
+            # every frame that follows it.
             self._thresholds = thresholds
             self.cue_selector.set_thresholds(thresholds)
             cue_reading = self.cue_selector.compute(frame_bgr, landmarks, raw_quality)
@@ -430,11 +439,11 @@ class DriverSafetyPipeline:
             and confidence >= self.confidence_threshold
         )
 
-        if not cnn_gate:
-            return "Not Drowsy", False
-
-        # The CNN gate agrees a Drowsy verdict is plausible. Now check how
-        # many of the other, independent signals corroborate it.
+        # Independent, duration-gated geometric/physiological signals --
+        # each one is already debounced against single-frame noise upstream
+        # (PERCLOS is a rolling time-window average; head-pose fatigue
+        # requires sustained tilt or repeated nods; prolonged eye-closure/
+        # yawning/head-tilt all require a consecutive-frame streak).
         secondary_votes = 0
         secondary_total = 0
 
@@ -448,21 +457,50 @@ class DriverSafetyPipeline:
             secondary_votes += 1
 
         secondary_total += 1
-        if cue_reading.prolonged_eye_closure or cue_reading.yawning:
+        if (
+            cue_reading.prolonged_eye_closure
+            or cue_reading.yawning
+            or cue_reading.prolonged_head_tilt
+        ):
             secondary_votes += 1
 
         agreement_ratio = secondary_votes / secondary_total if secondary_total else 0.0
 
-        if agreement_ratio >= config.FUSION_AGREEMENT_RATIO:
+        if cnn_gate and agreement_ratio >= config.FUSION_AGREEMENT_RATIO:
             alert_triggered = False
             if now - self._last_alert_time >= config.ALERT_COOLDOWN_SEC:
                 alert_triggered = True
                 self._last_alert_time = now
             return "Drowsy", alert_triggered
 
-        # CNN gate alone wasn't corroborated by enough secondary evidence --
-        # stay in "Not Drowsy" rather than raising a false alarm off a
-        # single signal.
+        # The CNN model is a validation layer, not the sole arbiter -- this
+        # project's design uses geometric cues as the primary trigger. So
+        # even when the CNN gate above didn't fire (e.g. the model itself
+        # under-recognizes this pose/lighting), strong evidence from enough
+        # *independently firing* signals is still enough to raise a Drowsy
+        # verdict on its own. Unlike the bucketed ratio above, each distinct
+        # cue counts on its own here -- eyes-closed, head-tilt, and yawning
+        # all firing together is 3 independent signals, not 1 -- so a driver
+        # showing multiple textbook drowsiness cues at once is never
+        # dismissed just because the CNN model alone wasn't convinced. A
+        # single isolated signal still cannot trigger this by itself.
+        independent_signals = sum(
+            [
+                perclos_ready and perclos_drowsy,
+                head_status.is_fatigue_signal,
+                cue_reading.prolonged_eye_closure,
+                cue_reading.yawning,
+                cue_reading.prolonged_head_tilt,
+            ]
+        )
+
+        if independent_signals >= config.STRONG_EVIDENCE_MIN_SIGNALS:
+            alert_triggered = False
+            if now - self._last_alert_time >= config.ALERT_COOLDOWN_SEC:
+                alert_triggered = True
+                self._last_alert_time = now
+            return "Drowsy", alert_triggered
+
         return "Not Drowsy", False
 
     # ------------------------------------------------------------------ #

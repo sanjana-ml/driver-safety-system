@@ -119,10 +119,22 @@ QUALITY_GRACE_FRAMES: int = 6
 EAR_THRESHOLD: float = 0.21
 EAR_CONSEC_FRAMES_BLINK: int = 2
 EAR_CONSEC_FRAMES_DROWSY: int = 25   # ~0.8s @30fps of continuous closure
+# EAR is only partially correctable for perspective (pose_compensated_ear()
+# floors its cosine correction at 0.5) -- past a certain head angle, a
+# genuinely open eye starts reading as artificially "closed" even after
+# compensation. The whole-frame quality gate (MAX_YAW_DEG/MAX_PITCH_DEG,
+# above) is intentionally wide so brief mirror-checks/glances don't get
+# rejected outright, but eye-closure specifically should stop being trusted
+# well before that wider limit -- otherwise turning your head (which also,
+# correctly, fires the head-tilt/nod cue) gets double-counted as two
+# "independent" drowsiness signals that are really just one off-angle pose.
+CUE_TRUST_MAX_YAW_DEG: float = 25.0
+CUE_TRUST_MAX_PITCH_DEG: float = 20.0
 MAR_THRESHOLD: float = 0.6
 YAWN_CONSEC_FRAMES: int = 15
 HEAD_NOD_PITCH_DELTA_DEG: float = 15.0
 HEAD_TILT_ROLL_DELTA_DEG: float = 20.0
+HEAD_TILT_CONSEC_FRAMES: int = 15   # ~0.5s @30fps of sustained sideways tilt
 
 
 # --------------------------------------------------------------------------- #
@@ -146,6 +158,14 @@ CALIBRATION_EAR_MIN: float = 0.12
 CALIBRATION_EAR_MAX: float = 0.30
 CALIBRATION_MAR_MIN: float = 0.35
 CALIBRATION_MAR_MAX: float = 0.85
+# If a calibration attempt doesn't collect enough usable samples, it is
+# retried from scratch (fresh CALIBRATION_DURATION_SEC window) instead of
+# silently falling back to the fixed defaults. This caps how many
+# consecutive retries happen in one session before finally falling back --
+# without a cap, a session where the face genuinely can't be tracked well
+# (e.g. a camera fault) would stay in "Calibrating" forever and never
+# monitor at all, which is worse than falling back to safe fixed defaults.
+CALIBRATION_MAX_RETRIES: int = 5
 
 
 # --------------------------------------------------------------------------- #
@@ -230,6 +250,16 @@ FRAME_QUALITY_ALERT_COOLDOWN_SEC: float = 5.0
 # fraction of the other available secondary signals must agree too, before
 # a "Drowsy" status/alert is raised.
 FUSION_AGREEMENT_RATIO: float = 0.5
+# The CNN model is a validation layer, not the sole arbiter -- the project's
+# hybrid design uses geometric cues (EAR/MAR/head-pose) as the primary
+# trigger. So even when the CNN gate above doesn't agree (e.g. it under-
+# recognizes a pose/lighting condition the geometric cues handle fine),
+# strong, independent, multi-signal physiological evidence can still raise a
+# "Drowsy" verdict on its own -- as long as at least this many independent
+# secondary signals (PERCLOS, head-pose fatigue, prolonged eye-closure/
+# yawning/head-tilt) agree simultaneously, so a single noisy signal still
+# can't trigger a false alarm by itself.
+STRONG_EVIDENCE_MIN_SIGNALS: int = 2
 
 
 # --------------------------------------------------------------------------- #

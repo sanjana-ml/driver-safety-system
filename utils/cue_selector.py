@@ -66,6 +66,7 @@ class CueReadings:
     yawning: bool = False
     head_nod: bool = False
     head_tilt: bool = False
+    prolonged_head_tilt: bool = False
     ear_threshold_used: float = config.EAR_THRESHOLD
     mar_threshold_used: float = config.MAR_THRESHOLD
     active_cues: List[str] = field(default_factory=list)
@@ -80,6 +81,7 @@ class CueSelector:
         self._right_votes: Deque[bool] = deque(maxlen=config.EYE_OCCLUSION_VOTE_FRAMES)
         self._eye_closed_streak: int = 0
         self._mouth_open_streak: int = 0
+        self._head_tilt_streak: int = 0
         # Adaptive EAR/MAR thresholds -- start out at the fixed config
         # defaults and are replaced once calibration finishes (see
         # set_thresholds()). Kept as plain floats (not the full
@@ -94,6 +96,7 @@ class CueSelector:
         self._right_votes.clear()
         self._eye_closed_streak = 0
         self._mouth_open_streak = 0
+        self._head_tilt_streak = 0
         # A new session may have a different driver / lighting, so drop back
         # to the fixed defaults until the new session's calibration finishes.
         self._ear_threshold = config.EAR_THRESHOLD
@@ -162,8 +165,13 @@ class CueSelector:
         reading.mar = mouth_aspect_ratio(mouth_points)
         reading.pitch, reading.yaw, reading.roll = quality.pitch, quality.yaw, quality.roll
 
-        reading.eyes_available = self._eyes_available(
-            frame_bgr, left_eye_points, right_eye_points, quality
+        pose_trustworthy_for_ear = (
+            abs(reading.pitch) <= config.CUE_TRUST_MAX_PITCH_DEG
+            and abs(reading.yaw) <= config.CUE_TRUST_MAX_YAW_DEG
+        )
+        reading.eyes_available = (
+            self._eyes_available(frame_bgr, left_eye_points, right_eye_points, quality)
+            and pose_trustworthy_for_ear
         )
         reading.mouth_available = quality.landmarks_sufficient
         reading.head_pose_available = quality.face_detected
@@ -196,6 +204,13 @@ class CueSelector:
         if reading.head_pose_available:
             reading.head_nod = abs(reading.pitch) > config.HEAD_NOD_PITCH_DELTA_DEG
             reading.head_tilt = abs(reading.roll) > config.HEAD_TILT_ROLL_DELTA_DEG
+            if reading.head_tilt:
+                self._head_tilt_streak += 1
+            else:
+                self._head_tilt_streak = 0
+            reading.prolonged_head_tilt = self._head_tilt_streak >= config.HEAD_TILT_CONSEC_FRAMES
+        else:
+            self._head_tilt_streak = 0
 
         active: List[str] = []
         if reading.eyes_available:
@@ -228,7 +243,7 @@ class CueSelector:
             votes.append(1.0 if reading.yawning else 0.0)
 
         if reading.head_pose_available:
-            votes.append(1.0 if (reading.head_nod or reading.head_tilt) else 0.0)
+            votes.append(1.0 if (reading.head_nod or reading.prolonged_head_tilt) else 0.0)
 
         if not votes:
             return 0.0

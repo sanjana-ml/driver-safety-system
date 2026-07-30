@@ -35,6 +35,7 @@ from utils.image_utils import (
     draw_face_box,
     draw_landmarks,
     put_status_text,
+    stamp_timestamp,
 )
 from utils.logger import PredictionCSVLogger, get_logger
 from utils.pipeline import DriverSafetyPipeline
@@ -190,9 +191,11 @@ def main() -> int:
 
 def _save_alert_screenshot(frame) -> None:
     session_dir = config.current_screenshot_dir()
-    filename = session_dir / f"drowsy_{int(time.time() * 1000)}.png"
+    readable_ts = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
+    filename = session_dir / f"drowsy_{readable_ts}.png"
+    stamped = stamp_timestamp(frame, readable_ts.replace("_", " "))
     try:
-        cv2.imwrite(str(filename), frame)
+        cv2.imwrite(str(filename), stamped)
     except Exception as exc:  # noqa: BLE001
         logger.warning("Could not save alert screenshot: %s", exc)
 
