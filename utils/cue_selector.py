@@ -79,9 +79,14 @@ class CueSelector:
     def __init__(self) -> None:
         self._left_votes: Deque[bool] = deque(maxlen=config.EYE_OCCLUSION_VOTE_FRAMES)
         self._right_votes: Deque[bool] = deque(maxlen=config.EYE_OCCLUSION_VOTE_FRAMES)
-        self._eye_closed_streak: int = 0
-        self._mouth_open_streak: int = 0
-        self._head_tilt_streak: int = 0
+        # Tracked as wall-clock timestamps (when the current closure/open/
+        # tilt streak started), not frame counts -- frame counts silently
+        # assumed ~30fps and became far too strict on machines where the
+        # actual processing rate is much lower (e.g. ~3fps due to CNN
+        # inference cost).
+        self._eye_closed_since: float | None = None
+        self._mouth_open_since: float | None = None
+        self._head_tilt_since: float | None = None
         # Adaptive EAR/MAR thresholds -- start out at the fixed config
         # defaults and are replaced once calibration finishes (see
         # set_thresholds()). Kept as plain floats (not the full
@@ -94,9 +99,9 @@ class CueSelector:
     def reset(self) -> None:
         self._left_votes.clear()
         self._right_votes.clear()
-        self._eye_closed_streak = 0
-        self._mouth_open_streak = 0
-        self._head_tilt_streak = 0
+        self._eye_closed_since = None
+        self._mouth_open_since = None
+        self._head_tilt_since = None
         # A new session may have a different driver / lighting, so drop back
         # to the fixed defaults until the new session's calibration finishes.
         self._ear_threshold = config.EAR_THRESHOLD
@@ -153,6 +158,7 @@ class CueSelector:
         frame_bgr: np.ndarray,
         landmarks: np.ndarray,
         quality: QualityReport,
+        now: float,
     ) -> CueReadings:
         left_eye_points = get_points(landmarks, LEFT_EYE_EAR_IDX)
         right_eye_points = get_points(landmarks, RIGHT_EYE_EAR_IDX)
@@ -183,34 +189,43 @@ class CueSelector:
             reading.corrected_ear = pose_compensated_ear(reading.avg_ear, reading.pitch, reading.yaw)
             reading.eye_closed = reading.corrected_ear < self._ear_threshold
             if reading.eye_closed:
-                self._eye_closed_streak += 1
+                if self._eye_closed_since is None:
+                    self._eye_closed_since = now
+                closed_duration = now - self._eye_closed_since
             else:
-                self._eye_closed_streak = 0
-            reading.prolonged_eye_closure = self._eye_closed_streak >= config.EAR_CONSEC_FRAMES_DROWSY
+                self._eye_closed_since = None
+                closed_duration = 0.0
+            reading.prolonged_eye_closure = closed_duration >= config.EAR_CONSEC_SEC_DROWSY
         else:
             reading.corrected_ear = 0.0
-            self._eye_closed_streak = 0
+            self._eye_closed_since = None
 
         if reading.mouth_available:
             mouth_open = reading.mar > self._mar_threshold
             if mouth_open:
-                self._mouth_open_streak += 1
+                if self._mouth_open_since is None:
+                    self._mouth_open_since = now
+                open_duration = now - self._mouth_open_since
             else:
-                self._mouth_open_streak = 0
-            reading.yawning = self._mouth_open_streak >= config.YAWN_CONSEC_FRAMES
+                self._mouth_open_since = None
+                open_duration = 0.0
+            reading.yawning = open_duration >= config.YAWN_CONSEC_SEC
         else:
-            self._mouth_open_streak = 0
+            self._mouth_open_since = None
 
         if reading.head_pose_available:
             reading.head_nod = abs(reading.pitch) > config.HEAD_NOD_PITCH_DELTA_DEG
             reading.head_tilt = abs(reading.roll) > config.HEAD_TILT_ROLL_DELTA_DEG
             if reading.head_tilt:
-                self._head_tilt_streak += 1
+                if self._head_tilt_since is None:
+                    self._head_tilt_since = now
+                tilt_duration = now - self._head_tilt_since
             else:
-                self._head_tilt_streak = 0
-            reading.prolonged_head_tilt = self._head_tilt_streak >= config.HEAD_TILT_CONSEC_FRAMES
+                self._head_tilt_since = None
+                tilt_duration = 0.0
+            reading.prolonged_head_tilt = tilt_duration >= config.HEAD_TILT_CONSEC_SEC
         else:
-            self._head_tilt_streak = 0
+            self._head_tilt_since = None
 
         active: List[str] = []
         if reading.eyes_available:

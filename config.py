@@ -118,23 +118,27 @@ QUALITY_GRACE_FRAMES: int = 6
 # --------------------------------------------------------------------------- #
 EAR_THRESHOLD: float = 0.21
 EAR_CONSEC_FRAMES_BLINK: int = 2
-EAR_CONSEC_FRAMES_DROWSY: int = 25   # ~0.8s @30fps of continuous closure
+# Duration-based (not frame-count-based), so this is correct regardless of
+# actual runtime FPS -- frame counts silently assumed ~30fps and became a
+# much longer real-time requirement on machines that run slower (observed
+# as low as ~3.3 FPS here, turning "25 frames" into ~7-8 seconds). Set low
+# so even a brief/minor eye closure registers quickly.
+EAR_CONSEC_SEC_DROWSY: float = 0.3
 # EAR is only partially correctable for perspective (pose_compensated_ear()
 # floors its cosine correction at 0.5) -- past a certain head angle, a
 # genuinely open eye starts reading as artificially "closed" even after
 # compensation. The whole-frame quality gate (MAX_YAW_DEG/MAX_PITCH_DEG,
 # above) is intentionally wide so brief mirror-checks/glances don't get
-# rejected outright, but eye-closure specifically should stop being trusted
-# well before that wider limit -- otherwise turning your head (which also,
-# correctly, fires the head-tilt/nod cue) gets double-counted as two
-# "independent" drowsiness signals that are really just one off-angle pose.
-CUE_TRUST_MAX_YAW_DEG: float = 25.0
-CUE_TRUST_MAX_PITCH_DEG: float = 20.0
+# rejected outright. This is widened close to that same wider limit so a
+# head-tilted-back "falling asleep" pose (which pushes pitch up) doesn't
+# get its eye-closure reading thrown out right when it matters most.
+CUE_TRUST_MAX_YAW_DEG: float = 40.0
+CUE_TRUST_MAX_PITCH_DEG: float = 40.0
 MAR_THRESHOLD: float = 0.6
-YAWN_CONSEC_FRAMES: int = 15
+YAWN_CONSEC_SEC: float = 0.4
 HEAD_NOD_PITCH_DELTA_DEG: float = 15.0
 HEAD_TILT_ROLL_DELTA_DEG: float = 20.0
-HEAD_TILT_CONSEC_FRAMES: int = 15   # ~0.5s @30fps of sustained sideways tilt
+HEAD_TILT_CONSEC_SEC: float = 0.3   # sustained sideways tilt needed to flag prolonged_head_tilt
 
 
 # --------------------------------------------------------------------------- #
@@ -240,8 +244,8 @@ MIN_WINDOW_FILL_RATIO_FOR_DECISION: float = 0.5
 # --------------------------------------------------------------------------- #
 # Confidence / alert decision (multi-signal fusion)
 # --------------------------------------------------------------------------- #
-PROBABILITY_THRESHOLD: float = 0.65
-CONFIDENCE_THRESHOLD: float = 0.60
+PROBABILITY_THRESHOLD: float = 0.5
+CONFIDENCE_THRESHOLD: float = 0.4
 ALERT_COOLDOWN_SEC: float = 3.0
 FRAME_QUALITY_ALERT_COOLDOWN_SEC: float = 5.0
 # Final fusion (utils/pipeline.py) combines the CNN+window+confidence gate
@@ -249,7 +253,7 @@ FRAME_QUALITY_ALERT_COOLDOWN_SEC: float = 5.0
 # The CNN+window+confidence gate must always agree, AND at least this
 # fraction of the other available secondary signals must agree too, before
 # a "Drowsy" status/alert is raised.
-FUSION_AGREEMENT_RATIO: float = 0.5
+FUSION_AGREEMENT_RATIO: float = 0.3
 # The CNN model is a validation layer, not the sole arbiter -- the project's
 # hybrid design uses geometric cues (EAR/MAR/head-pose) as the primary
 # trigger. So even when the CNN gate above doesn't agree (e.g. it under-
@@ -259,7 +263,7 @@ FUSION_AGREEMENT_RATIO: float = 0.5
 # secondary signals (PERCLOS, head-pose fatigue, prolonged eye-closure/
 # yawning/head-tilt) agree simultaneously, so a single noisy signal still
 # can't trigger a false alarm by itself.
-STRONG_EVIDENCE_MIN_SIGNALS: int = 2
+STRONG_EVIDENCE_MIN_SIGNALS: int = 1
 
 
 # --------------------------------------------------------------------------- #

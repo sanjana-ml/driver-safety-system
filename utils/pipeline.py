@@ -177,7 +177,7 @@ class DriverSafetyPipeline:
             return self._frozen_result(fps, raw_quality, face_box, landmarks)
 
         # -- Quality is genuinely good this frame -- #
-        cue_reading = self.cue_selector.compute(frame_bgr, landmarks, raw_quality)
+        cue_reading = self.cue_selector.compute(frame_bgr, landmarks, raw_quality, now)
 
         if self.calibration.in_progress:
             if cue_reading.eyes_available and cue_reading.mouth_available:
@@ -202,7 +202,7 @@ class DriverSafetyPipeline:
             # every frame that follows it.
             self._thresholds = thresholds
             self.cue_selector.set_thresholds(thresholds)
-            cue_reading = self.cue_selector.compute(frame_bgr, landmarks, raw_quality)
+            cue_reading = self.cue_selector.compute(frame_bgr, landmarks, raw_quality, now)
 
         return self._process_detection_frame(
             fps, raw_quality, face_box, landmarks, cue_reading, frame_bgr, gray, now
