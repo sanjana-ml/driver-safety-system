@@ -32,17 +32,22 @@ TRAINING_HISTORY_PATH: Path = LOGS_DIR / "training_history.json"
 
 ALARM_SOUND_PATH: Path = ALARM_DIR / "alarm.wav"
 
-# Screenshots are grouped into one folder per calendar day (rather than one
-# folder per monitoring session) so reviewing "what happened on a given day"
-# is a single folder open, not a hunt across many session-timestamped ones.
-SCREENSHOT_DATE_FORMAT: str = "%Y-%m-%d"
+# Screenshots are grouped into one folder per monitoring run (not one folder
+# per calendar day) -- every time the app/console script is started, a fresh
+# SCREENSHOTS_DIR/YYYY-MM-DD_HH-MM-SS folder is created, and every alert
+# screenshot captured during that run goes into it.
+SESSION_DIR_FORMAT: str = "%Y-%m-%d_%H-%M-%S"
 
 
-def current_screenshot_dir() -> Path:
-    """Today's screenshot folder (SCREENSHOTS_DIR/YYYY-MM-DD), created if it
-    doesn't exist yet. Callers should still give each individual screenshot
-    file a timestamped name for uniqueness within the day."""
-    directory = SCREENSHOTS_DIR / time.strftime(SCREENSHOT_DATE_FORMAT)
+def new_session_screenshot_dir() -> Path:
+    """Creates (and returns) a brand-new screenshot folder for this run,
+    named with the current date and time. Call this exactly ONCE per
+    program run/monitoring session (e.g. when predict.py starts, or when
+    the GUI's 'Start Monitoring' is clicked) and reuse the returned path for
+    every screenshot saved during that run -- do not call this again per
+    screenshot, or every alert would get its own folder instead of sharing
+    one per run."""
+    directory = SCREENSHOTS_DIR / time.strftime(SESSION_DIR_FORMAT)
     directory.mkdir(parents=True, exist_ok=True)
     return directory
 

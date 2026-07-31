@@ -53,6 +53,7 @@ class DriverSafetyGUI:
         self.csv_logger = PredictionCSVLogger()
 
         self.running = False
+        self._session_screenshot_dir: Optional[Path] = None
         self._last_alert_screenshot_ts = 0.0
         self._last_quality_alert_time = 0.0
         self._was_calibrating = False
@@ -321,6 +322,8 @@ class DriverSafetyGUI:
 
         self.pipeline.reset()
         self.running = True
+        self._session_screenshot_dir = config.new_session_screenshot_dir()
+        logger.info("Screenshots for this run will be saved to: %s", self._session_screenshot_dir)
         self._was_calibrating = True
         self._calibration_popup_shown = False
         self.start_btn.configure(state=tk.DISABLED)
@@ -532,7 +535,11 @@ class DriverSafetyGUI:
         if now - self._last_alert_screenshot_ts < 2.0:
             return
         self._last_alert_screenshot_ts = now
-        session_dir = config.current_screenshot_dir()
+        if self._session_screenshot_dir is None:
+            # Safety net -- should always be set by start() first, but avoid
+            # ever crashing on a screenshot save.
+            self._session_screenshot_dir = config.new_session_screenshot_dir()
+        session_dir = self._session_screenshot_dir
         readable_ts = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime(now))
         ms = int((now % 1) * 1000)
         filename = session_dir / f"drowsy_{readable_ts}_{ms:03d}.png"

@@ -81,6 +81,11 @@ def main() -> int:
         logger.error("Could not start pipeline: %s", exc)
         return 1
 
+    # One timestamped folder for this run -- every alert screenshot captured
+    # during this session is saved into it.
+    session_screenshot_dir = config.new_session_screenshot_dir()
+    logger.info("Screenshots for this run will be saved to: %s", session_screenshot_dir)
+
     alarm = None if args.no_alarm else AlarmManager()
     csv_logger = PredictionCSVLogger()
 
@@ -132,7 +137,7 @@ def main() -> int:
             )
 
             if result.alert_triggered and result.status == "Drowsy":
-                _save_alert_screenshot(frame)
+                _save_alert_screenshot(frame, session_screenshot_dir)
                 logger.warning("DROWSINESS ALERT triggered (%s).", result.status)
             elif result.alert_triggered:
                 logger.warning("Alert triggered (%s) -- no screenshot (not a drowsiness event).", result.status)
@@ -189,8 +194,7 @@ def main() -> int:
     return 0
 
 
-def _save_alert_screenshot(frame) -> None:
-    session_dir = config.current_screenshot_dir()
+def _save_alert_screenshot(frame, session_dir: Path) -> None:
     readable_ts = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime())
     filename = session_dir / f"drowsy_{readable_ts}.png"
     stamped = stamp_timestamp(frame, readable_ts.replace("_", " "))

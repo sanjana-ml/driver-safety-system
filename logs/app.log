@@ -939,3 +939,49 @@ weighted avg       0.41      0.64      0.50      9078
 2026-07-31 19:22:34,824 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31\drowsy_2026-07-31_19-22-34_801.png
 2026-07-31 19:22:37,905 | INFO     | driver_safety.camera | Webcam released.
 2026-07-31 19:22:37,909 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-31 19:31:37,719 | INFO     | driver_safety.utils.alert | Audio mixer ready (C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\alarm\alarm.wav).
+2026-07-31 19:31:37,807 | INFO     | driver_safety.utils.landmarks | LandmarkDetector initialised with MediaPipe Face Mesh (468 points).
+2026-07-31 19:31:41,121 | INFO     | driver_safety.utils.pipeline | Loaded trained model from C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\weights\drowsiness_cnn_cbam.h5
+2026-07-31 19:34:07,606 | INFO     | driver_safety.camera | Webcam opened at index 0
+2026-07-31 19:34:07,610 | INFO     | driver_safety.gui.app | Screenshots for this run will be saved to: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-34-07
+2026-07-31 19:34:39,826 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-31 19:34:39,851 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-34-07\drowsy_2026-07-31_19-34-39_827.png
+2026-07-31 19:34:40,735 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-31 19:34:42,129 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-31 19:34:42,376 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-31 19:34:46,241 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-31 19:34:46,269 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-34-07\drowsy_2026-07-31_19-34-46_242.png
+2026-07-31 19:34:47,082 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-31 19:34:51,502 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-31 19:34:51,529 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-34-07\drowsy_2026-07-31_19-34-51_503.png
+2026-07-31 19:34:52,687 | INFO     | driver_safety.camera | Webcam released.
+2026-07-31 19:34:52,690 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-31 19:35:28,652 | INFO     | driver_safety.camera | Webcam opened at index 0
+2026-07-31 19:35:28,656 | INFO     | driver_safety.gui.app | Screenshots for this run will be saved to: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-35-28
+2026-07-31 19:36:01,813 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-31 19:36:01,840 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-35-28\drowsy_2026-07-31_19-36-01_813.png
+2026-07-31 19:36:02,989 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-31 19:36:04,075 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-31 19:36:04,881 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-35-28\drowsy_2026-07-31_19-36-04_857.png
+2026-07-31 19:36:08,105 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-35-28\drowsy_2026-07-31_19-36-08_078.png
+2026-07-31 19:36:10,924 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-31 19:36:18,730 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-31 19:36:18,754 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-35-28\drowsy_2026-07-31_19-36-18_731.png
+2026-07-31 19:36:19,036 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-31 19:36:20,606 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-31 19:36:21,129 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-31 19:36:21,392 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-31 19:36:21,940 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-35-28\drowsy_2026-07-31_19-36-21_918.png
+2026-07-31 19:36:22,536 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-31 19:36:24,151 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-31 19:36:24,411 | INFO     | driver_safety.utils.alert | Alarm stopped.
+2026-07-31 19:36:24,671 | INFO     | driver_safety.utils.alert | Alarm started.
+2026-07-31 19:36:24,960 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-35-28\drowsy_2026-07-31_19-36-24_939.png
+2026-07-31 19:36:28,151 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-35-28\drowsy_2026-07-31_19-36-28_129.png
+2026-07-31 19:36:31,260 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-35-28\drowsy_2026-07-31_19-36-31_238.png
+2026-07-31 19:36:34,473 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-35-28\drowsy_2026-07-31_19-36-34_448.png
+2026-07-31 19:36:37,407 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-35-28\drowsy_2026-07-31_19-36-37_385.png
+2026-07-31 19:36:40,635 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-35-28\drowsy_2026-07-31_19-36-40_611.png
+2026-07-31 19:36:43,773 | INFO     | driver_safety.gui.app | Saved alert screenshot: C:\Users\Sanjana M L\OneDrive\Desktop\major project\driver_safety_systemss\screenshots\2026-07-31_19-35-28\drowsy_2026-07-31_19-36-43_752.png
+2026-07-31 19:36:44,122 | INFO     | driver_safety.camera | Webcam released.
+2026-07-31 19:36:44,132 | INFO     | driver_safety.utils.alert | Alarm stopped.
