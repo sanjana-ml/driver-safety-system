@@ -227,15 +227,18 @@ class CueSelector:
         else:
             self._head_tilt_since = None
 
+        # Only list cues that are actually triggered right now (not just the
+        # categories being tracked) -- otherwise this label is misleading,
+        # e.g. showing "yawning+head_pose" even when nothing real is
+        # happening yet.
         active: List[str] = []
-        if reading.eyes_available:
+        if reading.eyes_available and reading.eye_closed:
             active.append("eye_closure")
+        if reading.eyes_available and reading.prolonged_eye_closure:
             active.append("blink_duration")
-        if reading.mouth_available:
+        if reading.mouth_available and reading.yawning:
             active.append("yawning")
-        if reading.head_pose_available:
-            active.append("head_pose")
-        if not active:
+        if reading.head_pose_available and (reading.head_nod or reading.head_tilt):
             active.append("head_pose")
         reading.active_cues = active
 

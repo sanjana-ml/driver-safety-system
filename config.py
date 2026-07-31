@@ -152,8 +152,8 @@ HEAD_TILT_CONSEC_SEC: float = 0.3   # sustained sideways tilt needed to flag pro
 # does not collect enough usable samples (e.g. the driver's face was not
 # reliably tracked for most of the phase), the system safely falls back to
 # the fixed defaults instead of using noisy personalized values.
-CALIBRATION_DURATION_SEC: float = 7.0          # within the required 5-10s window
-CALIBRATION_MIN_SAMPLES: int = 30              # ~1s of good frames at 30fps
+CALIBRATION_DURATION_SEC: float = 5.0          # shortened so a good attempt finishes faster
+CALIBRATION_MIN_SAMPLES: int = 15              # ~1.5s of good frames -- easier to hit in one attempt, fewer retries
 CALIBRATION_EAR_STD_MULTIPLIER: float = 0.8    # personal_ear = mean_ear - k * std_ear
 CALIBRATION_MAR_STD_MULTIPLIER: float = 1.0    # personal_mar = mean_mar + k * std_mar
 # Sane clamps so a short/noisy calibration can never produce a threshold

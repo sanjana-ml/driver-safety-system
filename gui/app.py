@@ -533,7 +533,9 @@ class DriverSafetyGUI:
             return
         self._last_alert_screenshot_ts = now
         session_dir = config.current_screenshot_dir()
-        filename = session_dir / f"drowsy_{int(now * 1000)}.png"
+        readable_ts = time.strftime("%Y-%m-%d_%H-%M-%S", time.localtime(now))
+        ms = int((now % 1) * 1000)
+        filename = session_dir / f"drowsy_{readable_ts}_{ms:03d}.png"
         try:
             cv2.imwrite(str(filename), frame)
             logger.info("Saved alert screenshot: %s", filename)
