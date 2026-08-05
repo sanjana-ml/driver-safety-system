@@ -64,6 +64,7 @@ class CueReadings:
     eye_closed: bool = False
     prolonged_eye_closure: bool = False
     yawning: bool = False
+    repeated_yawning: bool = False
     head_nod: bool = False
     head_tilt: bool = False
     prolonged_head_tilt: bool = False
@@ -87,6 +88,13 @@ class CueSelector:
         self._eye_closed_since: float | None = None
         self._mouth_open_since: float | None = None
         self._head_tilt_since: float | None = None
+        # Timestamps of completed yawns (mouth-open streak that cleared
+        # YAWN_CONSEC_SEC and then closed again), trimmed to a rolling
+        # window -- same edge-triggered counting pattern as
+        # HeadPoseMonitor._nod_events. A single yawn should not by itself
+        # be treated as drowsiness evidence; only repeated yawns should.
+        self._yawn_events: Deque[float] = deque()
+        self._yawn_counted_this_streak: bool = False
         # Adaptive EAR/MAR thresholds -- start out at the fixed config
         # defaults and are replaced once calibration finishes (see
         # set_thresholds()). Kept as plain floats (not the full
@@ -102,6 +110,8 @@ class CueSelector:
         self._eye_closed_since = None
         self._mouth_open_since = None
         self._head_tilt_since = None
+        self._yawn_events.clear()
+        self._yawn_counted_this_streak = False
         # A new session may have a different driver / lighting, so drop back
         # to the fixed defaults until the new session's calibration finishes.
         self._ear_threshold = config.EAR_THRESHOLD
@@ -210,8 +220,23 @@ class CueSelector:
                 self._mouth_open_since = None
                 open_duration = 0.0
             reading.yawning = open_duration >= config.YAWN_CONSEC_SEC
+
+            # Count a completed yawn once (on the frame it first clears the
+            # duration gate, not every frame the mouth stays open), then
+            # track repeats in a rolling window -- a single yawn is one
+            # normal fatigue event, not evidence on its own.
+            if reading.yawning and not self._yawn_counted_this_streak:
+                self._yawn_events.append(now)
+                self._yawn_counted_this_streak = True
+            elif not mouth_open:
+                self._yawn_counted_this_streak = False
         else:
             self._mouth_open_since = None
+
+        yawn_cutoff = now - config.YAWN_WINDOW_SEC
+        while self._yawn_events and self._yawn_events[0] < yawn_cutoff:
+            self._yawn_events.popleft()
+        reading.repeated_yawning = len(self._yawn_events) >= config.YAWN_COUNT_THRESHOLD
 
         if reading.head_pose_available:
             reading.head_nod = abs(reading.pitch) > config.HEAD_NOD_PITCH_DELTA_DEG

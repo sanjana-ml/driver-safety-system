@@ -126,9 +126,11 @@ EAR_CONSEC_FRAMES_BLINK: int = 2
 # Duration-based (not frame-count-based), so this is correct regardless of
 # actual runtime FPS -- frame counts silently assumed ~30fps and became a
 # much longer real-time requirement on machines that run slower (observed
-# as low as ~3.3 FPS here, turning "25 frames" into ~7-8 seconds). Set low
-# so even a brief/minor eye closure registers quickly.
-EAR_CONSEC_SEC_DROWSY: float = 0.3
+# as low as ~3.3 FPS here, turning "25 frames" into ~7-8 seconds). A normal
+# blink is ~100-400ms, so this must sit above that range -- 2-3s continuous
+# closure is the standard threshold for "prolonged" (drowsy-relevant) eye
+# closure vs. an ordinary blink.
+EAR_CONSEC_SEC_DROWSY: float = 2.5
 # EAR is only partially correctable for perspective (pose_compensated_ear()
 # floors its cosine correction at 0.5) -- past a certain head angle, a
 # genuinely open eye starts reading as artificially "closed" even after
@@ -141,6 +143,11 @@ CUE_TRUST_MAX_YAW_DEG: float = 40.0
 CUE_TRUST_MAX_PITCH_DEG: float = 40.0
 MAR_THRESHOLD: float = 0.6
 YAWN_CONSEC_SEC: float = 0.4
+# A single yawn is one normal fatigue event, not evidence on its own -- only
+# when yawns repeat in a short span do they indicate drowsiness. Mirrors the
+# NOD_WINDOW_SEC/NOD_COUNT_THRESHOLD repeated-event pattern below.
+YAWN_WINDOW_SEC: float = 60.0        # rolling window for counting repeated yawns
+YAWN_COUNT_THRESHOLD: int = 2        # this many completed yawns within the window => repeated yawning
 HEAD_NOD_PITCH_DELTA_DEG: float = 15.0
 HEAD_TILT_ROLL_DELTA_DEG: float = 20.0
 HEAD_TILT_CONSEC_SEC: float = 0.3   # sustained sideways tilt needed to flag prolonged_head_tilt
@@ -258,7 +265,7 @@ FRAME_QUALITY_ALERT_COOLDOWN_SEC: float = 5.0
 # The CNN+window+confidence gate must always agree, AND at least this
 # fraction of the other available secondary signals must agree too, before
 # a "Drowsy" status/alert is raised.
-FUSION_AGREEMENT_RATIO: float = 0.3
+FUSION_AGREEMENT_RATIO: float = 0.5
 # The CNN model is a validation layer, not the sole arbiter -- the project's
 # hybrid design uses geometric cues (EAR/MAR/head-pose) as the primary
 # trigger. So even when the CNN gate above doesn't agree (e.g. it under-
@@ -268,7 +275,7 @@ FUSION_AGREEMENT_RATIO: float = 0.3
 # secondary signals (PERCLOS, head-pose fatigue, prolonged eye-closure/
 # yawning/head-tilt) agree simultaneously, so a single noisy signal still
 # can't trigger a false alarm by itself.
-STRONG_EVIDENCE_MIN_SIGNALS: int = 1
+STRONG_EVIDENCE_MIN_SIGNALS: int = 2
 
 
 # --------------------------------------------------------------------------- #

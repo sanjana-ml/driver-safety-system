@@ -357,7 +357,7 @@ class DriverSafetyPipeline:
         )
 
         # -- Sliding window -- #
-        frame_is_drowsy = prob_drowsy >= 0.5 or cue_reading.prolonged_eye_closure or cue_reading.yawning
+        frame_is_drowsy = prob_drowsy >= 0.5 or cue_reading.prolonged_eye_closure or cue_reading.repeated_yawning
         self.sliding_window.push(frame_is_drowsy, prob_drowsy)
         window_ratio = self.sliding_window.drowsy_vote_ratio()
         smoothed_probability = self.sliding_window.mean_probability()
@@ -459,7 +459,7 @@ class DriverSafetyPipeline:
         secondary_total += 1
         if (
             cue_reading.prolonged_eye_closure
-            or cue_reading.yawning
+            or cue_reading.repeated_yawning
             or cue_reading.prolonged_head_tilt
         ):
             secondary_votes += 1
@@ -489,7 +489,7 @@ class DriverSafetyPipeline:
                 perclos_ready and perclos_drowsy,
                 head_status.is_fatigue_signal,
                 cue_reading.prolonged_eye_closure,
-                cue_reading.yawning,
+                cue_reading.repeated_yawning,
                 cue_reading.prolonged_head_tilt,
             ]
         )
