@@ -48,8 +48,20 @@ LEFT_EYE_EAR_IDX: Tuple[int, int, int, int, int, int] = (362, 385, 387, 263, 373
 MOUTH_MAR_IDX: Tuple[int, int, int, int] = (61, 13, 291, 14)
 
 # 6-point set used for solvePnP head-pose estimation (nose tip, chin,
-# left/right eye outer corners, left/right mouth corners).
-POSE_LANDMARK_IDX: Tuple[int, int, int, int, int, int] = (1, 152, 33, 263, 61, 291)
+# left/right eye outer corners, left/right nasal ala/nose-wing points).
+#
+# IMPORTANT: this used to be (1, 152, 33, 263, 61, 291) -- i.e. it included
+# the mouth corners (61, 291). That was a real bug: the 3D model below
+# assumes those points sit at a fixed, neutral, mouth-closed position.
+# The instant the driver yawns, the jaw drops and 61/291 move substantially,
+# which solvePnP has no way to distinguish from the whole head rotating --
+# it reports spurious pitch/roll swings *caused by the yawn itself*. Those
+# fake swings can push quality.orientation_ok to False right when a yawn is
+# happening, freezing the very cue tracking meant to detect it (see
+# quality.py / pipeline.py). Nasal ala points (129, 358) sit on the nose,
+# not the mouth, so they stay essentially rigid whether the mouth is closed,
+# talking, or wide open in a yawn.
+POSE_LANDMARK_IDX: Tuple[int, int, int, int, int, int] = (1, 152, 33, 263, 129, 358)
 
 
 def _ordered_loop_from_connections(connections) -> List[int]:
@@ -213,15 +225,22 @@ def mouth_aspect_ratio(mouth_points: np.ndarray) -> float:
 
 # 3D model points for a generic face, used for solvePnP head-pose estimation.
 # Ordered to match POSE_LANDMARK_IDX: nose tip, chin, left eye outer corner,
-# right eye outer corner, left mouth corner, right mouth corner.
+# right eye outer corner, left nasal ala, right nasal ala.
+#
+# The ala (nose-wing) values below are an approximate generic placement --
+# slightly below and lateral to the nose tip, and shallower in z than the
+# eyes (the nose protrudes less than the eye socket rim at that height).
+# Like the rest of this generic model, treat these as a reasonable starting
+# point; if pitch/roll readings look consistently biased after this change,
+# they're the values to nudge.
 _MODEL_POINTS_3D = np.array(
     [
         (0.0, 0.0, 0.0),          # Nose tip
         (0.0, -330.0, -65.0),     # Chin
         (-225.0, 170.0, -135.0),  # Left eye outer corner
         (225.0, 170.0, -135.0),   # Right eye outer corner
-        (-150.0, -150.0, -125.0), # Left mouth corner
-        (150.0, -150.0, -125.0),  # Right mouth corner
+        (-45.0, -20.0, -30.0),    # Left nasal ala (was: left mouth corner)
+        (45.0, -20.0, -30.0),     # Right nasal ala (was: right mouth corner)
     ],
     dtype=np.float64,
 )
@@ -272,13 +291,13 @@ def head_pose_angles(
     yaw_deg = yaw * to_deg
     roll_deg = roll * to_deg
 
-    # This 6-point (nose/chin/eyes/mouth) solvePnP configuration has a
-    # well-known ~180-degree ambiguity on the pitch and roll axes: the
-    # object-space Z axis points out of the face toward the camera, which
-    # is antiparallel to the camera's own forward Z axis, so a genuinely
-    # frontal face decomposes to pitch/roll near +-180 degrees instead of
-    # near 0. Wrap both back into a human-readable range where 0 degrees
-    # means "looking straight at the camera".
+    # This 6-point solvePnP configuration has a well-known ~180-degree
+    # ambiguity on the pitch and roll axes: the object-space Z axis points
+    # out of the face toward the camera, which is antiparallel to the
+    # camera's own forward Z axis, so a genuinely frontal face decomposes
+    # to pitch/roll near +-180 degrees instead of near 0. Wrap both back
+    # into a human-readable range where 0 degrees means "looking straight
+    # at the camera".
     if pitch_deg > 90:
         pitch_deg -= 180
     elif pitch_deg < -90:

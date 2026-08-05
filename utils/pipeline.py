@@ -165,19 +165,36 @@ class DriverSafetyPipeline:
         raw_quality = assess_frame_quality(gray, face_box, landmarks, frame_bgr)
         stable_ok = self.quality_gate.update(raw_quality.overall_ok)
 
+        # Keep cue state (mouth-open/yawn tracking in particular) advancing
+        # whenever the *core* signal is trustworthy -- face present, lighting
+        # ok, full landmark set -- even if orientation alone is noisy this
+        # frame. This is deliberate: a yawn's own jaw movement is one of the
+        # things that can push the solvePnP pitch/roll estimate briefly out
+        # of range (see landmarks.py / quality.py), so gating cue updates on
+        # orientation_ok could freeze yawn tracking at exactly the moment it
+        # matters. Eye-dependent cues stay separately pose-gated inside
+        # cue_selector.compute() via pose_trustworthy_for_ear, so this does
+        # not loosen anything for EAR/blink detection.
+        cue_reading = None
+        if raw_quality.core_ok:
+            cue_reading = self.cue_selector.compute(frame_bgr, landmarks, raw_quality, now)
+
         if not stable_ok:
             # Sustained bad quality -- a genuine, non-transient failure.
             return self._insufficient_data_result(fps, raw_quality, face_box, landmarks)
 
         if not raw_quality.overall_ok:
-            # This particular frame's landmarks/orientation are not
-            # trustworthy, but the grace period is absorbing the blip.
-            # Do not run cue/CNN scoring on unreliable data for this frame --
-            # freeze on the last known-good reading instead.
+            # This particular frame's orientation isn't trustworthy enough
+            # for the full pipeline (CNN input, PERCLOS, etc.), but the
+            # grace period is absorbing the blip. Cue state above has still
+            # been kept current; we just don't run CNN/fusion on this frame.
             return self._frozen_result(fps, raw_quality, face_box, landmarks)
 
         # -- Quality is genuinely good this frame -- #
-        cue_reading = self.cue_selector.compute(frame_bgr, landmarks, raw_quality, now)
+        # overall_ok implies core_ok, so cue_reading is already set here;
+        # the fallback below only guards against future refactors.
+        if cue_reading is None:
+            cue_reading = self.cue_selector.compute(frame_bgr, landmarks, raw_quality, now)
 
         if self.calibration.in_progress:
             if cue_reading.eyes_available and cue_reading.mouth_available:

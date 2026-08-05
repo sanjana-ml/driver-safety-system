@@ -52,6 +52,36 @@ class QualityReport:
             and self.landmarks_sufficient
         )
 
+    @property
+    def core_ok(self) -> bool:
+        """True when face presence, lighting, and landmark count are all
+        trustworthy -- deliberately NOT requiring orientation_ok.
+
+        Orientation (pitch/yaw/roll) is derived from solvePnP, which uses
+        landmarks that move on their own during the exact behaviours this
+        system is trying to catch -- most notably, a wide yawn shifts the
+        pose estimate even with zero real head rotation (see the comment
+        on POSE_LANDMARK_IDX in landmarks.py). Gating cue updates on
+        orientation_ok would freeze mouth/yawn tracking right when a yawn
+        is happening. core_ok is what pipeline.py uses to decide whether
+        it's still safe to keep feeding cue_selector -- eye-dependent cues
+        remain separately pose-gated inside cue_selector via
+        pose_trustworthy_for_ear, so this doesn't loosen anything for EAR.
+        """
+        return self.face_detected and self.brightness_ok and self.landmarks_sufficient
+
+    def as_label(self) -> str:
+        return "Good" if self.overall_ok else f"Insufficient Data ({self.reason})"
+
+    @property
+    def overall_ok(self) -> bool:
+        return (
+            self.face_detected
+            and self.brightness_ok
+            and self.orientation_ok
+            and self.landmarks_sufficient
+        )
+
     def as_label(self) -> str:
         return "Good" if self.overall_ok else f"Insufficient Data ({self.reason})"
 

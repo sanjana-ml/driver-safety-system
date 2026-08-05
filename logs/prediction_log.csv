@@ -13929,3 +13929,165 @@ timestamp,status,probability,confidence,active_cues,frame_quality,alert_triggere
 2026-08-05T20:45:30,Not Drowsy,0.670,0.415,eye_closure,Good,False
 2026-08-05T20:45:30,Not Drowsy,0.663,0.419,eye_closure,Good,False
 2026-08-05T20:45:31,Not Drowsy,0.664,0.418,eye_closure,Good,False
+2026-08-05T21:30:42,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:42,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:42,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:42,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:42,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:42,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:42,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:42,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:43,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:43,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:43,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:43,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:43,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:43,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:43,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:43,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:43,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:43,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:43,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:44,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:44,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:44,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:44,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:44,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:44,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:44,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:44,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:44,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:44,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:44,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:44,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:44,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:45,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:46,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:46,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:46,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:46,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:46,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:46,Calibrating,0.000,0.000,head_pose,Good,False
+2026-08-05T21:30:46,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:46,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:46,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:46,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:46,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:46,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:47,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:47,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:47,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:47,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:47,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:47,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:47,Calibrating,0.000,0.000,none,Good,False
+2026-08-05T21:30:48,Insufficient Data,0.690,0.262,none,Good,False
+2026-08-05T21:30:48,Insufficient Data,0.688,0.263,none,Good,False
+2026-08-05T21:30:49,Insufficient Data,0.696,0.258,none,Good,False
+2026-08-05T21:30:49,Insufficient Data,0.696,0.682,head_pose,Good,False
+2026-08-05T21:30:49,Insufficient Data,0.695,0.682,head_pose,Good,False
+2026-08-05T21:30:50,Insufficient Data,0.697,0.257,none,Good,False
+2026-08-05T21:30:50,Insufficient Data,0.694,0.259,none,Good,False
+2026-08-05T21:30:50,Insufficient Data,0.689,0.263,none,Good,False
+2026-08-05T21:30:50,Insufficient Data,0.692,0.684,head_pose,Good,False
+2026-08-05T21:30:51,Insufficient Data,0.677,0.690,head_pose,Good,False
+2026-08-05T21:30:51,Insufficient Data,0.696,0.682,head_pose,Good,False
+2026-08-05T21:30:51,Insufficient Data,0.687,0.686,head_pose,Good,False
+2026-08-05T21:30:51,Insufficient Data,0.657,0.699,head_pose,Good,False
+2026-08-05T21:30:52,Insufficient Data,0.683,0.688,head_pose,Good,False
+2026-08-05T21:30:52,Not Drowsy,0.695,0.682,head_pose,Good,False
+2026-08-05T21:30:52,Not Drowsy,0.685,0.687,head_pose,Good,False
+2026-08-05T21:30:53,Not Drowsy,0.694,0.683,head_pose,Good,False
+2026-08-05T21:30:53,Not Drowsy,0.680,0.689,head_pose,Good,False
+2026-08-05T21:30:53,Not Drowsy,0.678,0.690,eye_closure+head_pose,Good,False
+2026-08-05T21:30:53,Not Drowsy,0.682,0.688,eye_closure+head_pose,Good,False
+2026-08-05T21:30:54,Not Drowsy,0.686,0.686,eye_closure+head_pose,Good,False
+2026-08-05T21:30:54,Not Drowsy,0.681,0.689,eye_closure+head_pose,Good,False
+2026-08-05T21:30:54,Not Drowsy,0.667,0.694,eye_closure+head_pose,Good,False
+2026-08-05T21:30:54,Not Drowsy,0.669,0.694,eye_closure+head_pose,Good,False
+2026-08-05T21:30:55,Not Drowsy,0.670,0.693,eye_closure+head_pose,Good,False
+2026-08-05T21:30:55,Not Drowsy,0.661,0.697,eye_closure+head_pose,Good,False
+2026-08-05T21:30:55,Not Drowsy,0.694,0.401,eye_closure,Good,False
+2026-08-05T21:30:55,Not Drowsy,0.694,0.400,eye_closure,Good,False
+2026-08-05T21:30:56,Drowsy,0.697,0.540,eye_closure+blink_duration,Good,True
+2026-08-05T21:30:56,Drowsy,0.679,0.829,eye_closure+blink_duration+head_pose,Good,False
+2026-08-05T21:30:56,Drowsy,0.671,0.832,eye_closure+blink_duration+head_pose,Good,False
+2026-08-05T21:30:57,Drowsy,0.688,0.826,eye_closure+blink_duration+head_pose,Good,False
+2026-08-05T21:30:57,Drowsy,0.692,0.824,eye_closure+blink_duration+head_pose,Good,False
+2026-08-05T21:30:57,Drowsy,0.693,0.824,eye_closure+blink_duration+head_pose,Good,False
+2026-08-05T21:30:58,Not Drowsy,0.697,0.540,head_pose,Good,False
+2026-08-05T21:30:58,Not Drowsy,0.696,0.541,head_pose,Good,False
+2026-08-05T21:30:58,Not Drowsy,0.718,0.672,eye_closure+head_pose,Good,False
+2026-08-05T21:30:58,Not Drowsy,0.718,0.529,head_pose,Good,False
+2026-08-05T21:30:59,Not Drowsy,0.717,0.815,yawning+head_pose,Good,False
+2026-08-05T21:30:59,Not Drowsy,0.715,0.530,head_pose,Good,False
+2026-08-05T21:30:59,Not Drowsy,0.714,0.673,eye_closure+head_pose,Good,False
+2026-08-05T21:30:59,Not Drowsy,0.713,0.674,eye_closure+head_pose,Good,False
+2026-08-05T21:31:00,Not Drowsy,0.700,0.680,eye_closure+head_pose,Good,False
+2026-08-05T21:31:00,Not Drowsy,0.696,0.540,head_pose,Good,False
+2026-08-05T21:31:00,Not Drowsy,0.693,0.260,none,Good,False
+2026-08-05T21:31:01,Not Drowsy,0.716,0.673,eye_closure+head_pose,Good,False
+2026-08-05T21:31:01,Not Drowsy,0.701,0.538,head_pose,Good,False
+2026-08-05T21:31:01,Drowsy,0.718,0.815,yawning+head_pose,Good,True
+2026-08-05T21:31:01,Drowsy,0.718,0.815,yawning+head_pose,Good,False
+2026-08-05T21:31:02,Drowsy,0.717,0.815,yawning+head_pose,Good,False
+2026-08-05T21:31:02,Drowsy,0.687,0.686,eye_closure+head_pose,Good,False
+2026-08-05T21:31:02,Drowsy,0.698,0.681,eye_closure+head_pose,Good,False
+2026-08-05T21:31:02,Drowsy,0.699,0.681,eye_closure+head_pose,Good,False
+2026-08-05T21:31:03,Drowsy,0.698,0.681,eye_closure+head_pose,Good,False
+2026-08-05T21:31:03,Drowsy,0.698,0.539,head_pose,Good,False
+2026-08-05T21:31:03,Drowsy,0.697,0.681,head_pose,Good,False
+2026-08-05T21:31:03,Drowsy,0.697,0.681,head_pose,Good,False
+2026-08-05T21:31:04,Drowsy,0.697,0.681,head_pose,Good,False
+2026-08-05T21:31:04,Drowsy,0.697,0.681,head_pose,Good,False
+2026-08-05T21:31:04,Drowsy,0.698,0.681,head_pose,Good,True
+2026-08-05T21:31:05,Drowsy,0.697,0.681,head_pose,Good,False
+2026-08-05T21:31:05,Drowsy,0.697,0.540,head_pose,Good,False
+2026-08-05T21:31:05,Drowsy,0.697,0.540,head_pose,Good,False
+2026-08-05T21:31:05,Drowsy,0.696,0.540,head_pose,Good,False
+2026-08-05T21:31:06,Drowsy,0.695,0.541,head_pose,Good,False
+2026-08-05T21:31:06,Drowsy,0.694,0.541,head_pose,Good,False
+2026-08-05T21:31:06,Drowsy,0.691,0.261,none,Good,False
+2026-08-05T21:31:06,Drowsy,0.672,0.275,none,Good,False
+2026-08-05T21:31:07,Drowsy,0.685,0.265,none,Good,False
+2026-08-05T21:31:07,Drowsy,0.685,0.265,none,Good,False
+2026-08-05T21:31:07,Drowsy,0.638,0.296,none,Good,False
+2026-08-05T21:31:07,Drowsy,0.637,0.297,none,Good,True
+2026-08-05T21:31:08,Drowsy,0.640,0.295,none,Good,False
+2026-08-05T21:31:08,Drowsy,0.689,0.263,none,Good,False
+2026-08-05T21:31:08,Drowsy,0.673,0.273,none,Good,False
+2026-08-05T21:31:09,Drowsy,0.675,0.272,none,Good,False
+2026-08-05T21:31:09,Drowsy,0.687,0.404,eye_closure,Good,False
+2026-08-05T21:31:09,Drowsy,0.674,0.273,none,Good,False
+2026-08-05T21:31:09,Drowsy,0.687,0.405,eye_closure,Good,False
+2026-08-05T21:31:10,Drowsy,0.645,0.292,none,Good,False
+2026-08-05T21:31:10,Drowsy,0.684,0.406,eye_closure,Good,False
+2026-08-05T21:31:10,Drowsy,0.677,0.271,head_pose,Good,False
+2026-08-05T21:31:10,Drowsy,0.666,0.417,eye_closure+head_pose,Good,False
+2026-08-05T21:31:11,Drowsy,0.675,0.691,eye_closure+head_pose,Good,True
+2026-08-05T21:31:11,Drowsy,0.663,0.696,eye_closure+head_pose,Good,False
+2026-08-05T21:31:11,Drowsy,0.679,0.689,eye_closure+head_pose,Good,False
+2026-08-05T21:31:12,Drowsy,0.687,0.686,eye_closure+head_pose,Good,False
+2026-08-05T21:31:12,Drowsy,0.696,0.399,eye_closure,Good,False
+2026-08-05T21:31:12,Drowsy,0.701,0.396,eye_closure,Good,False
+2026-08-05T21:31:12,Drowsy,0.698,0.681,eye_closure+head_pose,Good,False
+2026-08-05T21:31:13,Drowsy,0.697,0.681,eye_closure+head_pose,Good,False
+2026-08-05T21:31:13,Drowsy,0.699,0.680,eye_closure+head_pose,Good,False
+2026-08-05T21:31:13,Drowsy,0.698,0.681,head_pose,Good,False
+2026-08-05T21:31:14,Drowsy,0.697,0.682,head_pose,Good,False
+2026-08-05T21:31:14,Drowsy,0.697,0.681,head_pose,Good,True
+2026-08-05T21:31:14,Drowsy,0.700,0.680,head_pose,Good,False
+2026-08-05T21:31:14,Drowsy,0.698,0.681,head_pose,Good,False
